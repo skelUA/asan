@@ -1,0 +1,564 @@
+==393329==Registered root region at 0x7ffff4501310 of size 80
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff4501310 of size 80
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept '__isoc99_printf'
+==393329==Registered root region at 0x7ffff4501310 of size 80
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff4501310 of size 80
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept '__isoc99_sprintf'
+==393329==Registered root region at 0x7ffff4501310 of size 80
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff4501310 of size 80
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept '__isoc99_snprintf'
+==393329==Registered root region at 0x7ffff4501310 of size 80
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff4501310 of size 80
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept '__isoc99_fprintf'
+==393329==Registered root region at 0x7ffff4501310 of size 80
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff4501310 of size 80
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept '__isoc99_vprintf'
+==393329==Registered root region at 0x7ffff4501310 of size 80
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff4501310 of size 80
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept '__isoc99_vsprintf'
+==393329==Registered root region at 0x7ffff4501310 of size 80
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff4501310 of size 80
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept '__isoc99_vsnprintf'
+==393329==Registered root region at 0x7ffff4501310 of size 80
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff4501310 of size 80
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept '__isoc99_vfprintf'
+==393329==Registered root region at 0x7ffff3f016e0 of size 96
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff3f016e0 of size 96
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept 'pthread_mutexattr_getrobust_np'
+==393329==Registered root region at 0x7ffff4501310 of size 80
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff4501310 of size 80
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept 'xdr_quad_t'
+==393329==Registered root region at 0x7ffff4501310 of size 80
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff4501310 of size 80
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept 'xdr_u_quad_t'
+==393329==Registered root region at 0x7ffff4501310 of size 80
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff4501310 of size 80
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept 'xdr_destroy'
+==393329==Registered root region at 0x7ffff3d00f40 of size 64
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff3d00f40 of size 64
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept 'crypt'
+==393329==Registered root region at 0x7ffff3d00f40 of size 64
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff3d00f40 of size 64
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept 'crypt_r'
+==393329==Registered root region at 0x7ffff3f016e0 of size 96
+==393329==Registered root region at 0x7ffff41007a0 of size 32
+==393329==Unregistered root region at 0x7ffff3f016e0 of size 96
+==393329==Unregistered root region at 0x7ffff41007a0 of size 32
+==393329==AddressSanitizer: failed to intercept '__cxa_rethrow_primary_exception'
+==393329==AddressSanitizer: libc interceptors initialized
+|| `[0x10007fff8000, 0x7fffffffffff]` || HighMem    ||
+|| `[0x02008fff7000, 0x10007fff7fff]` || HighShadow ||
+|| `[0x00008fff7000, 0x02008fff6fff]` || ShadowGap  ||
+|| `[0x00007fff8000, 0x00008fff6fff]` || LowShadow  ||
+|| `[0x000000000000, 0x00007fff7fff]` || LowMem     ||
+MemToShadow(shadow): 0x00008fff7000 0x000091ff6dff 0x004091ff6e00 0x02008fff6fff
+redzone=16
+max_redzone=2048
+quarantine_size_mb=256M
+thread_local_quarantine_size_kb=1024K
+malloc_context_size=30
+SHADOW_SCALE: 3
+SHADOW_GRANULARITY: 8
+SHADOW_OFFSET: 0x7fff8000
+==393329==Installed the sigaction for signal 11
+==393329==Installed the sigaction for signal 7
+==393329==Installed the sigaction for signal 8
+==393329==T0: FakeStack created: 0x7ffff29f7000 -- 0x7ffff3500000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T0: stack [0x7fffff7ff000,0x7ffffffff000) size 0x800000; local=0x7fffffffdfb4
+==393329==AddressSanitizer Init done
+==393329==T1: FakeStack created: 0x7fffefff5000 -- 0x7ffff0afe000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T1: stack [0x7ffff1300000,0x7ffff1afee80) size 0x7fee80; local=0x7ffff1afeda4
+==393329==T2: FakeStack created: 0x7fffef4ec000 -- 0x7fffefff5000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T2: stack [0x7ffff0aff000,0x7ffff12fde80) size 0x7fee80; local=0x7ffff12fdda4
+==393329==T3: FakeStack created: 0x7fffee1e2000 -- 0x7fffeeceb000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T3: stack [0x7fffeecec000,0x7fffef4eae80) size 0x7fee80; local=0x7fffef4eada4
+==393329==T4: FakeStack created: 0x7fffeced8000 -- 0x7fffed9e1000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T4: stack [0x7fffed9e2000,0x7fffee1e0e80) size 0x7fee80; local=0x7fffee1e0da4
+==393329==T5: FakeStack created: 0x7fffebbce000 -- 0x7fffec6d7000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T5: stack [0x7fffec6d8000,0x7fffeced6e80) size 0x7fee80; local=0x7fffeced6da4
+==393329==T6: FakeStack created: 0x7fffea8c4000 -- 0x7fffeb3cd000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T6: stack [0x7fffeb3ce000,0x7fffebbcce80) size 0x7fee80; local=0x7fffebbccda4
+==393329==T7: FakeStack created: 0x7fffcea3e000 -- 0x7fffcf547000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T7: stack [0x7fffcf548000,0x7fffcfd46e80) size 0x7fee80; local=0x7fffcfd46da4
+==393329==T8: FakeStack created: 0x7fffd922c000 -- 0x7fffd9d35000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T8: stack [0x7fffd9d36000,0x7fffda534e80) size 0x7fee80; local=0x7fffda534da4
+==393329==T9: FakeStack created: 0x7fffc64cf000 -- 0x7fffc6fd8000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T10: FakeStack created: 0x7fffc59c6000 -- 0x7fffc64cf000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T9: stack [0x7fffd8a2c000,0x7fffd922ae80) size 0x7fee80; local=0x7fffd922ada4
+==393329==T10: stack [0x7fffce23e000,0x7fffcea3ce80) size 0x7fee80; local=0x7fffcea3cda4
+==393329==T11: FakeStack created: 0x7fffc4ebd000 -- 0x7fffc59c6000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T11: stack [0x7fffcda3d000,0x7fffce23be80) size 0x7fee80; local=0x7fffce23bda4
+==393329==T12: FakeStack created: 0x7fffc43b4000 -- 0x7fffc4ebd000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T12: stack [0x7fffcd23c000,0x7fffcda3ae80) size 0x7fee80; local=0x7fffcda3ada4
+==393329==T13: FakeStack created: 0x7fffbe6ef000 -- 0x7fffbf1f8000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T13: stack [0x7fffbf1f9000,0x7fffbf9f7e80) size 0x7fee80; local=0x7fffbf9f7da4
+==393329==T14: FakeStack created: 0x7fffbd3e5000 -- 0x7fffbdeee000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T14: stack [0x7fffbdeef000,0x7fffbe6ede80) size 0x7fee80; local=0x7fffbe6edda4
+==393329==T15: FakeStack created: 0x7fffbc0db000 -- 0x7fffbcbe4000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==393329==T15: stack [0x7fffbcbe5000,0x7fffbd3e3e80) size 0x7fee80; local=0x7fffbd3e3da4
+=================================================================
+==393329==ERROR: AddressSanitizer: heap-use-after-free on address 0x60300668c990 at pc 0x555556d98466 bp 0x7fffce23b310 sp 0x7fffce23b308
+READ of size 8 at 0x60300668c990 thread T11
+    #0 0x555556d98465 in boss_laj::ScheduleTasks()::'lambda0'()::operator()() const /opt/wotlk_prod/src/server/scripts/Outland/TempestKeep/botanica/boss_laj.cpp:96:28
+    #1 0x555556d98465 in void std::__invoke_impl<void, boss_laj::ScheduleTasks()::'lambda0'()&>(std::__invoke_other, boss_laj::ScheduleTasks()::'lambda0'()&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #2 0x555556d98465 in std::enable_if<is_invocable_r_v<void, boss_laj::ScheduleTasks()::'lambda0'()&>, void>::type std::__invoke_r<void, boss_laj::ScheduleTasks()::'lambda0'()&>(boss_laj::ScheduleTasks()::'lambda0'()&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:111:2
+    #3 0x555556d98465 in std::_Function_handler<void (), boss_laj::ScheduleTasks()::'lambda0'()>::_M_invoke(std::_Any_data const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:290:9
+    #4 0x5555573d5038 in std::function<void ()>::operator()() const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #5 0x5555573d5038 in ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2::operator()(TaskContext) const /opt/wotlk_prod/src/server/game/AI/ScriptedAI/ScriptedCreature.cpp:330:9
+    #6 0x5555573d5038 in void std::__invoke_impl<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>(std::__invoke_other, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #7 0x5555573d5038 in std::enable_if<is_invocable_r_v<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>, void>::type std::__invoke_r<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>(ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:111:2
+    #8 0x5555573d5038 in std::_Function_handler<void (TaskContext), ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2>::_M_invoke(std::_Any_data const&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:290:9
+    #9 0x55555916a6b0 in std::function<void (TaskContext)>::operator()(TaskContext) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #10 0x55555916a6b0 in TaskContext::Invoke() /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:282:5
+    #11 0x555559168101 in TaskScheduler::Dispatch(std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:109:17
+    #12 0x555559168f2e in TaskScheduler& TaskScheduler::Update<long, std::ratio<1l, 1000l> >(std::chrono::duration<long, std::ratio<1l, 1000l> > const&, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.h:221:9
+    #13 0x555559168f2e in TaskScheduler::Update(unsigned long, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:36:12
+    #14 0x5555573d232c in BossAI::UpdateAI(unsigned int) /opt/wotlk_prod/src/server/game/AI/ScriptedAI/ScriptedCreature.cpp:728:15
+    #15 0x5555578e441f in Creature::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Creature/Creature.cpp:828:23
+    #16 0x5555580dbb87 in void Acore::ObjectUpdater::Visit<Creature>(GridRefMgr<Creature>&) /opt/wotlk_prod/src/server/game/Grids/Notifiers/GridNotifiers.cpp:366:18
+    #17 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature>(Acore::ObjectUpdater&, ContainerMapList<Creature>&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:43:7
+    #18 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:49:5
+    #19 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:50:5
+    #20 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(Acore::ObjectUpdater&, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:56:5
+    #21 0x5555583c6d67 in TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >::Visit(TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:90:9
+    #22 0x5555583c6d67 in void Grid<Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::Visit<Acore::ObjectUpdater>(TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/Grid.h:89:17
+    #23 0x5555583c6d67 in void NGrid<8u, Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::VisitGrid<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(unsigned int, unsigned int, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/NGrid.h:102:27
+    #24 0x55555838256e in void Map::Visit<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >(Cell const&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.h:881:25
+    #25 0x55555838256e in Map::VisitNearbyCellsOf(WorldObject*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:732:17
+    #26 0x555558382e86 in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:805:9
+    #27 0x5555583a27d6 in InstanceMap::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:3043:10
+    #28 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #29 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #30 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #31 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #32 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x60300668c990 is located 16 bytes inside of 24-byte region [0x60300668c980,0x60300668c998)
+freed by thread T11 here:
+    #0 0x555555edc5bd in operator delete(void*) (/opt/azeroth-server/bin/worldserver+0x9885bd) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x555556d98a3a in __gnu_cxx::new_allocator<std::_List_node<LajTransformData> >::deallocate(std::_List_node<LajTransformData>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:145:2
+    #2 0x555556d98a3a in std::allocator<std::_List_node<LajTransformData> >::deallocate(std::_List_node<LajTransformData>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:199:25
+    #3 0x555556d98a3a in std::allocator_traits<std::allocator<std::_List_node<LajTransformData> > >::deallocate(std::allocator<std::_List_node<LajTransformData> >&, std::_List_node<LajTransformData>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:496:13
+    #4 0x555556d98a3a in std::__cxx11::_List_base<LajTransformData, std::allocator<LajTransformData> >::_M_put_node(std::_List_node<LajTransformData>*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:447:9
+    #5 0x555556d98a3a in std::__cxx11::_List_base<LajTransformData, std::allocator<LajTransformData> >::_M_clear() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/list.tcc:81:4
+    #6 0x555556d98a3a in std::__cxx11::_List_base<LajTransformData, std::allocator<LajTransformData> >::~_List_base() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:500:9
+    #7 0x555556d98a3a in std::add_const<decltype(*(std::begin(fp)))>::type& Acore::Containers::SelectRandomContainerElementIf<std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> >, boss_laj::ScheduleTasks()::'lambda0'()::operator()() const::'lambda'(LajTransformData)>(std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> > const&, boss_laj::ScheduleTasks()::'lambda0'()::operator()() const::'lambda'(LajTransformData)&&) /opt/wotlk_prod/src/common/Utilities/Containers.h:153:5
+    #8 0x555556d982cd in boss_laj::ScheduleTasks()::'lambda0'()::operator()() const /opt/wotlk_prod/src/server/scripts/Outland/TempestKeep/botanica/boss_laj.cpp:96:30
+    #9 0x555556d982cd in void std::__invoke_impl<void, boss_laj::ScheduleTasks()::'lambda0'()&>(std::__invoke_other, boss_laj::ScheduleTasks()::'lambda0'()&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #10 0x555556d982cd in std::enable_if<is_invocable_r_v<void, boss_laj::ScheduleTasks()::'lambda0'()&>, void>::type std::__invoke_r<void, boss_laj::ScheduleTasks()::'lambda0'()&>(boss_laj::ScheduleTasks()::'lambda0'()&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:111:2
+    #11 0x555556d982cd in std::_Function_handler<void (), boss_laj::ScheduleTasks()::'lambda0'()>::_M_invoke(std::_Any_data const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:290:9
+    #12 0x5555573d5038 in std::function<void ()>::operator()() const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #13 0x5555573d5038 in ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2::operator()(TaskContext) const /opt/wotlk_prod/src/server/game/AI/ScriptedAI/ScriptedCreature.cpp:330:9
+    #14 0x5555573d5038 in void std::__invoke_impl<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>(std::__invoke_other, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #15 0x5555573d5038 in std::enable_if<is_invocable_r_v<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>, void>::type std::__invoke_r<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>(ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:111:2
+    #16 0x5555573d5038 in std::_Function_handler<void (TaskContext), ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2>::_M_invoke(std::_Any_data const&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:290:9
+    #17 0x55555916a6b0 in std::function<void (TaskContext)>::operator()(TaskContext) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #18 0x55555916a6b0 in TaskContext::Invoke() /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:282:5
+    #19 0x555559168101 in TaskScheduler::Dispatch(std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:109:17
+    #20 0x555559168f2e in TaskScheduler& TaskScheduler::Update<long, std::ratio<1l, 1000l> >(std::chrono::duration<long, std::ratio<1l, 1000l> > const&, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.h:221:9
+    #21 0x555559168f2e in TaskScheduler::Update(unsigned long, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:36:12
+    #22 0x5555573d232c in BossAI::UpdateAI(unsigned int) /opt/wotlk_prod/src/server/game/AI/ScriptedAI/ScriptedCreature.cpp:728:15
+    #23 0x5555578e441f in Creature::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Creature/Creature.cpp:828:23
+    #24 0x5555580dbb87 in void Acore::ObjectUpdater::Visit<Creature>(GridRefMgr<Creature>&) /opt/wotlk_prod/src/server/game/Grids/Notifiers/GridNotifiers.cpp:366:18
+    #25 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature>(Acore::ObjectUpdater&, ContainerMapList<Creature>&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:43:7
+    #26 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:49:5
+    #27 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:50:5
+    #28 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(Acore::ObjectUpdater&, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:56:5
+    #29 0x5555583c6d67 in TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >::Visit(TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:90:9
+    #30 0x5555583c6d67 in void Grid<Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::Visit<Acore::ObjectUpdater>(TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/Grid.h:89:17
+    #31 0x5555583c6d67 in void NGrid<8u, Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::VisitGrid<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(unsigned int, unsigned int, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/NGrid.h:102:27
+    #32 0x55555838256e in void Map::Visit<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >(Cell const&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.h:881:25
+    #33 0x55555838256e in Map::VisitNearbyCellsOf(WorldObject*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:732:17
+    #34 0x555558382e86 in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:805:9
+    #35 0x5555583a27d6 in InstanceMap::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:3043:10
+    #36 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #37 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #38 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+previously allocated by thread T11 here:
+    #0 0x555555edbd5d in operator new(unsigned long) (/opt/azeroth-server/bin/worldserver+0x987d5d) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x555556d98750 in __gnu_cxx::new_allocator<std::_List_node<LajTransformData> >::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:127:27
+    #2 0x555556d98750 in std::allocator<std::_List_node<LajTransformData> >::allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:185:32
+    #3 0x555556d98750 in std::allocator_traits<std::allocator<std::_List_node<LajTransformData> > >::allocate(std::allocator<std::_List_node<LajTransformData> >&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:464:20
+    #4 0x555556d98750 in std::__cxx11::_List_base<LajTransformData, std::allocator<LajTransformData> >::_M_get_node() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:443:16
+    #5 0x555556d98750 in std::_List_node<LajTransformData>* std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> >::_M_create_node<LajTransformData const&>(LajTransformData const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:635:21
+    #6 0x555556d98750 in std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> >::insert(std::_List_const_iterator<LajTransformData>, LajTransformData const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/list.tcc:108:22
+    #7 0x555556d98750 in std::insert_iterator<std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> > >::operator=(LajTransformData const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:929:20
+    #8 0x555556d98750 in std::insert_iterator<std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> > > std::copy_if<std::_List_const_iterator<LajTransformData>, std::insert_iterator<std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> > >, boss_laj::ScheduleTasks()::'lambda0'()::operator()() const::'lambda'(LajTransformData)>(std::_List_const_iterator<LajTransformData>, std::_List_const_iterator<LajTransformData>, std::insert_iterator<std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> > >, boss_laj::ScheduleTasks()::'lambda0'()::operator()() const::'lambda'(LajTransformData)) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algo.h:702:16
+    #9 0x555556d98750 in std::add_const<decltype(*(std::begin(fp)))>::type& Acore::Containers::SelectRandomContainerElementIf<std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> >, boss_laj::ScheduleTasks()::'lambda0'()::operator()() const::'lambda'(LajTransformData)>(std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> > const&, boss_laj::ScheduleTasks()::'lambda0'()::operator()() const::'lambda'(LajTransformData)&&) /opt/wotlk_prod/src/common/Utilities/Containers.h:149:9
+    #10 0x555556d982cd in boss_laj::ScheduleTasks()::'lambda0'()::operator()() const /opt/wotlk_prod/src/server/scripts/Outland/TempestKeep/botanica/boss_laj.cpp:96:30
+    #11 0x555556d982cd in void std::__invoke_impl<void, boss_laj::ScheduleTasks()::'lambda0'()&>(std::__invoke_other, boss_laj::ScheduleTasks()::'lambda0'()&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #12 0x555556d982cd in std::enable_if<is_invocable_r_v<void, boss_laj::ScheduleTasks()::'lambda0'()&>, void>::type std::__invoke_r<void, boss_laj::ScheduleTasks()::'lambda0'()&>(boss_laj::ScheduleTasks()::'lambda0'()&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:111:2
+    #13 0x555556d982cd in std::_Function_handler<void (), boss_laj::ScheduleTasks()::'lambda0'()>::_M_invoke(std::_Any_data const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:290:9
+    #14 0x5555573d5038 in std::function<void ()>::operator()() const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #15 0x5555573d5038 in ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2::operator()(TaskContext) const /opt/wotlk_prod/src/server/game/AI/ScriptedAI/ScriptedCreature.cpp:330:9
+    #16 0x5555573d5038 in void std::__invoke_impl<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>(std::__invoke_other, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #17 0x5555573d5038 in std::enable_if<is_invocable_r_v<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>, void>::type std::__invoke_r<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>(ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:111:2
+    #18 0x5555573d5038 in std::_Function_handler<void (TaskContext), ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2>::_M_invoke(std::_Any_data const&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:290:9
+    #19 0x55555916a6b0 in std::function<void (TaskContext)>::operator()(TaskContext) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #20 0x55555916a6b0 in TaskContext::Invoke() /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:282:5
+    #21 0x555559168101 in TaskScheduler::Dispatch(std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:109:17
+    #22 0x555559168f2e in TaskScheduler& TaskScheduler::Update<long, std::ratio<1l, 1000l> >(std::chrono::duration<long, std::ratio<1l, 1000l> > const&, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.h:221:9
+    #23 0x555559168f2e in TaskScheduler::Update(unsigned long, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:36:12
+    #24 0x5555573d232c in BossAI::UpdateAI(unsigned int) /opt/wotlk_prod/src/server/game/AI/ScriptedAI/ScriptedCreature.cpp:728:15
+    #25 0x5555578e441f in Creature::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Creature/Creature.cpp:828:23
+    #26 0x5555580dbb87 in void Acore::ObjectUpdater::Visit<Creature>(GridRefMgr<Creature>&) /opt/wotlk_prod/src/server/game/Grids/Notifiers/GridNotifiers.cpp:366:18
+    #27 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature>(Acore::ObjectUpdater&, ContainerMapList<Creature>&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:43:7
+    #28 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:49:5
+    #29 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:50:5
+    #30 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(Acore::ObjectUpdater&, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:56:5
+    #31 0x5555583c6d67 in TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >::Visit(TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:90:9
+    #32 0x5555583c6d67 in void Grid<Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::Visit<Acore::ObjectUpdater>(TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/Grid.h:89:17
+    #33 0x5555583c6d67 in void NGrid<8u, Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::VisitGrid<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(unsigned int, unsigned int, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/NGrid.h:102:27
+    #34 0x55555838256e in void Map::Visit<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >(Cell const&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.h:881:25
+    #35 0x55555838256e in Map::VisitNearbyCellsOf(WorldObject*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:732:17
+    #36 0x555558382e86 in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:805:9
+    #37 0x5555583a27d6 in InstanceMap::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:3043:10
+    #38 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #39 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #40 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+Thread T11 created by T0 here:
+    #0 0x555555e8a40c in pthread_create (/opt/azeroth-server/bin/worldserver+0x93640c) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558c48427 in World::SetInitialWorldSettings() /opt/wotlk_prod/src/server/game/World/World.cpp:2106:14
+    #3 0x555555ee1b6e in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:306:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+SUMMARY: AddressSanitizer: heap-use-after-free /opt/wotlk_prod/src/server/scripts/Outland/TempestKeep/botanica/boss_laj.cpp:96:28 in boss_laj::ScheduleTasks()::'lambda0'()::operator()() const
+Shadow bytes around the buggy address:
+  0x0c0680cc98e0: fa fa 00 00 00 00 fa fa 00 00 00 04 fa fa 00 00
+  0x0c0680cc98f0: 04 fa fa fa 00 00 04 fa fa fa 00 00 00 fa fa fa
+  0x0c0680cc9900: 00 00 00 00 fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x0c0680cc9910: fa fa 00 00 00 fa fa fa 00 00 00 00 fa fa 00 00
+  0x0c0680cc9920: 00 fa fa fa 00 00 00 00 fa fa 00 00 00 fa fa fa
+=>0x0c0680cc9930: fd fd[fd]fa fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x0c0680cc9940: fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00
+  0x0c0680cc9950: 00 fa fa fa 00 00 03 fa fa fa 00 00 00 fa fa fa
+  0x0c0680cc9960: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 03 fa
+  0x0c0680cc9970: fa fa 00 00 00 00 fa fa 00 00 00 fa fa fa 00 00
+  0x0c0680cc9980: 00 04 fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+=================================================================
+==393329==ERROR: AddressSanitizer: heap-use-after-free on address 0x60300668c997 at pc 0x555556d98486 bp 0x7fffce23b310 sp 0x7fffce23b308
+READ of size 8 at 0x60300668c997 thread T11
+    #0 0x555556d98485 in boss_laj::ScheduleTasks()::'lambda0'()::operator()() const /opt/wotlk_prod/src/server/scripts/Outland/TempestKeep/botanica/boss_laj.cpp:96:28
+    #1 0x555556d98485 in void std::__invoke_impl<void, boss_laj::ScheduleTasks()::'lambda0'()&>(std::__invoke_other, boss_laj::ScheduleTasks()::'lambda0'()&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #2 0x555556d98485 in std::enable_if<is_invocable_r_v<void, boss_laj::ScheduleTasks()::'lambda0'()&>, void>::type std::__invoke_r<void, boss_laj::ScheduleTasks()::'lambda0'()&>(boss_laj::ScheduleTasks()::'lambda0'()&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:111:2
+    #3 0x555556d98485 in std::_Function_handler<void (), boss_laj::ScheduleTasks()::'lambda0'()>::_M_invoke(std::_Any_data const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:290:9
+    #4 0x5555573d5038 in std::function<void ()>::operator()() const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #5 0x5555573d5038 in ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2::operator()(TaskContext) const /opt/wotlk_prod/src/server/game/AI/ScriptedAI/ScriptedCreature.cpp:330:9
+    #6 0x5555573d5038 in void std::__invoke_impl<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>(std::__invoke_other, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #7 0x5555573d5038 in std::enable_if<is_invocable_r_v<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>, void>::type std::__invoke_r<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>(ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:111:2
+    #8 0x5555573d5038 in std::_Function_handler<void (TaskContext), ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2>::_M_invoke(std::_Any_data const&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:290:9
+    #9 0x55555916a6b0 in std::function<void (TaskContext)>::operator()(TaskContext) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #10 0x55555916a6b0 in TaskContext::Invoke() /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:282:5
+    #11 0x555559168101 in TaskScheduler::Dispatch(std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:109:17
+    #12 0x555559168f2e in TaskScheduler& TaskScheduler::Update<long, std::ratio<1l, 1000l> >(std::chrono::duration<long, std::ratio<1l, 1000l> > const&, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.h:221:9
+    #13 0x555559168f2e in TaskScheduler::Update(unsigned long, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:36:12
+    #14 0x5555573d232c in BossAI::UpdateAI(unsigned int) /opt/wotlk_prod/src/server/game/AI/ScriptedAI/ScriptedCreature.cpp:728:15
+    #15 0x5555578e441f in Creature::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Creature/Creature.cpp:828:23
+    #16 0x5555580dbb87 in void Acore::ObjectUpdater::Visit<Creature>(GridRefMgr<Creature>&) /opt/wotlk_prod/src/server/game/Grids/Notifiers/GridNotifiers.cpp:366:18
+    #17 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature>(Acore::ObjectUpdater&, ContainerMapList<Creature>&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:43:7
+    #18 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:49:5
+    #19 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:50:5
+    #20 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(Acore::ObjectUpdater&, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:56:5
+    #21 0x5555583c6d67 in TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >::Visit(TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:90:9
+    #22 0x5555583c6d67 in void Grid<Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::Visit<Acore::ObjectUpdater>(TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/Grid.h:89:17
+    #23 0x5555583c6d67 in void NGrid<8u, Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::VisitGrid<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(unsigned int, unsigned int, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/NGrid.h:102:27
+    #24 0x55555838256e in void Map::Visit<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >(Cell const&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.h:881:25
+    #25 0x55555838256e in Map::VisitNearbyCellsOf(WorldObject*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:732:17
+    #26 0x555558382e86 in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:805:9
+    #27 0x5555583a27d6 in InstanceMap::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:3043:10
+    #28 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #29 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #30 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #31 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #32 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x60300668c998 is located 0 bytes to the right of 24-byte region [0x60300668c980,0x60300668c998)
+freed by thread T11 here:
+    #0 0x555555edc5bd in operator delete(void*) (/opt/azeroth-server/bin/worldserver+0x9885bd) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x555556d98a3a in __gnu_cxx::new_allocator<std::_List_node<LajTransformData> >::deallocate(std::_List_node<LajTransformData>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:145:2
+    #2 0x555556d98a3a in std::allocator<std::_List_node<LajTransformData> >::deallocate(std::_List_node<LajTransformData>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:199:25
+    #3 0x555556d98a3a in std::allocator_traits<std::allocator<std::_List_node<LajTransformData> > >::deallocate(std::allocator<std::_List_node<LajTransformData> >&, std::_List_node<LajTransformData>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:496:13
+    #4 0x555556d98a3a in std::__cxx11::_List_base<LajTransformData, std::allocator<LajTransformData> >::_M_put_node(std::_List_node<LajTransformData>*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:447:9
+    #5 0x555556d98a3a in std::__cxx11::_List_base<LajTransformData, std::allocator<LajTransformData> >::_M_clear() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/list.tcc:81:4
+    #6 0x555556d98a3a in std::__cxx11::_List_base<LajTransformData, std::allocator<LajTransformData> >::~_List_base() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:500:9
+    #7 0x555556d98a3a in std::add_const<decltype(*(std::begin(fp)))>::type& Acore::Containers::SelectRandomContainerElementIf<std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> >, boss_laj::ScheduleTasks()::'lambda0'()::operator()() const::'lambda'(LajTransformData)>(std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> > const&, boss_laj::ScheduleTasks()::'lambda0'()::operator()() const::'lambda'(LajTransformData)&&) /opt/wotlk_prod/src/common/Utilities/Containers.h:153:5
+    #8 0x555556d982cd in boss_laj::ScheduleTasks()::'lambda0'()::operator()() const /opt/wotlk_prod/src/server/scripts/Outland/TempestKeep/botanica/boss_laj.cpp:96:30
+    #9 0x555556d982cd in void std::__invoke_impl<void, boss_laj::ScheduleTasks()::'lambda0'()&>(std::__invoke_other, boss_laj::ScheduleTasks()::'lambda0'()&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #10 0x555556d982cd in std::enable_if<is_invocable_r_v<void, boss_laj::ScheduleTasks()::'lambda0'()&>, void>::type std::__invoke_r<void, boss_laj::ScheduleTasks()::'lambda0'()&>(boss_laj::ScheduleTasks()::'lambda0'()&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:111:2
+    #11 0x555556d982cd in std::_Function_handler<void (), boss_laj::ScheduleTasks()::'lambda0'()>::_M_invoke(std::_Any_data const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:290:9
+    #12 0x5555573d5038 in std::function<void ()>::operator()() const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #13 0x5555573d5038 in ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2::operator()(TaskContext) const /opt/wotlk_prod/src/server/game/AI/ScriptedAI/ScriptedCreature.cpp:330:9
+    #14 0x5555573d5038 in void std::__invoke_impl<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>(std::__invoke_other, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #15 0x5555573d5038 in std::enable_if<is_invocable_r_v<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>, void>::type std::__invoke_r<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>(ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:111:2
+    #16 0x5555573d5038 in std::_Function_handler<void (TaskContext), ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2>::_M_invoke(std::_Any_data const&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:290:9
+    #17 0x55555916a6b0 in std::function<void (TaskContext)>::operator()(TaskContext) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #18 0x55555916a6b0 in TaskContext::Invoke() /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:282:5
+    #19 0x555559168101 in TaskScheduler::Dispatch(std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:109:17
+    #20 0x555559168f2e in TaskScheduler& TaskScheduler::Update<long, std::ratio<1l, 1000l> >(std::chrono::duration<long, std::ratio<1l, 1000l> > const&, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.h:221:9
+    #21 0x555559168f2e in TaskScheduler::Update(unsigned long, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:36:12
+    #22 0x5555573d232c in BossAI::UpdateAI(unsigned int) /opt/wotlk_prod/src/server/game/AI/ScriptedAI/ScriptedCreature.cpp:728:15
+    #23 0x5555578e441f in Creature::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Creature/Creature.cpp:828:23
+    #24 0x5555580dbb87 in void Acore::ObjectUpdater::Visit<Creature>(GridRefMgr<Creature>&) /opt/wotlk_prod/src/server/game/Grids/Notifiers/GridNotifiers.cpp:366:18
+    #25 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature>(Acore::ObjectUpdater&, ContainerMapList<Creature>&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:43:7
+    #26 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:49:5
+    #27 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:50:5
+    #28 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(Acore::ObjectUpdater&, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:56:5
+    #29 0x5555583c6d67 in TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >::Visit(TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:90:9
+    #30 0x5555583c6d67 in void Grid<Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::Visit<Acore::ObjectUpdater>(TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/Grid.h:89:17
+    #31 0x5555583c6d67 in void NGrid<8u, Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::VisitGrid<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(unsigned int, unsigned int, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/NGrid.h:102:27
+    #32 0x55555838256e in void Map::Visit<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >(Cell const&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.h:881:25
+    #33 0x55555838256e in Map::VisitNearbyCellsOf(WorldObject*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:732:17
+    #34 0x555558382e86 in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:805:9
+    #35 0x5555583a27d6 in InstanceMap::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:3043:10
+    #36 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #37 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #38 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+previously allocated by thread T11 here:
+    #0 0x555555edbd5d in operator new(unsigned long) (/opt/azeroth-server/bin/worldserver+0x987d5d) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x555556d98750 in __gnu_cxx::new_allocator<std::_List_node<LajTransformData> >::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:127:27
+    #2 0x555556d98750 in std::allocator<std::_List_node<LajTransformData> >::allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:185:32
+    #3 0x555556d98750 in std::allocator_traits<std::allocator<std::_List_node<LajTransformData> > >::allocate(std::allocator<std::_List_node<LajTransformData> >&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:464:20
+    #4 0x555556d98750 in std::__cxx11::_List_base<LajTransformData, std::allocator<LajTransformData> >::_M_get_node() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:443:16
+    #5 0x555556d98750 in std::_List_node<LajTransformData>* std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> >::_M_create_node<LajTransformData const&>(LajTransformData const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:635:21
+    #6 0x555556d98750 in std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> >::insert(std::_List_const_iterator<LajTransformData>, LajTransformData const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/list.tcc:108:22
+    #7 0x555556d98750 in std::insert_iterator<std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> > >::operator=(LajTransformData const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:929:20
+    #8 0x555556d98750 in std::insert_iterator<std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> > > std::copy_if<std::_List_const_iterator<LajTransformData>, std::insert_iterator<std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> > >, boss_laj::ScheduleTasks()::'lambda0'()::operator()() const::'lambda'(LajTransformData)>(std::_List_const_iterator<LajTransformData>, std::_List_const_iterator<LajTransformData>, std::insert_iterator<std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> > >, boss_laj::ScheduleTasks()::'lambda0'()::operator()() const::'lambda'(LajTransformData)) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algo.h:702:16
+    #9 0x555556d98750 in std::add_const<decltype(*(std::begin(fp)))>::type& Acore::Containers::SelectRandomContainerElementIf<std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> >, boss_laj::ScheduleTasks()::'lambda0'()::operator()() const::'lambda'(LajTransformData)>(std::__cxx11::list<LajTransformData, std::allocator<LajTransformData> > const&, boss_laj::ScheduleTasks()::'lambda0'()::operator()() const::'lambda'(LajTransformData)&&) /opt/wotlk_prod/src/common/Utilities/Containers.h:149:9
+    #10 0x555556d982cd in boss_laj::ScheduleTasks()::'lambda0'()::operator()() const /opt/wotlk_prod/src/server/scripts/Outland/TempestKeep/botanica/boss_laj.cpp:96:30
+    #11 0x555556d982cd in void std::__invoke_impl<void, boss_laj::ScheduleTasks()::'lambda0'()&>(std::__invoke_other, boss_laj::ScheduleTasks()::'lambda0'()&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #12 0x555556d982cd in std::enable_if<is_invocable_r_v<void, boss_laj::ScheduleTasks()::'lambda0'()&>, void>::type std::__invoke_r<void, boss_laj::ScheduleTasks()::'lambda0'()&>(boss_laj::ScheduleTasks()::'lambda0'()&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:111:2
+    #13 0x555556d982cd in std::_Function_handler<void (), boss_laj::ScheduleTasks()::'lambda0'()>::_M_invoke(std::_Any_data const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:290:9
+    #14 0x5555573d5038 in std::function<void ()>::operator()() const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #15 0x5555573d5038 in ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2::operator()(TaskContext) const /opt/wotlk_prod/src/server/game/AI/ScriptedAI/ScriptedCreature.cpp:330:9
+    #16 0x5555573d5038 in void std::__invoke_impl<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>(std::__invoke_other, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #17 0x5555573d5038 in std::enable_if<is_invocable_r_v<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>, void>::type std::__invoke_r<void, ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext>(ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:111:2
+    #18 0x5555573d5038 in std::_Function_handler<void (TaskContext), ScriptedAI::ScheduleTimedEvent(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<long, std::ratio<1l, 1000l> >, unsigned int)::$_2>::_M_invoke(std::_Any_data const&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:290:9
+    #19 0x55555916a6b0 in std::function<void (TaskContext)>::operator()(TaskContext) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #20 0x55555916a6b0 in TaskContext::Invoke() /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:282:5
+    #21 0x555559168101 in TaskScheduler::Dispatch(std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:109:17
+    #22 0x555559168f2e in TaskScheduler& TaskScheduler::Update<long, std::ratio<1l, 1000l> >(std::chrono::duration<long, std::ratio<1l, 1000l> > const&, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.h:221:9
+    #23 0x555559168f2e in TaskScheduler::Update(unsigned long, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:36:12
+    #24 0x5555573d232c in BossAI::UpdateAI(unsigned int) /opt/wotlk_prod/src/server/game/AI/ScriptedAI/ScriptedCreature.cpp:728:15
+    #25 0x5555578e441f in Creature::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Creature/Creature.cpp:828:23
+    #26 0x5555580dbb87 in void Acore::ObjectUpdater::Visit<Creature>(GridRefMgr<Creature>&) /opt/wotlk_prod/src/server/game/Grids/Notifiers/GridNotifiers.cpp:366:18
+    #27 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature>(Acore::ObjectUpdater&, ContainerMapList<Creature>&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:43:7
+    #28 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:49:5
+    #29 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:50:5
+    #30 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(Acore::ObjectUpdater&, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:56:5
+    #31 0x5555583c6d67 in TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >::Visit(TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:90:9
+    #32 0x5555583c6d67 in void Grid<Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::Visit<Acore::ObjectUpdater>(TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/Grid.h:89:17
+    #33 0x5555583c6d67 in void NGrid<8u, Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::VisitGrid<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(unsigned int, unsigned int, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/NGrid.h:102:27
+    #34 0x55555838256e in void Map::Visit<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >(Cell const&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.h:881:25
+    #35 0x55555838256e in Map::VisitNearbyCellsOf(WorldObject*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:732:17
+    #36 0x555558382e86 in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:805:9
+    #37 0x5555583a27d6 in InstanceMap::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:3043:10
+    #38 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #39 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #40 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+SUMMARY: AddressSanitizer: heap-use-after-free /opt/wotlk_prod/src/server/scripts/Outland/TempestKeep/botanica/boss_laj.cpp:96:28 in boss_laj::ScheduleTasks()::'lambda0'()::operator()() const
+Shadow bytes around the buggy address:
+  0x0c0680cc98e0: fa fa 00 00 00 00 fa fa 00 00 00 04 fa fa 00 00
+  0x0c0680cc98f0: 04 fa fa fa 00 00 04 fa fa fa 00 00 00 fa fa fa
+  0x0c0680cc9900: 00 00 00 00 fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x0c0680cc9910: fa fa 00 00 00 fa fa fa 00 00 00 00 fa fa 00 00
+  0x0c0680cc9920: 00 fa fa fa 00 00 00 00 fa fa 00 00 00 fa fa fa
+=>0x0c0680cc9930: fd fd[fd]fa fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x0c0680cc9940: fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00
+  0x0c0680cc9950: 00 fa fa fa 00 00 03 fa fa fa 00 00 00 fa fa fa
+  0x0c0680cc9960: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 03 fa
+  0x0c0680cc9970: fa fa 00 00 00 00 fa fa 00 00 00 fa fa fa 00 00
+  0x0c0680cc9980: 00 04 fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+=================================================================
+==393329==ERROR: AddressSanitizer: global-buffer-overflow on address 0x55555955dea8 at pc 0x555556b17160 bp 0x7fffcea3c5b0 sp 0x7fffcea3c5a8
+READ of size 4 at 0x55555955dea8 thread T10
+    #0 0x555556b1715f in npc_lord_illidan_stormrage::npc_lord_illidan_stormrageAI::SummonNextWave() /opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:1389:38
+    #1 0x555556b1b641 in npc_lord_illidan_stormrage::npc_lord_illidan_stormrageAI::UpdateAI(unsigned int) /opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:1189:21
+    #2 0x5555578e441f in Creature::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Creature/Creature.cpp:828:23
+    #3 0x5555580dbb87 in void Acore::ObjectUpdater::Visit<Creature>(GridRefMgr<Creature>&) /opt/wotlk_prod/src/server/game/Grids/Notifiers/GridNotifiers.cpp:366:18
+    #4 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature>(Acore::ObjectUpdater&, ContainerMapList<Creature>&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:43:7
+    #5 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:49:5
+    #6 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:50:5
+    #7 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(Acore::ObjectUpdater&, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:56:5
+    #8 0x5555583c6d67 in TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >::Visit(TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:90:9
+    #9 0x5555583c6d67 in void Grid<Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::Visit<Acore::ObjectUpdater>(TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/Grid.h:89:17
+    #10 0x5555583c6d67 in void NGrid<8u, Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::VisitGrid<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(unsigned int, unsigned int, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/NGrid.h:102:27
+    #11 0x55555838248f in void Map::Visit<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >(Cell const&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.h:881:25
+    #12 0x55555838248f in Map::VisitNearbyCellsOf(WorldObject*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:726:13
+    #13 0x555558381b48 in Map::VisitNearbyCellsOfPlayer(Player*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:674:5
+    #14 0x555558382f9d in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:820:9
+    #15 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #16 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #17 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #18 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #19 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x55555955dea8 is located 24 bytes to the left of global variable 'SpawnLocation' defined in '/opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:844:17' (0x55555955dec0) of size 256
+0x55555955dea8 is located 8 bytes to the right of global variable 'WavesInfo' defined in '/opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:871:25' (0x55555955de60) of size 64
+SUMMARY: AddressSanitizer: global-buffer-overflow /opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:1389:38 in npc_lord_illidan_stormrage::npc_lord_illidan_stormrageAI::SummonNextWave()
+Shadow bytes around the buggy address:
+  0x0aab2b2a3b80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3b90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3ba0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3bb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3bc0: 00 00 00 00 00 00 00 00 00 03 f9 f9 00 00 00 00
+=>0x0aab2b2a3bd0: 00 00 00 00 f9[f9]f9 f9 00 00 00 00 00 00 00 00
+  0x0aab2b2a3be0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3bf0: 00 00 00 00 00 00 00 00 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b2a3c00: 00 00 00 00 00 03 f9 f9 f9 f9 f9 f9 00 00 00 00
+  0x0aab2b2a3c10: 00 f9 f9 f9 f9 f9 f9 f9 00 00 03 f9 f9 f9 f9 f9
+  0x0aab2b2a3c20: 00 00 00 06 f9 f9 f9 f9 00 00 00 02 f9 f9 f9 f9
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+Thread T10 created by T0 here:
+    #0 0x555555e8a40c in pthread_create (/opt/azeroth-server/bin/worldserver+0x93640c) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558c48427 in World::SetInitialWorldSettings() /opt/wotlk_prod/src/server/game/World/World.cpp:2106:14
+    #3 0x555555ee1b6e in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:306:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+=================================================================
+==393329==ERROR: AddressSanitizer: global-buffer-overflow on address 0x55555955deac at pc 0x555556b1719b bp 0x7fffcea3c5b0 sp 0x7fffcea3c5a8
+READ of size 4 at 0x55555955deac thread T10
+    #0 0x555556b1719a in npc_lord_illidan_stormrage::npc_lord_illidan_stormrageAI::SummonNextWave() /opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:1390:42
+    #1 0x555556b1b641 in npc_lord_illidan_stormrage::npc_lord_illidan_stormrageAI::UpdateAI(unsigned int) /opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:1189:21
+    #2 0x5555578e441f in Creature::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Creature/Creature.cpp:828:23
+    #3 0x5555580dbb87 in void Acore::ObjectUpdater::Visit<Creature>(GridRefMgr<Creature>&) /opt/wotlk_prod/src/server/game/Grids/Notifiers/GridNotifiers.cpp:366:18
+    #4 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature>(Acore::ObjectUpdater&, ContainerMapList<Creature>&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:43:7
+    #5 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:49:5
+    #6 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:50:5
+    #7 0x5555583c6d67 in void VisitorHelper<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(Acore::ObjectUpdater&, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:56:5
+    #8 0x5555583c6d67 in TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >::Visit(TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:90:9
+    #9 0x5555583c6d67 in void Grid<Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::Visit<Acore::ObjectUpdater>(TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/Grid.h:89:17
+    #10 0x5555583c6d67 in void NGrid<8u, Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::VisitGrid<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(unsigned int, unsigned int, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/NGrid.h:102:27
+    #11 0x55555838248f in void Map::Visit<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >(Cell const&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.h:881:25
+    #12 0x55555838248f in Map::VisitNearbyCellsOf(WorldObject*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:726:13
+    #13 0x555558381b48 in Map::VisitNearbyCellsOfPlayer(Player*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:674:5
+    #14 0x555558382f9d in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:820:9
+    #15 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #16 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #17 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #18 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #19 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x55555955deac is located 20 bytes to the left of global variable 'SpawnLocation' defined in '/opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:844:17' (0x55555955dec0) of size 256
+0x55555955deac is located 12 bytes to the right of global variable 'WavesInfo' defined in '/opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:871:25' (0x55555955de60) of size 64
+SUMMARY: AddressSanitizer: global-buffer-overflow /opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:1390:42 in npc_lord_illidan_stormrage::npc_lord_illidan_stormrageAI::SummonNextWave()
+Shadow bytes around the buggy address:
+  0x0aab2b2a3b80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3b90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3ba0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3bb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3bc0: 00 00 00 00 00 00 00 00 00 03 f9 f9 00 00 00 00
+=>0x0aab2b2a3bd0: 00 00 00 00 f9[f9]f9 f9 00 00 00 00 00 00 00 00
+  0x0aab2b2a3be0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3bf0: 00 00 00 00 00 00 00 00 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b2a3c00: 00 00 00 00 00 03 f9 f9 f9 f9 f9 f9 00 00 00 00
+  0x0aab2b2a3c10: 00 f9 f9 f9 f9 f9 f9 f9 00 00 03 f9 f9 f9 f9 f9
+  0x0aab2b2a3c20: 00 00 00 06 f9 f9 f9 f9 00 00 00 02 f9 f9 f9 f9
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb

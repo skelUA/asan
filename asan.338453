@@ -1,0 +1,495 @@
+==338453==Registered root region at 0x7ffff4501310 of size 80
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff4501310 of size 80
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept '__isoc99_printf'
+==338453==Registered root region at 0x7ffff4501310 of size 80
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff4501310 of size 80
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept '__isoc99_sprintf'
+==338453==Registered root region at 0x7ffff4501310 of size 80
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff4501310 of size 80
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept '__isoc99_snprintf'
+==338453==Registered root region at 0x7ffff4501310 of size 80
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff4501310 of size 80
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept '__isoc99_fprintf'
+==338453==Registered root region at 0x7ffff4501310 of size 80
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff4501310 of size 80
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept '__isoc99_vprintf'
+==338453==Registered root region at 0x7ffff4501310 of size 80
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff4501310 of size 80
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept '__isoc99_vsprintf'
+==338453==Registered root region at 0x7ffff4501310 of size 80
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff4501310 of size 80
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept '__isoc99_vsnprintf'
+==338453==Registered root region at 0x7ffff4501310 of size 80
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff4501310 of size 80
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept '__isoc99_vfprintf'
+==338453==Registered root region at 0x7ffff3f016e0 of size 96
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff3f016e0 of size 96
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept 'pthread_mutexattr_getrobust_np'
+==338453==Registered root region at 0x7ffff4501310 of size 80
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff4501310 of size 80
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept 'xdr_quad_t'
+==338453==Registered root region at 0x7ffff4501310 of size 80
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff4501310 of size 80
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept 'xdr_u_quad_t'
+==338453==Registered root region at 0x7ffff4501310 of size 80
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff4501310 of size 80
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept 'xdr_destroy'
+==338453==Registered root region at 0x7ffff3d00f40 of size 64
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff3d00f40 of size 64
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept 'crypt'
+==338453==Registered root region at 0x7ffff3d00f40 of size 64
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff3d00f40 of size 64
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept 'crypt_r'
+==338453==Registered root region at 0x7ffff3f016e0 of size 96
+==338453==Registered root region at 0x7ffff41007a0 of size 32
+==338453==Unregistered root region at 0x7ffff3f016e0 of size 96
+==338453==Unregistered root region at 0x7ffff41007a0 of size 32
+==338453==AddressSanitizer: failed to intercept '__cxa_rethrow_primary_exception'
+==338453==AddressSanitizer: libc interceptors initialized
+|| `[0x10007fff8000, 0x7fffffffffff]` || HighMem    ||
+|| `[0x02008fff7000, 0x10007fff7fff]` || HighShadow ||
+|| `[0x00008fff7000, 0x02008fff6fff]` || ShadowGap  ||
+|| `[0x00007fff8000, 0x00008fff6fff]` || LowShadow  ||
+|| `[0x000000000000, 0x00007fff7fff]` || LowMem     ||
+MemToShadow(shadow): 0x00008fff7000 0x000091ff6dff 0x004091ff6e00 0x02008fff6fff
+redzone=16
+max_redzone=2048
+quarantine_size_mb=256M
+thread_local_quarantine_size_kb=1024K
+malloc_context_size=30
+SHADOW_SCALE: 3
+SHADOW_GRANULARITY: 8
+SHADOW_OFFSET: 0x7fff8000
+==338453==Installed the sigaction for signal 11
+==338453==Installed the sigaction for signal 7
+==338453==Installed the sigaction for signal 8
+==338453==T0: FakeStack created: 0x7ffff29f7000 -- 0x7ffff3500000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T0: stack [0x7fffff7ff000,0x7ffffffff000) size 0x800000; local=0x7fffffffe024
+==338453==AddressSanitizer Init done
+==338453==T1: FakeStack created: 0x7fffefff5000 -- 0x7ffff0afe000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T1: stack [0x7ffff1300000,0x7ffff1afee80) size 0x7fee80; local=0x7ffff1afeda4
+==338453==T2: FakeStack created: 0x7fffef4ec000 -- 0x7fffefff5000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T2: stack [0x7ffff0aff000,0x7ffff12fde80) size 0x7fee80; local=0x7ffff12fdda4
+==338453==T3: FakeStack created: 0x7fffee1e2000 -- 0x7fffeeceb000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T3: stack [0x7fffeecec000,0x7fffef4eae80) size 0x7fee80; local=0x7fffef4eada4
+==338453==T4: FakeStack created: 0x7fffeced8000 -- 0x7fffed9e1000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T4: stack [0x7fffed9e2000,0x7fffee1e0e80) size 0x7fee80; local=0x7fffee1e0da4
+==338453==T5: FakeStack created: 0x7fffebbce000 -- 0x7fffec6d7000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T5: stack [0x7fffec6d8000,0x7fffeced6e80) size 0x7fee80; local=0x7fffeced6da4
+==338453==T6: FakeStack created: 0x7fffea8c4000 -- 0x7fffeb3cd000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T6: stack [0x7fffeb3ce000,0x7fffebbcce80) size 0x7fee80; local=0x7fffebbccda4
+==338453==T7: FakeStack created: 0x7fffcea3e000 -- 0x7fffcf547000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T7: stack [0x7fffcf548000,0x7fffcfd46e80) size 0x7fee80; local=0x7fffcfd46da4
+==338453==T8: FakeStack created: 0x7fffcdf35000 -- 0x7fffcea3e000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T8: stack [0x7fffdded4000,0x7fffde6d2e80) size 0x7fee80; local=0x7fffde6d2da4
+==338453==T9: FakeStack created: 0x7fffcd42c000 -- 0x7fffcdf35000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T9: stack [0x7fffdd6d3000,0x7fffdded1e80) size 0x7fee80; local=0x7fffdded1da4
+==338453==T10: FakeStack created: 0x7fffc69c1000 -- 0x7fffc74ca000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T10: stack [0x7fffd9d36000,0x7fffda534e80) size 0x7fee80; local=0x7fffda534da4
+==338453==T11: FakeStack created: 0x7fffc56b7000 -- 0x7fffc61c0000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T11: stack [0x7fffd9535000,0x7fffd9d33e80) size 0x7fee80; local=0x7fffd9d33da4
+==338453==T12: FakeStack created: 0x7fffc4bae000 -- 0x7fffc56b7000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T12: stack [0x7fffc61c1000,0x7fffc69bfe80) size 0x7fee80; local=0x7fffc69bfda4
+==338453==T13: FakeStack created: 0x7fffbde76000 -- 0x7fffbe97f000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T13: stack [0x7fffbf181000,0x7fffbf97fe80) size 0x7fee80; local=0x7fffbf97fda4
+==338453==T14: FakeStack created: 0x7fffbd36d000 -- 0x7fffbde76000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T14: stack [0x7fffbe980000,0x7fffbf17ee80) size 0x7fee80; local=0x7fffbf17eda4
+==338453==T15: FakeStack created: 0x7fffbc063000 -- 0x7fffbcb6c000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==338453==T15: stack [0x7fffbcb6d000,0x7fffbd36be80) size 0x7fee80; local=0x7fffbd36bda4
+=================================================================
+==338453==ERROR: AddressSanitizer: stack-use-after-scope on address 0x7fffce405900 at pc 0x555555e3fd9d bp 0x7fffde6d1e90 sp 0x7fffde6d1618
+READ of size 5 at 0x7fffce405900 thread T8
+    #0 0x555555e3fd9c in printf_common(void*, char const*, __va_list_tag*) asan_interceptors.cpp.o
+    #1 0x555555e416c0 in __interceptor_snprintf (/opt/azeroth-server/bin/worldserver+0x8ed6c0) (BuildId: 8846f982bb719a408f7a40508eea6c898c665148)
+    #2 0x555557c6b7f2 in Player::UpdateLocalChannels(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Player/PlayerUpdates.cpp:560:21
+    #3 0x555557c68419 in Player::UpdateZone(unsigned int, unsigned int) /opt/wotlk_prod/src/server/game/Entities/Player/PlayerUpdates.cpp:1345:5
+    #4 0x555557c638db in Player::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Player/PlayerUpdates.cpp:294:17
+    #5 0x55555837eb42 in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:769:21
+    #6 0x5555583d1aa2 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #7 0x5555583cfebe in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #8 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #9 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #10 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Address 0x7fffce405900 is located in stack of thread T8 at offset 256 in frame
+    #0 0x555557c6ac4f in Player::UpdateLocalChannels(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Player/PlayerUpdates.cpp:502
+
+  This frame has 7 object(s):
+    [32, 64) 'current_zone_name' (line 519)
+    [96, 196) 'new_channel_name_buf' (line 551)
+    [240, 272) 'ref.tmp72' (line 555) <== Memory access at offset 256 is inside this variable
+    [304, 336) 'ref.tmp86' (line 564)
+    [368, 400) 'ref.tmp106' (line 579)
+    [432, 464) 'ref.tmp130' (line 587)
+    [496, 528) 'name' (line 594)
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+Thread T8 created by T0 here:
+    #0 0x555555e8a40c in pthread_create (/opt/azeroth-server/bin/worldserver+0x93640c) (BuildId: 8846f982bb719a408f7a40508eea6c898c665148)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558c43057 in World::SetInitialWorldSettings() /opt/wotlk_prod/src/server/game/World/World.cpp:2102:14
+    #3 0x555555ee1b6e in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:306:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+SUMMARY: AddressSanitizer: stack-use-after-scope asan_interceptors.cpp.o in printf_common(void*, char const*, __va_list_tag*)
+Shadow bytes around the buggy address:
+  0x100079c78ad0: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x100079c78ae0: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x100079c78af0: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x100079c78b00: f1 f1 f1 f1 00 00 00 00 f2 f2 f2 f2 00 00 00 00
+  0x100079c78b10: 00 00 00 00 00 00 00 00 04 f2 f2 f2 f2 f2 f8 f8
+=>0x100079c78b20:[f8]f8 f2 f2 f2 f2 f8 f8 f8 f8 f2 f2 f2 f2 f8 f8
+  0x100079c78b30: f8 f8 f2 f2 f2 f2 f8 f8 f8 f8 f2 f2 f2 f2 f8 f8
+  0x100079c78b40: f8 f8 f3 f3 f3 f3 f3 f3 00 00 00 00 00 00 00 00
+  0x100079c78b50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x100079c78b60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x100079c78b70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+=================================================================
+==338453==ERROR: AddressSanitizer: heap-use-after-free on address 0x619010687dc4 at pc 0x55555893f291 bp 0x7fffda534560 sp 0x7fffda534558
+READ of size 4 at 0x619010687dc4 thread T10
+    #0 0x55555893f290 in Object::GetTypeId() const /opt/wotlk_prod/src/server/game/Entities/Object/Object.h:124:53
+    #1 0x55555893f290 in Object::IsCreature() const /opt/wotlk_prod/src/server/game/Entities/Object/Object.h:201:59
+    #2 0x55555893f290 in Object::ToUnit() /opt/wotlk_prod/src/server/game/Entities/Object/Object.h:206:26
+    #3 0x55555893f290 in SpellCastTargets::GetUnitTarget() const /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:235:32
+    #4 0x55555893f290 in Spell::_cast(bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4112:34
+    #5 0x555558949f98 in Spell::update(unsigned int) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4454:21
+    #6 0x55555895eff9 in SpellEvent::Execute(unsigned long, unsigned int) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:8155:18
+    #7 0x555559125dad in EventProcessor::Update(unsigned int) /opt/wotlk_prod/src/common/Utilities/EventProcessor.cpp:55:24
+    #8 0x555557cbddbd in Unit::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:389:14
+    #9 0x555557c61fc0 in Player::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Player/PlayerUpdates.cpp:82:11
+    #10 0x55555837eb42 in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:769:21
+    #11 0x5555583d1aa2 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #12 0x5555583cfebe in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #13 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #14 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #15 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x619010687dc4 is located 68 bytes inside of 1056-byte region [0x619010687d80,0x6190106881a0)
+freed by thread T10 here:
+    #0 0x555555edc5bd in operator delete(void*) (/opt/azeroth-server/bin/worldserver+0x9885bd) (BuildId: 8846f982bb719a408f7a40508eea6c898c665148)
+    #1 0x55555837ae24 in Map::ConvertCorpseToBones(ObjectGuid, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:3695:5
+    #2 0x555557ae0b6a in Player::RemovedInsignia(Player*) /opt/wotlk_prod/src/server/game/Entities/Player/Player.cpp:7767:31
+    #3 0x5555589c60d6 in Spell::EffectSkinPlayerCorpse(SpellEffIndex) /opt/wotlk_prod/src/server/game/Spells/SpellEffects.cpp:5588:29
+    #4 0x5555589256d4 in Spell::HandleEffects(Unit*, Item*, GameObject*, unsigned int, SpellEffectHandleMode) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:5660:9
+    #5 0x555558927d95 in Spell::DoSpellHitOnUnit(Unit*, unsigned int, bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:3259:13
+    #6 0x555558921ecf in Spell::DoAllEffectOnTarget(TargetInfo*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:2705:35
+    #7 0x5555589463e4 in Spell::handle_immediate() /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4165:9
+    #8 0x55555893e41d in Spell::_cast(bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4065:9
+    #9 0x555558949f98 in Spell::update(unsigned int) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4454:21
+    #10 0x55555895eff9 in SpellEvent::Execute(unsigned long, unsigned int) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:8155:18
+    #11 0x555559125dad in EventProcessor::Update(unsigned int) /opt/wotlk_prod/src/common/Utilities/EventProcessor.cpp:55:24
+    #12 0x555557cbddbd in Unit::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:389:14
+    #13 0x555557c61fc0 in Player::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Player/PlayerUpdates.cpp:82:11
+    #14 0x55555837eb42 in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:769:21
+    #15 0x5555583d1aa2 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #16 0x5555583cfebe in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #17 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+previously allocated by thread T12 here:
+    #0 0x555555edbd5d in operator new(unsigned long) (/opt/azeroth-server/bin/worldserver+0x987d5d) (BuildId: 8846f982bb719a408f7a40508eea6c898c665148)
+    #1 0x555557ab8742 in Player::CreateCorpse() /opt/wotlk_prod/src/server/game/Entities/Player/Player.cpp:4599:22
+    #2 0x555557ab6e80 in Player::BuildPlayerRepop() /opt/wotlk_prod/src/server/game/Entities/Player/Player.cpp:4445:22
+    #3 0x55555821a136 in WorldSession::HandleRepopRequestOpcode(WorldPacket&) /opt/wotlk_prod/src/server/game/Handlers/MiscHandler.cpp:83:18
+    #4 0x555558650f65 in WorldSession::Update(unsigned int, PacketFilter&) /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:360:35
+    #5 0x55555837da8c in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:753:22
+    #6 0x5555583d1aa2 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #7 0x5555583cfebe in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #8 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+Thread T10 created by T0 here:
+    #0 0x555555e8a40c in pthread_create (/opt/azeroth-server/bin/worldserver+0x93640c) (BuildId: 8846f982bb719a408f7a40508eea6c898c665148)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558c43057 in World::SetInitialWorldSettings() /opt/wotlk_prod/src/server/game/World/World.cpp:2102:14
+    #3 0x555555ee1b6e in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:306:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+Thread T12 created by T0 here:
+    #0 0x555555e8a40c in pthread_create (/opt/azeroth-server/bin/worldserver+0x93640c) (BuildId: 8846f982bb719a408f7a40508eea6c898c665148)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558c43057 in World::SetInitialWorldSettings() /opt/wotlk_prod/src/server/game/World/World.cpp:2102:14
+    #3 0x555555ee1b6e in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:306:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+SUMMARY: AddressSanitizer: heap-use-after-free /opt/wotlk_prod/src/server/game/Entities/Object/Object.h:124:53 in Object::GetTypeId() const
+Shadow bytes around the buggy address:
+  0x0c32820c8f60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c32820c8f70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c32820c8f80: 00 00 00 00 00 fa fa fa fa fa fa fa fa fa fa fa
+  0x0c32820c8f90: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c32820c8fa0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+=>0x0c32820c8fb0: fd fd fd fd fd fd fd fd[fd]fd fd fd fd fd fd fd
+  0x0c32820c8fc0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32820c8fd0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32820c8fe0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32820c8ff0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32820c9000: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+=================================================================
+==338453==ERROR: AddressSanitizer: heap-use-after-free on address 0x60f0007e1f20 at pc 0x55555828544f bp 0x7fffda534070 sp 0x7fffda534068
+WRITE of size 4 at 0x60f0007e1f20 thread T10
+    #0 0x55555828544e in CharmInfo::SetForcedSpell(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Unit/CharmInfo.h:176:53
+    #1 0x55555828544e in WorldSession::HandlePetActionHelper(Unit*, ObjectGuid, unsigned int, unsigned short, ObjectGuid) /opt/wotlk_prod/src/server/game/Handlers/PetHandler.cpp:435:32
+    #2 0x5555582804ec in WorldSession::HandlePetAction(WorldPacket&) /opt/wotlk_prod/src/server/game/Handlers/PetHandler.cpp:104:9
+    #3 0x555558650f65 in WorldSession::Update(unsigned int, PacketFilter&) /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:360:35
+    #4 0x55555837da8c in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:753:22
+    #5 0x55555839d8f6 in InstanceMap::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:3043:10
+    #6 0x5555583d1aa2 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #7 0x5555583cfebe in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #8 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #9 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #10 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x60f0007e1f20 is located 80 bytes inside of 168-byte region [0x60f0007e1ed0,0x60f0007e1f78)
+freed by thread T10 here:
+    #0 0x555555edc5bd in operator delete(void*) (/opt/azeroth-server/bin/worldserver+0x9885bd) (BuildId: 8846f982bb719a408f7a40508eea6c898c665148)
+    #1 0x555557da7cb5 in Unit::DeleteCharmInfo() /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:15884:5
+    #2 0x555557da7cb5 in Unit::RemoveCharmedBy(Unit*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:18751:9
+    #3 0x555558ac813c in AuraEffect::HandleEffect(AuraApplication*, unsigned char, bool) /opt/wotlk_prod/src/server/game/Spells/Auras/SpellAuraEffects.cpp:784:5
+    #4 0x555558aedd23 in AuraApplication::_HandleEffect(unsigned char, bool) /opt/wotlk_prod/src/server/game/Spells/Auras/SpellAuras.cpp:179:17
+    #5 0x555557d25403 in Unit::_UnapplyAura(std::_Rb_tree_iterator<std::pair<unsigned int const, AuraApplication*> >&, AuraRemoveMode) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:4640:21
+    #6 0x555557d2f249 in Unit::RemoveAllAuras() /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:5360:13
+    #7 0x5555562d9350 in instance_karazhan::instance_karazhan_InstanceMapScript::SetData(unsigned int, unsigned int) /opt/wotlk_prod/src/server/scripts/EasternKingdoms/Karazhan/instance_karazhan.cpp:271:36
+    #8 0x55555623e399 in npc_echo_of_medivh::HandlePieceJustDied(Creature*) /opt/wotlk_prod/src/server/scripts/EasternKingdoms/Karazhan/boss_chess_event.cpp:559:36
+    #9 0x55555623acb5 in npc_chesspiece::JustDied(Unit*) /opt/wotlk_prod/src/server/scripts/EasternKingdoms/Karazhan/boss_chess_event.cpp:1642:56
+    #10 0x555557cd4e2d in Unit::Kill(Unit*, Unit*, bool, WeaponAttackType, SpellInfo const*, Spell const*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:18007:17
+    #11 0x555557cc931c in Unit::DealDamage(Unit*, Unit*, unsigned int, CleanDamage const*, DamageEffectType, SpellSchoolMask, SpellInfo const*, bool, bool, Spell const*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1052:9
+    #12 0x555557ceaeef in Unit::DealSpellDamage(SpellNonMeleeDamage*, bool, Spell const*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1471:5
+    #13 0x555558923538 in Spell::DoAllEffectOnTarget(TargetInfo*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:2885:17
+    #14 0x5555589463e4 in Spell::handle_immediate() /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4165:9
+    #15 0x55555893e41d in Spell::_cast(bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4065:9
+    #16 0x55555892e012 in Spell::prepare(SpellCastTargets const*, AuraEffect const*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:3714:13
+    #17 0x5555582846bc in WorldSession::HandlePetActionHelper(Unit*, ObjectGuid, unsigned int, unsigned short, ObjectGuid) /opt/wotlk_prod/src/server/game/Handlers/PetHandler.cpp:433:28
+    #18 0x5555582804ec in WorldSession::HandlePetAction(WorldPacket&) /opt/wotlk_prod/src/server/game/Handlers/PetHandler.cpp:104:9
+    #19 0x555558650f65 in WorldSession::Update(unsigned int, PacketFilter&) /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:360:35
+    #20 0x55555837da8c in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:753:22
+    #21 0x55555839d8f6 in InstanceMap::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:3043:10
+    #22 0x5555583d1aa2 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #23 0x5555583cfebe in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #24 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+previously allocated by thread T0 here:
+    #0 0x555555edbd5d in operator new(unsigned long) (/opt/azeroth-server/bin/worldserver+0x987d5d) (BuildId: 8846f982bb719a408f7a40508eea6c898c665148)
+    #1 0x555557d929ed in Unit::InitCharmInfo() /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:15873:23
+    #2 0x555557da4dcb in Unit::SetCharmedBy(Unit*, CharmType, AuraApplication const*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:18541:9
+    #3 0x555558ac813c in AuraEffect::HandleEffect(AuraApplication*, unsigned char, bool) /opt/wotlk_prod/src/server/game/Spells/Auras/SpellAuraEffects.cpp:784:5
+    #4 0x555558aedce1 in AuraApplication::_HandleEffect(unsigned char, bool) /opt/wotlk_prod/src/server/game/Spells/Auras/SpellAuras.cpp:173:17
+    #5 0x555557d2389b in Unit::_ApplyAuraEffect(Aura*, unsigned char) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:4533:17
+    #6 0x555558afca1f in Aura::_ApplyEffectForTargets(unsigned char) /opt/wotlk_prod/src/server/game/Spells/Auras/SpellAuras.cpp:752:21
+    #7 0x555558980e3c in Spell::EffectApplyAura(SpellEffIndex) /opt/wotlk_prod/src/server/game/Spells/SpellEffects.cpp:1316:18
+    #8 0x5555589256d4 in Spell::HandleEffects(Unit*, Item*, GameObject*, unsigned int, SpellEffectHandleMode) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:5660:9
+    #9 0x555558927e72 in Spell::DoSpellHitOnUnit(Unit*, unsigned int, bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:3259:13
+    #10 0x555558921ecf in Spell::DoAllEffectOnTarget(TargetInfo*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:2705:35
+    #11 0x5555589463e4 in Spell::handle_immediate() /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4165:9
+    #12 0x55555893e41d in Spell::_cast(bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4065:9
+    #13 0x55555892e012 in Spell::prepare(SpellCastTargets const*, AuraEffect const*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:3714:13
+    #14 0x555557cd898e in Unit::CastSpell(SpellCastTargets const&, SpellInfo const*, CustomSpellValues const*, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1203:19
+    #15 0x555557cd932b in Unit::CastSpell(Unit*, SpellInfo const*, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1232:12
+    #16 0x555557cd932b in Unit::CastSpell(Unit*, unsigned int, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1220:12
+    #17 0x55555623aa26 in npc_chesspiece::sGossipSelect(Player*, unsigned int, unsigned int) /opt/wotlk_prod/src/server/scripts/EasternKingdoms/Karazhan/boss_chess_event.cpp:2010:21
+    #18 0x55555821c3c0 in WorldSession::HandleGossipSelectOptionOpcode(WorldPacket&) /opt/wotlk_prod/src/server/game/Handlers/MiscHandler.cpp:191:25
+    #19 0x555558650f65 in WorldSession::Update(unsigned int, PacketFilter&) /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:360:35
+    #20 0x555558c85dd8 in World::UpdateSessions(unsigned int) /opt/wotlk_prod/src/server/game/World/World.cpp:2844:24
+    #21 0x555558c7270a in World::Update(unsigned int) /opt/wotlk_prod/src/server/game/World/World.cpp:2369:5
+    #22 0x555555ef2614 in WorldUpdateLoop() /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:586:17
+    #23 0x555555ee367a in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:398:5
+    #24 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+SUMMARY: AddressSanitizer: heap-use-after-free /opt/wotlk_prod/src/server/game/Entities/Unit/CharmInfo.h:176:53 in CharmInfo::SetForcedSpell(unsigned int)
+Shadow bytes around the buggy address:
+  0x0c1e800f4390: fa fa fa fa fa fa fa fa fa fa fa fa fa fa 00 00
+  0x0c1e800f43a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c1e800f43b0: 00 00 00 fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c1e800f43c0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c1e800f43d0: fa fa fa fa fa fa fa fa fa fa fd fd fd fd fd fd
+=>0x0c1e800f43e0: fd fd fd fd[fd]fd fd fd fd fd fd fd fd fd fd fa
+  0x0c1e800f43f0: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x0c1e800f4400: fd fd fd fd fd fd fd fd fd fd fd fd fd fa fa fa
+  0x0c1e800f4410: fa fa fa fa fa fa 00 00 00 00 00 00 00 00 00 00
+  0x0c1e800f4420: 00 00 00 00 00 00 00 00 00 00 00 fa fa fa fa fa
+  0x0c1e800f4430: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+=================================================================
+==338453==ERROR: AddressSanitizer: heap-use-after-free on address 0x60f0007e1f28 at pc 0x555558284727 bp 0x7fffda534070 sp 0x7fffda534068
+WRITE of size 8 at 0x60f0007e1f28 thread T10
+    #0 0x555558284726 in CharmInfo::SetForcedTargetGUID(ObjectGuid) /opt/wotlk_prod/src/server/game/Entities/Unit/CharmInfo.h:178:87
+    #1 0x555558284726 in WorldSession::HandlePetActionHelper(Unit*, ObjectGuid, unsigned int, unsigned short, ObjectGuid) /opt/wotlk_prod/src/server/game/Handlers/PetHandler.cpp:436:32
+    #2 0x5555582804ec in WorldSession::HandlePetAction(WorldPacket&) /opt/wotlk_prod/src/server/game/Handlers/PetHandler.cpp:104:9
+    #3 0x555558650f65 in WorldSession::Update(unsigned int, PacketFilter&) /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:360:35
+    #4 0x55555837da8c in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:753:22
+    #5 0x55555839d8f6 in InstanceMap::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:3043:10
+    #6 0x5555583d1aa2 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #7 0x5555583cfebe in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #8 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #9 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #10 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x60f0007e1f28 is located 88 bytes inside of 168-byte region [0x60f0007e1ed0,0x60f0007e1f78)
+freed by thread T10 here:
+    #0 0x555555edc5bd in operator delete(void*) (/opt/azeroth-server/bin/worldserver+0x9885bd) (BuildId: 8846f982bb719a408f7a40508eea6c898c665148)
+    #1 0x555557da7cb5 in Unit::DeleteCharmInfo() /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:15884:5
+    #2 0x555557da7cb5 in Unit::RemoveCharmedBy(Unit*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:18751:9
+    #3 0x555558ac813c in AuraEffect::HandleEffect(AuraApplication*, unsigned char, bool) /opt/wotlk_prod/src/server/game/Spells/Auras/SpellAuraEffects.cpp:784:5
+    #4 0x555558aedd23 in AuraApplication::_HandleEffect(unsigned char, bool) /opt/wotlk_prod/src/server/game/Spells/Auras/SpellAuras.cpp:179:17
+    #5 0x555557d25403 in Unit::_UnapplyAura(std::_Rb_tree_iterator<std::pair<unsigned int const, AuraApplication*> >&, AuraRemoveMode) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:4640:21
+    #6 0x555557d2f249 in Unit::RemoveAllAuras() /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:5360:13
+    #7 0x5555562d9350 in instance_karazhan::instance_karazhan_InstanceMapScript::SetData(unsigned int, unsigned int) /opt/wotlk_prod/src/server/scripts/EasternKingdoms/Karazhan/instance_karazhan.cpp:271:36
+    #8 0x55555623e399 in npc_echo_of_medivh::HandlePieceJustDied(Creature*) /opt/wotlk_prod/src/server/scripts/EasternKingdoms/Karazhan/boss_chess_event.cpp:559:36
+    #9 0x55555623acb5 in npc_chesspiece::JustDied(Unit*) /opt/wotlk_prod/src/server/scripts/EasternKingdoms/Karazhan/boss_chess_event.cpp:1642:56
+    #10 0x555557cd4e2d in Unit::Kill(Unit*, Unit*, bool, WeaponAttackType, SpellInfo const*, Spell const*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:18007:17
+    #11 0x555557cc931c in Unit::DealDamage(Unit*, Unit*, unsigned int, CleanDamage const*, DamageEffectType, SpellSchoolMask, SpellInfo const*, bool, bool, Spell const*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1052:9
+    #12 0x555557ceaeef in Unit::DealSpellDamage(SpellNonMeleeDamage*, bool, Spell const*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1471:5
+    #13 0x555558923538 in Spell::DoAllEffectOnTarget(TargetInfo*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:2885:17
+    #14 0x5555589463e4 in Spell::handle_immediate() /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4165:9
+    #15 0x55555893e41d in Spell::_cast(bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4065:9
+    #16 0x55555892e012 in Spell::prepare(SpellCastTargets const*, AuraEffect const*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:3714:13
+    #17 0x5555582846bc in WorldSession::HandlePetActionHelper(Unit*, ObjectGuid, unsigned int, unsigned short, ObjectGuid) /opt/wotlk_prod/src/server/game/Handlers/PetHandler.cpp:433:28
+    #18 0x5555582804ec in WorldSession::HandlePetAction(WorldPacket&) /opt/wotlk_prod/src/server/game/Handlers/PetHandler.cpp:104:9
+    #19 0x555558650f65 in WorldSession::Update(unsigned int, PacketFilter&) /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:360:35
+    #20 0x55555837da8c in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:753:22
+    #21 0x55555839d8f6 in InstanceMap::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:3043:10
+    #22 0x5555583d1aa2 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #23 0x5555583cfebe in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #24 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+previously allocated by thread T0 here:
+    #0 0x555555edbd5d in operator new(unsigned long) (/opt/azeroth-server/bin/worldserver+0x987d5d) (BuildId: 8846f982bb719a408f7a40508eea6c898c665148)
+    #1 0x555557d929ed in Unit::InitCharmInfo() /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:15873:23
+    #2 0x555557da4dcb in Unit::SetCharmedBy(Unit*, CharmType, AuraApplication const*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:18541:9
+    #3 0x555558ac813c in AuraEffect::HandleEffect(AuraApplication*, unsigned char, bool) /opt/wotlk_prod/src/server/game/Spells/Auras/SpellAuraEffects.cpp:784:5
+    #4 0x555558aedce1 in AuraApplication::_HandleEffect(unsigned char, bool) /opt/wotlk_prod/src/server/game/Spells/Auras/SpellAuras.cpp:173:17
+    #5 0x555557d2389b in Unit::_ApplyAuraEffect(Aura*, unsigned char) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:4533:17
+    #6 0x555558afca1f in Aura::_ApplyEffectForTargets(unsigned char) /opt/wotlk_prod/src/server/game/Spells/Auras/SpellAuras.cpp:752:21
+    #7 0x555558980e3c in Spell::EffectApplyAura(SpellEffIndex) /opt/wotlk_prod/src/server/game/Spells/SpellEffects.cpp:1316:18
+    #8 0x5555589256d4 in Spell::HandleEffects(Unit*, Item*, GameObject*, unsigned int, SpellEffectHandleMode) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:5660:9
+    #9 0x555558927e72 in Spell::DoSpellHitOnUnit(Unit*, unsigned int, bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:3259:13
+    #10 0x555558921ecf in Spell::DoAllEffectOnTarget(TargetInfo*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:2705:35
+    #11 0x5555589463e4 in Spell::handle_immediate() /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4165:9
+    #12 0x55555893e41d in Spell::_cast(bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4065:9
+    #13 0x55555892e012 in Spell::prepare(SpellCastTargets const*, AuraEffect const*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:3714:13
+    #14 0x555557cd898e in Unit::CastSpell(SpellCastTargets const&, SpellInfo const*, CustomSpellValues const*, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1203:19
+    #15 0x555557cd932b in Unit::CastSpell(Unit*, SpellInfo const*, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1232:12
+    #16 0x555557cd932b in Unit::CastSpell(Unit*, unsigned int, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1220:12
+    #17 0x55555623aa26 in npc_chesspiece::sGossipSelect(Player*, unsigned int, unsigned int) /opt/wotlk_prod/src/server/scripts/EasternKingdoms/Karazhan/boss_chess_event.cpp:2010:21
+    #18 0x55555821c3c0 in WorldSession::HandleGossipSelectOptionOpcode(WorldPacket&) /opt/wotlk_prod/src/server/game/Handlers/MiscHandler.cpp:191:25
+    #19 0x555558650f65 in WorldSession::Update(unsigned int, PacketFilter&) /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:360:35
+    #20 0x555558c85dd8 in World::UpdateSessions(unsigned int) /opt/wotlk_prod/src/server/game/World/World.cpp:2844:24
+    #21 0x555558c7270a in World::Update(unsigned int) /opt/wotlk_prod/src/server/game/World/World.cpp:2369:5
+    #22 0x555555ef2614 in WorldUpdateLoop() /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:586:17
+    #23 0x555555ee367a in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:398:5
+    #24 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+SUMMARY: AddressSanitizer: heap-use-after-free /opt/wotlk_prod/src/server/game/Entities/Unit/CharmInfo.h:178:87 in CharmInfo::SetForcedTargetGUID(ObjectGuid)
+Shadow bytes around the buggy address:
+  0x0c1e800f4390: fa fa fa fa fa fa fa fa fa fa fa fa fa fa 00 00
+  0x0c1e800f43a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c1e800f43b0: 00 00 00 fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c1e800f43c0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c1e800f43d0: fa fa fa fa fa fa fa fa fa fa fd fd fd fd fd fd
+=>0x0c1e800f43e0: fd fd fd fd fd[fd]fd fd fd fd fd fd fd fd fd fa
+  0x0c1e800f43f0: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x0c1e800f4400: fd fd fd fd fd fd fd fd fd fd fd fd fd fa fa fa
+  0x0c1e800f4410: fa fa fa fa fa fa 00 00 00 00 00 00 00 00 00 00
+  0x0c1e800f4420: 00 00 00 00 00 00 00 00 00 00 00 fa fa fa fa fa
+  0x0c1e800f4430: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
