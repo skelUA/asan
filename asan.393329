@@ -618,3 +618,105 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
+=================================================================
+==393329==ERROR: AddressSanitizer: heap-use-after-free on address 0x603006f5b7c0 at pc 0x555555ea02b7 bp 0x7fffcda3a7f0 sp 0x7fffcda39fc0
+READ of size 16 at 0x603006f5b7c0 thread T12
+    #0 0x555555ea02b6 in __asan_memcpy (/opt/azeroth-server/bin/worldserver+0x94c2b6) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x555556562e50 in instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)::operator()(TaskContext) const /opt/wotlk_prod/src/server/scripts/Kalimdor/CavernsOfTime/TheBlackMorass/instance_the_black_morass.cpp:209:38
+    #2 0x55555656244f in void std::__invoke_impl<void, instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)&, TaskContext>(std::__invoke_other, instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #3 0x55555916a6b0 in std::function<void (TaskContext)>::operator()(TaskContext) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #4 0x55555916a6b0 in TaskContext::Invoke() /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:282:5
+    #5 0x555559168101 in TaskScheduler::Dispatch(std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:109:17
+    #6 0x555559168f2e in TaskScheduler& TaskScheduler::Update<long, std::ratio<1l, 1000l> >(std::chrono::duration<long, std::ratio<1l, 1000l> > const&, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.h:221:9
+    #7 0x555559168f2e in TaskScheduler::Update(unsigned long, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:36:12
+    #8 0x55555656123d in instance_the_black_morass::instance_the_black_morass_InstanceMapScript::Update(unsigned int) /opt/wotlk_prod/src/server/scripts/Kalimdor/CavernsOfTime/TheBlackMorass/instance_the_black_morass.cpp:454:24
+    #9 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #10 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #11 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #12 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #13 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x603006f5b7c0 is located 16 bytes inside of 32-byte region [0x603006f5b7b0,0x603006f5b7d0)
+freed by thread T12 here:
+    #0 0x555555edc5bd in operator delete(void*) (/opt/azeroth-server/bin/worldserver+0x9885bd) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x55555656371a in __gnu_cxx::new_allocator<std::_List_node<Position> >::deallocate(std::_List_node<Position>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:145:2
+    #2 0x55555656371a in std::allocator<std::_List_node<Position> >::deallocate(std::_List_node<Position>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:199:25
+    #3 0x55555656371a in std::allocator_traits<std::allocator<std::_List_node<Position> > >::deallocate(std::allocator<std::_List_node<Position> >&, std::_List_node<Position>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:496:13
+    #4 0x55555656371a in std::__cxx11::_List_base<Position, std::allocator<Position> >::_M_put_node(std::_List_node<Position>*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:447:9
+    #5 0x55555656371a in std::__cxx11::_List_base<Position, std::allocator<Position> >::_M_clear() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/list.tcc:81:4
+    #6 0x55555656371a in std::__cxx11::_List_base<Position, std::allocator<Position> >::~_List_base() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:500:9
+    #7 0x55555656371a in std::add_const<decltype(*(std::begin(fp)))>::type& Acore::Containers::SelectRandomContainerElementIf<std::__cxx11::list<Position, std::allocator<Position> >, instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)::operator()(TaskContext) const::'lambda'(Position)>(std::__cxx11::list<Position, std::allocator<Position> > const&, instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)::operator()(TaskContext) const::'lambda'(Position)&&) /opt/wotlk_prod/src/common/Utilities/Containers.h:153:5
+    #8 0x555556562e3c in instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)::operator()(TaskContext) const /opt/wotlk_prod/src/server/scripts/Kalimdor/CavernsOfTime/TheBlackMorass/instance_the_black_morass.cpp:209:40
+    #9 0x55555656244f in void std::__invoke_impl<void, instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)&, TaskContext>(std::__invoke_other, instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #10 0x55555916a6b0 in std::function<void (TaskContext)>::operator()(TaskContext) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #11 0x55555916a6b0 in TaskContext::Invoke() /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:282:5
+    #12 0x555559168101 in TaskScheduler::Dispatch(std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:109:17
+    #13 0x555559168f2e in TaskScheduler& TaskScheduler::Update<long, std::ratio<1l, 1000l> >(std::chrono::duration<long, std::ratio<1l, 1000l> > const&, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.h:221:9
+    #14 0x555559168f2e in TaskScheduler::Update(unsigned long, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:36:12
+    #15 0x55555656123d in instance_the_black_morass::instance_the_black_morass_InstanceMapScript::Update(unsigned int) /opt/wotlk_prod/src/server/scripts/Kalimdor/CavernsOfTime/TheBlackMorass/instance_the_black_morass.cpp:454:24
+    #16 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #17 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #18 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+previously allocated by thread T12 here:
+    #0 0x555555edbd5d in operator new(unsigned long) (/opt/azeroth-server/bin/worldserver+0x987d5d) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x55555656343b in __gnu_cxx::new_allocator<std::_List_node<Position> >::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:127:27
+    #2 0x55555656343b in std::allocator<std::_List_node<Position> >::allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:185:32
+    #3 0x55555656343b in std::allocator_traits<std::allocator<std::_List_node<Position> > >::allocate(std::allocator<std::_List_node<Position> >&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:464:20
+    #4 0x55555656343b in std::__cxx11::_List_base<Position, std::allocator<Position> >::_M_get_node() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:443:16
+    #5 0x55555656343b in std::_List_node<Position>* std::__cxx11::list<Position, std::allocator<Position> >::_M_create_node<Position const&>(Position const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:635:21
+    #6 0x55555656343b in std::__cxx11::list<Position, std::allocator<Position> >::insert(std::_List_const_iterator<Position>, Position const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/list.tcc:108:22
+    #7 0x55555656343b in std::insert_iterator<std::__cxx11::list<Position, std::allocator<Position> > >::operator=(Position const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:929:20
+    #8 0x55555656343b in std::insert_iterator<std::__cxx11::list<Position, std::allocator<Position> > > std::copy_if<std::_List_const_iterator<Position>, std::insert_iterator<std::__cxx11::list<Position, std::allocator<Position> > >, instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)::operator()(TaskContext) const::'lambda'(Position)>(std::_List_const_iterator<Position>, std::_List_const_iterator<Position>, std::insert_iterator<std::__cxx11::list<Position, std::allocator<Position> > >, instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)::operator()(TaskContext) const::'lambda'(Position)) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algo.h:702:16
+    #9 0x55555656343b in std::add_const<decltype(*(std::begin(fp)))>::type& Acore::Containers::SelectRandomContainerElementIf<std::__cxx11::list<Position, std::allocator<Position> >, instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)::operator()(TaskContext) const::'lambda'(Position)>(std::__cxx11::list<Position, std::allocator<Position> > const&, instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)::operator()(TaskContext) const::'lambda'(Position)&&) /opt/wotlk_prod/src/common/Utilities/Containers.h:149:9
+    #10 0x555556562e3c in instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)::operator()(TaskContext) const /opt/wotlk_prod/src/server/scripts/Kalimdor/CavernsOfTime/TheBlackMorass/instance_the_black_morass.cpp:209:40
+    #11 0x55555656244f in void std::__invoke_impl<void, instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)&, TaskContext>(std::__invoke_other, instance_the_black_morass::instance_the_black_morass_InstanceMapScript::ScheduleNextPortal(std::chrono::duration<long, std::ratio<1l, 1000l> >, Position)::'lambda'(TaskContext)&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #12 0x55555916a6b0 in std::function<void (TaskContext)>::operator()(TaskContext) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #13 0x55555916a6b0 in TaskContext::Invoke() /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:282:5
+    #14 0x555559168101 in TaskScheduler::Dispatch(std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:109:17
+    #15 0x555559168f2e in TaskScheduler& TaskScheduler::Update<long, std::ratio<1l, 1000l> >(std::chrono::duration<long, std::ratio<1l, 1000l> > const&, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.h:221:9
+    #16 0x555559168f2e in TaskScheduler::Update(unsigned long, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:36:12
+    #17 0x55555656123d in instance_the_black_morass::instance_the_black_morass_InstanceMapScript::Update(unsigned int) /opt/wotlk_prod/src/server/scripts/Kalimdor/CavernsOfTime/TheBlackMorass/instance_the_black_morass.cpp:454:24
+    #18 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #19 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #20 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+Thread T12 created by T0 here:
+    #0 0x555555e8a40c in pthread_create (/opt/azeroth-server/bin/worldserver+0x93640c) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558c48427 in World::SetInitialWorldSettings() /opt/wotlk_prod/src/server/game/World/World.cpp:2106:14
+    #3 0x555555ee1b6e in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:306:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+SUMMARY: AddressSanitizer: heap-use-after-free (/opt/azeroth-server/bin/worldserver+0x94c2b6) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a) in __asan_memcpy
+Shadow bytes around the buggy address:
+  0x0c0680de36a0: fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00
+  0x0c0680de36b0: 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa
+  0x0c0680de36c0: 00 00 00 fa fa fa 00 00 00 07 fa fa 00 00 04 fa
+  0x0c0680de36d0: fa fa fa fa fa fa fa fa 00 00 00 00 fa fa fa fa
+  0x0c0680de36e0: fa fa fa fa 00 00 00 03 fa fa 00 00 00 00 fa fa
+=>0x0c0680de36f0: 00 00 00 fa fa fa fd fd[fd]fd fa fa 00 00 00 07
+  0x0c0680de3700: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x0c0680de3710: 00 fa fa fa 00 00 00 fa fa fa 00 00 00 00 fa fa
+  0x0c0680de3720: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 00 00
+  0x0c0680de3730: fa fa 00 00 01 fa fa fa 00 00 00 fa fa fa 00 00
+  0x0c0680de3740: 05 fa fa fa 00 00 00 fa fa fa 00 00 04 fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
