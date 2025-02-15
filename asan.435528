@@ -124,3 +124,69 @@ SHADOW_OFFSET: 0x7fff8000
 ==435528==T14: stack [0x7fffbe737000,0x7fffbef35e80) size 0x7fee80; local=0x7fffbef35da4
 ==435528==T15: FakeStack created: 0x7fffbbe1a000 -- 0x7fffbc923000 stack_size_log: 20; mmapped 11300K, noreserve=0 
 ==435528==T15: stack [0x7fffbc924000,0x7fffbd122e80) size 0x7fee80; local=0x7fffbd122da4
+=================================================================
+==435528==ERROR: AddressSanitizer: global-buffer-overflow on address 0x55555957c848 at pc 0x555558305796 bp 0x7fffffffc150 sp 0x7fffffffc148
+READ of size 4 at 0x55555957c848 thread T0
+    #0 0x555558305795 in InstanceScript::LoadMinionData(MinionData const*) /opt/wotlk_prod/src/server/game/Instances/InstanceScript.cpp:166:18
+    #1 0x555556cb93b3 in instance_gruuls_lair::instance_gruuls_lair_InstanceMapScript::instance_gruuls_lair_InstanceMapScript(Map*) /opt/wotlk_prod/src/server/scripts/Outland/GruulsLair/instance_gruuls_lair.cpp:57:13
+    #2 0x555556cb8ad1 in instance_gruuls_lair::GetInstanceScript(InstanceMap*) const /opt/wotlk_prod/src/server/scripts/Outland/GruulsLair/instance_gruuls_lair.cpp:96:20
+    #3 0x5555585fb7da in ScriptMgr::CreateInstanceScript(InstanceMap*) /opt/wotlk_prod/src/server/game/Scripting/ScriptDefines/InstanceMapScript.cpp:26:37
+    #4 0x5555583a2f29 in InstanceMap::CreateInstanceScript(bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:3092:41
+    #5 0x555558e21472 in MapInstanced::CreateInstance(unsigned int, InstanceSave*, Difficulty) /opt/wotlk_prod/src/server/game/Maps/MapInstanced.cpp:211:14
+    #6 0x555558e1f27b in MapInstanced::CreateInstanceForPlayer(unsigned int, Player*) /opt/wotlk_prod/src/server/game/Maps/MapInstanced.cpp
+    #7 0x555557c0806a in Player::LoadFromDB(ObjectGuid, SQLQueryHolder<CharacterDatabaseConnection> const&) /opt/wotlk_prod/src/server/game/Entities/Player/PlayerStorage.cpp:5268:24
+    #8 0x555558d7baa2 in WorldSession::HandlePlayerLoginFromDB(LoginQueryHolder const&) /opt/wotlk_prod/src/server/game/Handlers/CharacterHandler.cpp:802:21
+    #9 0x555558f9d68f in std::function<void (SQLQueryHolderBase const&)>::operator()(SQLQueryHolderBase const&) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #10 0x555558f9d68f in SQLQueryHolderCallback::InvokeIfReady() /opt/wotlk_prod/src/server/database/Database/QueryHolder.cpp:112:9
+    #11 0x555558682bc4 in AsyncCallbackProcessor<SQLQueryHolderCallback>::ProcessReadyCallbacks()::'lambda'(SQLQueryHolderCallback&)::operator()(SQLQueryHolderCallback&) const /opt/wotlk_prod/src/common/Utilities/AsyncCallbackProcessor.h:49:29
+    #12 0x555558682bc4 in bool __gnu_cxx::__ops::_Iter_pred<AsyncCallbackProcessor<SQLQueryHolderCallback>::ProcessReadyCallbacks()::'lambda'(SQLQueryHolderCallback&)>::operator()<__gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > > >(__gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/predefined_ops.h:318:16
+    #13 0x555558682bc4 in __gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > > std::__find_if<__gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >, __gnu_cxx::__ops::_Iter_pred<AsyncCallbackProcessor<SQLQueryHolderCallback>::ProcessReadyCallbacks()::'lambda'(SQLQueryHolderCallback&)> >(__gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >, __gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >, __gnu_cxx::__ops::_Iter_pred<AsyncCallbackProcessor<SQLQueryHolderCallback>::ProcessReadyCallbacks()::'lambda'(SQLQueryHolderCallback&)>, std::random_access_iterator_tag) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:2099:8
+    #14 0x55555867762d in __gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > > std::__find_if<__gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >, __gnu_cxx::__ops::_Iter_pred<AsyncCallbackProcessor<SQLQueryHolderCallback>::ProcessReadyCallbacks()::'lambda'(SQLQueryHolderCallback&)> >(__gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >, __gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >, __gnu_cxx::__ops::_Iter_pred<AsyncCallbackProcessor<SQLQueryHolderCallback>::ProcessReadyCallbacks()::'lambda'(SQLQueryHolderCallback&)>) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:2114:14
+    #15 0x55555867762d in __gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > > std::__remove_if<__gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >, __gnu_cxx::__ops::_Iter_pred<AsyncCallbackProcessor<SQLQueryHolderCallback>::ProcessReadyCallbacks()::'lambda'(SQLQueryHolderCallback&)> >(__gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >, __gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >, __gnu_cxx::__ops::_Iter_pred<AsyncCallbackProcessor<SQLQueryHolderCallback>::ProcessReadyCallbacks()::'lambda'(SQLQueryHolderCallback&)>) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algo.h:816:17
+    #16 0x55555867762d in __gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > > std::remove_if<__gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >, AsyncCallbackProcessor<SQLQueryHolderCallback>::ProcessReadyCallbacks()::'lambda'(SQLQueryHolderCallback&)>(__gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >, __gnu_cxx::__normal_iterator<SQLQueryHolderCallback*, std::vector<SQLQueryHolderCallback, std::allocator<SQLQueryHolderCallback> > >, AsyncCallbackProcessor<SQLQueryHolderCallback>::ProcessReadyCallbacks()::'lambda'(SQLQueryHolderCallback&)) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algo.h:894:14
+    #17 0x55555867762d in AsyncCallbackProcessor<SQLQueryHolderCallback>::ProcessReadyCallbacks() /opt/wotlk_prod/src/common/Utilities/AsyncCallbackProcessor.h:47:31
+    #18 0x55555865a461 in WorldSession::ProcessQueryCallbacks() /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:1287:27
+    #19 0x55555865a461 in WorldSession::Update(unsigned int, PacketFilter&) /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:503:5
+    #20 0x555558c8b1a8 in World::UpdateSessions(unsigned int) /opt/wotlk_prod/src/server/game/World/World.cpp:2848:24
+    #21 0x555558c77ada in World::Update(unsigned int) /opt/wotlk_prod/src/server/game/World/World.cpp:2373:5
+    #22 0x555555ef2614 in WorldUpdateLoop() /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:586:17
+    #23 0x555555ee367a in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:398:5
+    #24 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #25 0x7ffff6cc6e3f in __libc_start_main csu/../csu/libc-start.c:392:3
+    #26 0x555555e1e144 in _start (/opt/azeroth-server/bin/worldserver+0x8ca144) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+
+0x55555957c848 is located 56 bytes to the left of global variable '<string literal>' defined in '/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/vector.tcc:634:21' (0x55555957c880) of size 26
+  '<string literal>' is ascii string 'vector::_M_default_append'
+0x55555957c848 is located 0 bytes to the right of global variable 'minionData' defined in '/opt/wotlk_prod/src/server/scripts/Outland/GruulsLair/instance_gruuls_lair.cpp:35:18' (0x55555957c820) of size 40
+SUMMARY: AddressSanitizer: global-buffer-overflow /opt/wotlk_prod/src/server/game/Instances/InstanceScript.cpp:166:18 in InstanceScript::LoadMinionData(MinionData const*)
+Shadow bytes around the buggy address:
+  0x0aab2b2a78b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a78c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a78d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a78e0: 00 00 00 00 00 00 00 00 00 03 f9 f9 00 00 05 f9
+  0x0aab2b2a78f0: f9 f9 f9 f9 00 00 f9 f9 00 00 00 00 04 f9 f9 f9
+=>0x0aab2b2a7900: f9 f9 f9 f9 00 00 00 00 00[f9]f9 f9 f9 f9 f9 f9
+  0x0aab2b2a7910: 00 00 00 02 f9 f9 f9 f9 00 00 00 00 00 00 00 00
+  0x0aab2b2a7920: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a7930: 00 03 f9 f9 00 05 f9 f9 00 00 00 03 f9 f9 f9 f9
+  0x0aab2b2a7940: 00 00 01 f9 f9 f9 f9 f9 00 00 07 f9 f9 f9 f9 f9
+  0x0aab2b2a7950: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
