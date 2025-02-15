@@ -720,3 +720,119 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
+=================================================================
+==393329==ERROR: AddressSanitizer: attempting double-free on 0x602004a77310 in thread T8:
+    #0 0x555555edc5bd in operator delete(void*) (/opt/azeroth-server/bin/worldserver+0x9885bd) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x555557c67a1c in __gnu_cxx::new_allocator<unsigned char>::deallocate(unsigned char*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:145:2
+    #2 0x555557c67a1c in std::allocator<unsigned char>::deallocate(unsigned char*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:199:25
+    #3 0x555557c67a1c in std::allocator_traits<std::allocator<unsigned char> >::deallocate(std::allocator<unsigned char>&, unsigned char*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:496:13
+    #4 0x555557c67a1c in std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_deallocate(unsigned char*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:354:4
+    #5 0x555557c67a1c in std::_Vector_base<unsigned char, std::allocator<unsigned char> >::~_Vector_base() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:335:2
+    #6 0x555557c67a1c in std::vector<unsigned char, std::allocator<unsigned char> >::~vector() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:683:7
+    #7 0x555557c67a1c in ByteBuffer::~ByteBuffer() /opt/wotlk_prod/src/server/shared/Packets/ByteBuffer.h:94:35
+    #8 0x555557c67a1c in PendingSpellCastRequest::~PendingSpellCastRequest() /opt/wotlk_prod/src/server/game/Entities/Player/Player.h:1068:8
+    #9 0x555557c67a1c in void std::destroy_at<PendingSpellCastRequest>(PendingSpellCastRequest*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:88:15
+    #10 0x555557c67a1c in void std::allocator_traits<std::allocator<PendingSpellCastRequest> >::destroy<PendingSpellCastRequest>(std::allocator<PendingSpellCastRequest>&, PendingSpellCastRequest*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:537:4
+    #11 0x555557c67a1c in std::deque<PendingSpellCastRequest, std::allocator<PendingSpellCastRequest> >::pop_front() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_deque.h:1538:6
+    #12 0x555557c67a1c in Player::ProcessSpellQueue() /opt/wotlk_prod/src/server/game/Entities/Player/PlayerUpdates.cpp:2376:24
+    #13 0x555557c635b9 in Player::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Player/PlayerUpdates.cpp:82:5
+    #14 0x555558383a22 in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:769:21
+    #15 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #16 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #17 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #18 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #19 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x602004a77310 is located 0 bytes inside of 13-byte region [0x602004a77310,0x602004a7731d)
+freed by thread T8 here:
+    #0 0x555555edc5bd in operator delete(void*) (/opt/azeroth-server/bin/worldserver+0x9885bd) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x555557b73d2a in __gnu_cxx::new_allocator<unsigned char>::deallocate(unsigned char*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:145:2
+    #2 0x555557b73d2a in std::allocator<unsigned char>::deallocate(unsigned char*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:199:25
+    #3 0x555557b73d2a in std::allocator_traits<std::allocator<unsigned char> >::deallocate(std::allocator<unsigned char>&, unsigned char*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:496:13
+    #4 0x555557b73d2a in std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_deallocate(unsigned char*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:354:4
+    #5 0x555557b73d2a in std::_Vector_base<unsigned char, std::allocator<unsigned char> >::~_Vector_base() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:335:2
+    #6 0x555557b73d2a in std::vector<unsigned char, std::allocator<unsigned char> >::~vector() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:683:7
+    #7 0x555557b73d2a in ByteBuffer::~ByteBuffer() /opt/wotlk_prod/src/server/shared/Packets/ByteBuffer.h:94:35
+    #8 0x555557b73d2a in PendingSpellCastRequest::~PendingSpellCastRequest() /opt/wotlk_prod/src/server/game/Entities/Player/Player.h:1068:8
+    #9 0x555557b73d2a in void std::destroy_at<PendingSpellCastRequest>(PendingSpellCastRequest*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:88:15
+    #10 0x555557b73d2a in void std::_Destroy<PendingSpellCastRequest>(PendingSpellCastRequest*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:149:7
+    #11 0x555557b73d2a in void std::_Destroy_aux<false>::__destroy<PendingSpellCastRequest*>(PendingSpellCastRequest*, PendingSpellCastRequest*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:163:6
+    #12 0x555557b73d2a in void std::_Destroy<PendingSpellCastRequest*>(PendingSpellCastRequest*, PendingSpellCastRequest*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:195:7
+    #13 0x555557b73d2a in void std::_Destroy<PendingSpellCastRequest*, PendingSpellCastRequest>(PendingSpellCastRequest*, PendingSpellCastRequest*, std::allocator<PendingSpellCastRequest>&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:848:7
+    #14 0x555557b73d2a in std::deque<PendingSpellCastRequest, std::allocator<PendingSpellCastRequest> >::_M_destroy_data_aux(std::_Deque_iterator<PendingSpellCastRequest, PendingSpellCastRequest&, PendingSpellCastRequest*>, std::_Deque_iterator<PendingSpellCastRequest, PendingSpellCastRequest&, PendingSpellCastRequest*>) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/deque.tcc:875:3
+    #15 0x555557b66fa1 in std::deque<PendingSpellCastRequest, std::allocator<PendingSpellCastRequest> >::_M_destroy_data(std::_Deque_iterator<PendingSpellCastRequest, PendingSpellCastRequest&, PendingSpellCastRequest*>, std::_Deque_iterator<PendingSpellCastRequest, PendingSpellCastRequest&, PendingSpellCastRequest*>, std::allocator<PendingSpellCastRequest> const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_deque.h:2049:4
+    #16 0x555557b66fa1 in std::deque<PendingSpellCastRequest, std::allocator<PendingSpellCastRequest> >::_M_erase_at_end(std::_Deque_iterator<PendingSpellCastRequest, PendingSpellCastRequest&, PendingSpellCastRequest*>) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_deque.h:2066:2
+    #17 0x555557b66fa1 in std::deque<PendingSpellCastRequest, std::allocator<PendingSpellCastRequest> >::clear() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_deque.h:1794:9
+    #18 0x555557a71fa7 in Player::setDeathState(DeathState, bool) /opt/wotlk_prod/src/server/game/Entities/Player/Player.cpp:1031:20
+    #19 0x555557cd6cb5 in Unit::Kill(Unit*, Unit*, bool, WeaponAttackType, SpellInfo const*, Spell const*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:17939:17
+    #20 0x555557ccbddc in Unit::DealDamage(Unit*, Unit*, unsigned int, CleanDamage const*, DamageEffectType, SpellSchoolMask, SpellInfo const*, bool, bool, Spell const*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1052:9
+    #21 0x555557ced9af in Unit::DealSpellDamage(SpellNonMeleeDamage*, bool, Spell const*) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1471:5
+    #22 0x555558928418 in Spell::DoAllEffectOnTarget(TargetInfo*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:2885:17
+    #23 0x55555894b344 in Spell::handle_immediate() /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4165:9
+    #24 0x55555894337d in Spell::_cast(bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4065:9
+    #25 0x555558932e9c in Spell::cast(bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:3809:5
+    #26 0x555558932e9c in Spell::prepare(SpellCastTargets const*, AuraEffect const*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:3676:9
+    #27 0x555557cdb44e in Unit::CastSpell(SpellCastTargets const&, SpellInfo const*, CustomSpellValues const*, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1203:19
+    #28 0x555557ce5698 in Unit::CastCustomSpell(unsigned int, CustomSpellValues const&, Unit*, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1273:12
+    #29 0x555557cdf5d9 in Unit::CastCustomSpell(Unit*, unsigned int, int const*, int const*, int const*, bool, Item*, AuraEffect const*, ObjectGuid) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:1244:12
+    #30 0x5555572c32c5 in spell_pri_vampiric_touch::HandleDispel(DispelInfo*) /opt/wotlk_prod/src/server/scripts/Spells/spell_priest.cpp:856:29
+    #31 0x555558b11f1d in Aura::CallScriptAfterDispel(DispelInfo*) /opt/wotlk_prod/src/server/game/Spells/Auras/SpellAuras.cpp:2410:22
+    #32 0x555557d2d3ff in Unit::RemoveAurasDueToSpellByDispel(unsigned int, unsigned int, ObjectGuid, Unit*, unsigned char) /opt/wotlk_prod/src/server/game/Entities/Unit/Unit.cpp:4994:19
+    #33 0x5555589a075e in Spell::EffectDispel(SpellEffIndex) /opt/wotlk_prod/src/server/game/Spells/SpellEffects.cpp:2658:21
+    #34 0x55555892a5b4 in Spell::HandleEffects(Unit*, Item*, GameObject*, unsigned int, SpellEffectHandleMode) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:5660:9
+    #35 0x55555892cd52 in Spell::DoSpellHitOnUnit(Unit*, unsigned int, bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:3259:13
+    #36 0x555558926daf in Spell::DoAllEffectOnTarget(TargetInfo*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:2705:35
+    #37 0x55555894b344 in Spell::handle_immediate() /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4165:9
+    #38 0x55555894337d in Spell::_cast(bool) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:4065:9
+    #39 0x555558933037 in Spell::prepare(SpellCastTargets const*, AuraEffect const*) /opt/wotlk_prod/src/server/game/Spells/Spell.cpp:3714:13
+    #40 0x5555582cda53 in WorldSession::HandleCastSpellOpcode(WorldPacket&) /opt/wotlk_prod/src/server/game/Handlers/SpellHandler.cpp:545:12
+    #41 0x555557c67987 in Player::ExecuteOrCancelSpellCastRequest(PendingSpellCastRequest*, bool) /opt/wotlk_prod/src/server/game/Entities/Player/PlayerUpdates.cpp:2363:22
+    #42 0x555557c67987 in Player::ProcessSpellQueue() /opt/wotlk_prod/src/server/game/Entities/Player/PlayerUpdates.cpp:2375:13
+    #43 0x555557c635b9 in Player::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Player/PlayerUpdates.cpp:82:5
+    #44 0x555558383a22 in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:769:21
+    #45 0x5555583d6982 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #46 0x5555583d4d9e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+
+previously allocated by thread T14 here:
+    #0 0x555555edbd5d in operator new(unsigned long) (/opt/azeroth-server/bin/worldserver+0x987d5d) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x5555586a36de in __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:127:27
+    #2 0x5555586a36de in std::allocator<unsigned char>::allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:185:32
+    #3 0x5555586a36de in std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:464:20
+    #4 0x5555586a36de in std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:346:20
+    #5 0x5555586a36de in std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/vector.tcc:635:34
+    #6 0x55555868e5b2 in std::vector<unsigned char, std::allocator<unsigned char> >::resize(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:940:4
+    #7 0x55555868e5b2 in MessageBuffer::Resize(unsigned long) /opt/wotlk_prod/src/common/Utilities/MessageBuffer.h:54:18
+    #8 0x55555868e5b2 in WorldSocket::ReadHeaderHandler() /opt/wotlk_prod/src/server/game/Server/WorldSocket.cpp:326:19
+    #9 0x55555868dbbb in WorldSocket::ReadHandler() /opt/wotlk_prod/src/server/game/Server/WorldSocket.cpp:263:18
+    #10 0x5555586a6871 in void std::__invoke_impl<void, void (Socket<WorldSocket>::*&)(boost::system::error_code, unsigned long), std::shared_ptr<WorldSocket>&, boost::system::error_code const&, unsigned long const&>(std::__invoke_memfun_deref, void (Socket<WorldSocket>::*&)(boost::system::error_code, unsigned long), std::shared_ptr<WorldSocket>&, boost::system::error_code const&, unsigned long const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:74:14
+    #11 0x5555586a6871 in std::__invoke_result<void (Socket<WorldSocket>::*&)(boost::system::error_code, unsigned long), std::shared_ptr<WorldSocket>&, boost::system::error_code const&, unsigned long const&>::type std::__invoke<void (Socket<WorldSocket>::*&)(boost::system::error_code, unsigned long), std::shared_ptr<WorldSocket>&, boost::system::error_code const&, unsigned long const&>(void (Socket<WorldSocket>::*&)(boost::system::error_code, unsigned long), std::shared_ptr<WorldSocket>&, boost::system::error_code const&, unsigned long const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:96:14
+    #12 0x5555586a6871 in void std::_Bind<void (Socket<WorldSocket>::* (std::shared_ptr<WorldSocket>, std::_Placeholder<1>, std::_Placeholder<2>))(boost::system::error_code, unsigned long)>::__call<void, boost::system::error_code const&, unsigned long const&, 0ul, 1ul, 2ul>(std::tuple<boost::system::error_code const&, unsigned long const&>&&, std::_Index_tuple<0ul, 1ul, 2ul>) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/functional:420:11
+    #13 0x5555586a6871 in void std::_Bind<void (Socket<WorldSocket>::* (std::shared_ptr<WorldSocket>, std::_Placeholder<1>, std::_Placeholder<2>))(boost::system::error_code, unsigned long)>::operator()<boost::system::error_code const&, unsigned long const&, void>(boost::system::error_code const&, unsigned long const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/functional:503:17
+    #14 0x5555586a6871 in boost::asio::detail::binder2<std::_Bind<void (Socket<WorldSocket>::* (std::shared_ptr<WorldSocket>, std::_Placeholder<1>, std::_Placeholder<2>))(boost::system::error_code, unsigned long)>, boost::system::error_code, unsigned long>::operator()() /usr/include/boost/asio/detail/bind_handler.hpp:182:5
+    #15 0x5555586a6871 in void boost_asio_handler_invoke_helpers::invoke<boost::asio::detail::binder2<std::_Bind<void (Socket<WorldSocket>::* (std::shared_ptr<WorldSocket>, std::_Placeholder<1>, std::_Placeholder<2>))(boost::system::error_code, unsigned long)>, boost::system::error_code, unsigned long>, std::_Bind<void (Socket<WorldSocket>::* (std::shared_ptr<WorldSocket>, std::_Placeholder<1>, std::_Placeholder<2>))(boost::system::error_code, unsigned long)> >(boost::asio::detail::binder2<std::_Bind<void (Socket<WorldSocket>::* (std::shared_ptr<WorldSocket>, std::_Placeholder<1>, std::_Placeholder<2>))(boost::system::error_code, unsigned long)>, boost::system::error_code, unsigned long>&, std::_Bind<void (Socket<WorldSocket>::* (std::shared_ptr<WorldSocket>, std::_Placeholder<1>, std::_Placeholder<2>))(boost::system::error_code, unsigned long)>&) /usr/include/boost/asio/detail/handler_invoke_helpers.hpp:51:3
+    #16 0x5555586a6871 in void boost::asio::detail::handler_work<std::_Bind<void (Socket<WorldSocket>::* (std::shared_ptr<WorldSocket>, std::_Placeholder<1>, std::_Placeholder<2>))(boost::system::error_code, unsigned long)>, boost::asio::execution::any_executor<boost::asio::execution::context_as_t<boost::asio::execution_context&>, boost::asio::execution::detail::blocking::never_t<0>, boost::asio::execution::prefer_only<boost::asio::execution::detail::blocking::possibly_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::tracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::untracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::fork_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::continuation_t<0> > >, void>::complete<boost::asio::detail::binder2<std::_Bind<void (Socket<WorldSocket>::* (std::shared_ptr<WorldSocket>, std::_Placeholder<1>, std::_Placeholder<2>))(boost::system::error_code, unsigned long)>, boost::system::error_code, unsigned long> >(boost::asio::detail::binder2<std::_Bind<void (Socket<WorldSocket>::* (std::shared_ptr<WorldSocket>, std::_Placeholder<1>, std::_Placeholder<2>))(boost::system::error_code, unsigned long)>, boost::system::error_code, unsigned long>&, std::_Bind<void (Socket<WorldSocket>::* (std::shared_ptr<WorldSocket>, std::_Placeholder<1>, std::_Placeholder<2>))(boost::system::error_code, unsigned long)>&) /usr/include/boost/asio/detail/handler_work.hpp:425:7
+    #17 0x5555586a6871 in boost::asio::detail::reactive_socket_recv_op<boost::asio::mutable_buffer, std::_Bind<void (Socket<WorldSocket>::* (std::shared_ptr<WorldSocket>, std::_Placeholder<1>, std::_Placeholder<2>))(boost::system::error_code, unsigned long)>, boost::asio::execution::any_executor<boost::asio::execution::context_as_t<boost::asio::execution_context&>, boost::asio::execution::detail::blocking::never_t<0>, boost::asio::execution::prefer_only<boost::asio::execution::detail::blocking::possibly_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::tracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::untracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::fork_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::continuation_t<0> > > >::do_complete(void*, boost::asio::detail::scheduler_operation*, boost::system::error_code const&, unsigned long) /usr/include/boost/asio/detail/reactive_socket_recv_op.hpp:145:9
+    #18 0x555555f1c89c in boost::asio::detail::scheduler_operation::complete(void*, boost::system::error_code const&, unsigned long) /usr/include/boost/asio/detail/scheduler_operation.hpp:40:5
+    #19 0x555555f1c89c in boost::asio::detail::scheduler::do_run_one(boost::asio::detail::conditionally_enabled_mutex::scoped_lock&, boost::asio::detail::scheduler_thread_info&, boost::system::error_code const&) /usr/include/boost/asio/detail/impl/scheduler.ipp:481:12
+    #20 0x555555f1b295 in boost::asio::detail::scheduler::run(boost::system::error_code&) /usr/include/boost/asio/detail/impl/scheduler.ipp:204:10
+    #21 0x555555f3cf0b in boost::asio::io_context::run() /usr/include/boost/asio/impl/io_context.ipp:63:24
+    #22 0x555555f3cf0b in Acore::Asio::IoContext::run() /opt/wotlk_prod/src/common/Asio/IoContext.h:38:42
+    #23 0x5555586b909f in NetworkThread<WorldSocket>::Run() /opt/wotlk_prod/src/server/shared/Network/NetworkThread.h:184:20
+    #24 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+Thread T8 created by T0 here:
+    #0 0x555555e8a40c in pthread_create (/opt/azeroth-server/bin/worldserver+0x93640c) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558c48427 in World::SetInitialWorldSettings() /opt/wotlk_prod/src/server/game/World/World.cpp:2106:14
+    #3 0x555555ee1b6e in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:306:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+Thread T14 created by T0 here:
+    #0 0x555555e8a40c in pthread_create (/opt/azeroth-server/bin/worldserver+0x93640c) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x5555586b25ad in SocketMgr<WorldSocket>::StartNetwork(Acore::Asio::IoContext&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned short, int) /opt/wotlk_prod/src/server/shared/Network/SocketMgr.h:66:25
+    #3 0x5555586af128 in WorldSocketMgr::StartWorldNetwork(Acore::Asio::IoContext&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned short, int) /opt/wotlk_prod/src/server/game/Server/WorldSocketMgr.cpp:68:25
+    #4 0x555555ee2c03 in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:351:26
+    #5 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+SUMMARY: AddressSanitizer: double-free (/opt/azeroth-server/bin/worldserver+0x9885bd) (BuildId: 94b1b8a4438fe7573a83b5df74cccb8c99e9094a) in operator delete(void*)

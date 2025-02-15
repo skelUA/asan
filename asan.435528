@@ -1,0 +1,126 @@
+==435528==Registered root region at 0x7ffff4501310 of size 80
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff4501310 of size 80
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept '__isoc99_printf'
+==435528==Registered root region at 0x7ffff4501310 of size 80
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff4501310 of size 80
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept '__isoc99_sprintf'
+==435528==Registered root region at 0x7ffff4501310 of size 80
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff4501310 of size 80
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept '__isoc99_snprintf'
+==435528==Registered root region at 0x7ffff4501310 of size 80
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff4501310 of size 80
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept '__isoc99_fprintf'
+==435528==Registered root region at 0x7ffff4501310 of size 80
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff4501310 of size 80
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept '__isoc99_vprintf'
+==435528==Registered root region at 0x7ffff4501310 of size 80
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff4501310 of size 80
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept '__isoc99_vsprintf'
+==435528==Registered root region at 0x7ffff4501310 of size 80
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff4501310 of size 80
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept '__isoc99_vsnprintf'
+==435528==Registered root region at 0x7ffff4501310 of size 80
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff4501310 of size 80
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept '__isoc99_vfprintf'
+==435528==Registered root region at 0x7ffff3f016e0 of size 96
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff3f016e0 of size 96
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept 'pthread_mutexattr_getrobust_np'
+==435528==Registered root region at 0x7ffff4501310 of size 80
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff4501310 of size 80
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept 'xdr_quad_t'
+==435528==Registered root region at 0x7ffff4501310 of size 80
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff4501310 of size 80
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept 'xdr_u_quad_t'
+==435528==Registered root region at 0x7ffff4501310 of size 80
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff4501310 of size 80
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept 'xdr_destroy'
+==435528==Registered root region at 0x7ffff3d00f40 of size 64
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff3d00f40 of size 64
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept 'crypt'
+==435528==Registered root region at 0x7ffff3d00f40 of size 64
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff3d00f40 of size 64
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept 'crypt_r'
+==435528==Registered root region at 0x7ffff3f016e0 of size 96
+==435528==Registered root region at 0x7ffff41007a0 of size 32
+==435528==Unregistered root region at 0x7ffff3f016e0 of size 96
+==435528==Unregistered root region at 0x7ffff41007a0 of size 32
+==435528==AddressSanitizer: failed to intercept '__cxa_rethrow_primary_exception'
+==435528==AddressSanitizer: libc interceptors initialized
+|| `[0x10007fff8000, 0x7fffffffffff]` || HighMem    ||
+|| `[0x02008fff7000, 0x10007fff7fff]` || HighShadow ||
+|| `[0x00008fff7000, 0x02008fff6fff]` || ShadowGap  ||
+|| `[0x00007fff8000, 0x00008fff6fff]` || LowShadow  ||
+|| `[0x000000000000, 0x00007fff7fff]` || LowMem     ||
+MemToShadow(shadow): 0x00008fff7000 0x000091ff6dff 0x004091ff6e00 0x02008fff6fff
+redzone=16
+max_redzone=2048
+quarantine_size_mb=256M
+thread_local_quarantine_size_kb=1024K
+malloc_context_size=30
+SHADOW_SCALE: 3
+SHADOW_GRANULARITY: 8
+SHADOW_OFFSET: 0x7fff8000
+==435528==Installed the sigaction for signal 11
+==435528==Installed the sigaction for signal 7
+==435528==Installed the sigaction for signal 8
+==435528==T0: FakeStack created: 0x7ffff29f7000 -- 0x7ffff3500000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T0: stack [0x7fffff7ff000,0x7ffffffff000) size 0x800000; local=0x7fffffffdfb4
+==435528==AddressSanitizer Init done
+==435528==T1: FakeStack created: 0x7ffff07f6000 -- 0x7ffff12ff000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T1: stack [0x7ffff1300000,0x7ffff1afee80) size 0x7fee80; local=0x7ffff1afeda4
+==435528==T2: FakeStack created: 0x7fffef4ec000 -- 0x7fffefff5000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T2: stack [0x7fffefff6000,0x7ffff07f4e80) size 0x7fee80; local=0x7ffff07f4da4
+==435528==T3: FakeStack created: 0x7fffee1e2000 -- 0x7fffeeceb000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T3: stack [0x7fffeecec000,0x7fffef4eae80) size 0x7fee80; local=0x7fffef4eada4
+==435528==T4: FakeStack created: 0x7fffeced8000 -- 0x7fffed9e1000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T4: stack [0x7fffed9e2000,0x7fffee1e0e80) size 0x7fee80; local=0x7fffee1e0da4
+==435528==T5: FakeStack created: 0x7fffebbce000 -- 0x7fffec6d7000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T5: stack [0x7fffec6d8000,0x7fffeced6e80) size 0x7fee80; local=0x7fffeced6da4
+==435528==T6: FakeStack created: 0x7fffea8c4000 -- 0x7fffeb3cd000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T6: stack [0x7fffeb3ce000,0x7fffebbcce80) size 0x7fee80; local=0x7fffebbccda4
+==435528==T7: FakeStack created: 0x7fffcea3e000 -- 0x7fffcf547000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T7: stack [0x7fffcf548000,0x7fffcfd46e80) size 0x7fee80; local=0x7fffcfd46da4
+==435528==T8: FakeStack created: 0x7fffcdf35000 -- 0x7fffcea3e000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T8: stack [0x7fffdd939000,0x7fffde137e80) size 0x7fee80; local=0x7fffde137da4
+==435528==T9: FakeStack created: 0x7fffcd42c000 -- 0x7fffcdf35000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T9: stack [0x7fffd9d36000,0x7fffda534e80) size 0x7fee80; local=0x7fffda534da4
+==435528==T10: FakeStack created: 0x7fffc5d65000 -- 0x7fffc686e000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T10: stack [0x7fffd9535000,0x7fffd9d33e80) size 0x7fee80; local=0x7fffd9d33da4
+==435528==T11: FakeStack created: 0x7fffc4a5b000 -- 0x7fffc5564000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T11: stack [0x7fffc686f000,0x7fffc706de80) size 0x7fee80; local=0x7fffc706dda4
+==435528==T12: FakeStack created: 0x7fffc3f52000 -- 0x7fffc4a5b000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T12: stack [0x7fffc5565000,0x7fffc5d63e80) size 0x7fee80; local=0x7fffc5d63da4
+==435528==T13: FakeStack created: 0x7fffbdc2d000 -- 0x7fffbe736000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T13: stack [0x7fffbef38000,0x7fffbf736e80) size 0x7fee80; local=0x7fffbf736da4
+==435528==T14: FakeStack created: 0x7fffbd124000 -- 0x7fffbdc2d000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T14: stack [0x7fffbe737000,0x7fffbef35e80) size 0x7fee80; local=0x7fffbef35da4
+==435528==T15: FakeStack created: 0x7fffbbe1a000 -- 0x7fffbc923000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==435528==T15: stack [0x7fffbc924000,0x7fffbd122e80) size 0x7fee80; local=0x7fffbd122da4
