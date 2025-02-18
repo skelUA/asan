@@ -570,3 +570,112 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
+=================================================================
+==4332==ERROR: AddressSanitizer: global-buffer-overflow on address 0x55555a105ba0 at pc 0x5555565ab801 bp 0x7fffc3ad8870 sp 0x7fffc3ad8868
+READ of size 4 at 0x55555a105ba0 thread T14
+    #0 0x5555565ab800 in instance_ruins_of_ahnqiraj::instance_ruins_of_ahnqiraj_InstanceMapScript::CallNextRajaxxLeader(bool) /opt/wotlk_prod/src/server/scripts/Kalimdor/RuinsOfAhnQiraj/instance_ruins_of_ahnqiraj.cpp:257:87
+    #1 0x5555565aaec9 in instance_ruins_of_ahnqiraj::instance_ruins_of_ahnqiraj_InstanceMapScript::OnUnitDeath(Unit*)::'lambda'(TaskContext)::operator()(TaskContext) const /opt/wotlk_prod/src/server/scripts/Kalimdor/RuinsOfAhnQiraj/instance_ruins_of_ahnqiraj.cpp:207:41
+    #2 0x5555565aaec9 in void std::__invoke_impl<void, instance_ruins_of_ahnqiraj::instance_ruins_of_ahnqiraj_InstanceMapScript::OnUnitDeath(Unit*)::'lambda'(TaskContext)&, TaskContext>(std::__invoke_other, instance_ruins_of_ahnqiraj::instance_ruins_of_ahnqiraj_InstanceMapScript::OnUnitDeath(Unit*)::'lambda'(TaskContext)&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #3 0x55555916ae40 in std::function<void (TaskContext)>::operator()(TaskContext) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #4 0x55555916ae40 in TaskContext::Invoke() /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:282:5
+    #5 0x555559168891 in TaskScheduler::Dispatch(std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:109:17
+    #6 0x5555591696be in TaskScheduler& TaskScheduler::Update<long, std::ratio<1l, 1000l> >(std::chrono::duration<long, std::ratio<1l, 1000l> > const&, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.h:221:9
+    #7 0x5555591696be in TaskScheduler::Update(unsigned long, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:36:12
+    #8 0x55555830873a in InstanceScript::Update(unsigned int) /opt/wotlk_prod/src/server/game/Instances/InstanceScript.cpp:249:15
+    #9 0x5555583d7112 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #10 0x5555583d552e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #11 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #12 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #13 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x55555a105ba0 is located 0 bytes to the right of global variable 'RajaxxWavesData' defined in '/opt/wotlk_prod/src/server/scripts/Kalimdor/RuinsOfAhnQiraj/instance_ruins_of_ahnqiraj.cpp:55:23' (0x55555a105aa0) of size 256
+SUMMARY: AddressSanitizer: global-buffer-overflow /opt/wotlk_prod/src/server/scripts/Kalimdor/RuinsOfAhnQiraj/instance_ruins_of_ahnqiraj.cpp:257:87 in instance_ruins_of_ahnqiraj::instance_ruins_of_ahnqiraj_InstanceMapScript::CallNextRajaxxLeader(bool)
+Shadow bytes around the buggy address:
+  0x0aab2b418b20: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418b30: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418b40: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418b50: f9 f9 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b418b60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0aab2b418b70: 00 00 00 00[f9]f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418b80: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418b90: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418ba0: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418bb0: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418bc0: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+Thread T14 created by T0 here:
+    #0 0x555555e8a40c in pthread_create (/opt/azeroth-server/bin/worldserver+0x93640c) (BuildId: f60063e4adc41f35c6242ce39725b4df1b98f33d)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558c48bb7 in World::SetInitialWorldSettings() /opt/wotlk_prod/src/server/game/World/World.cpp:2106:14
+    #3 0x555555ee1b6e in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:306:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+=================================================================
+==4332==ERROR: AddressSanitizer: global-buffer-overflow on address 0x55555a105ba4 at pc 0x5555565ab86d bp 0x7fffc3ad8870 sp 0x7fffc3ad8868
+READ of size 4 at 0x55555a105ba4 thread T14
+    #0 0x5555565ab86c in instance_ruins_of_ahnqiraj::instance_ruins_of_ahnqiraj_InstanceMapScript::CallNextRajaxxLeader(bool) /opt/wotlk_prod/src/server/scripts/Kalimdor/RuinsOfAhnQiraj/instance_ruins_of_ahnqiraj.cpp:265:83
+    #1 0x5555565aaec9 in instance_ruins_of_ahnqiraj::instance_ruins_of_ahnqiraj_InstanceMapScript::OnUnitDeath(Unit*)::'lambda'(TaskContext)::operator()(TaskContext) const /opt/wotlk_prod/src/server/scripts/Kalimdor/RuinsOfAhnQiraj/instance_ruins_of_ahnqiraj.cpp:207:41
+    #2 0x5555565aaec9 in void std::__invoke_impl<void, instance_ruins_of_ahnqiraj::instance_ruins_of_ahnqiraj_InstanceMapScript::OnUnitDeath(Unit*)::'lambda'(TaskContext)&, TaskContext>(std::__invoke_other, instance_ruins_of_ahnqiraj::instance_ruins_of_ahnqiraj_InstanceMapScript::OnUnitDeath(Unit*)::'lambda'(TaskContext)&, TaskContext&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14
+    #3 0x55555916ae40 in std::function<void (TaskContext)>::operator()(TaskContext) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:590:9
+    #4 0x55555916ae40 in TaskContext::Invoke() /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:282:5
+    #5 0x555559168891 in TaskScheduler::Dispatch(std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:109:17
+    #6 0x5555591696be in TaskScheduler& TaskScheduler::Update<long, std::ratio<1l, 1000l> >(std::chrono::duration<long, std::ratio<1l, 1000l> > const&, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.h:221:9
+    #7 0x5555591696be in TaskScheduler::Update(unsigned long, std::function<void ()> const&) /opt/wotlk_prod/src/common/Utilities/TaskScheduler.cpp:36:12
+    #8 0x55555830873a in InstanceScript::Update(unsigned int) /opt/wotlk_prod/src/server/game/Instances/InstanceScript.cpp:249:15
+    #9 0x5555583d7112 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #10 0x5555583d552e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #11 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #12 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #13 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x55555a105ba4 is located 4 bytes to the right of global variable 'RajaxxWavesData' defined in '/opt/wotlk_prod/src/server/scripts/Kalimdor/RuinsOfAhnQiraj/instance_ruins_of_ahnqiraj.cpp:55:23' (0x55555a105aa0) of size 256
+SUMMARY: AddressSanitizer: global-buffer-overflow /opt/wotlk_prod/src/server/scripts/Kalimdor/RuinsOfAhnQiraj/instance_ruins_of_ahnqiraj.cpp:265:83 in instance_ruins_of_ahnqiraj::instance_ruins_of_ahnqiraj_InstanceMapScript::CallNextRajaxxLeader(bool)
+Shadow bytes around the buggy address:
+  0x0aab2b418b20: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418b30: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418b40: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418b50: f9 f9 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b418b60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0aab2b418b70: 00 00 00 00[f9]f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418b80: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418b90: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418ba0: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418bb0: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b418bc0: f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9 f9
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
