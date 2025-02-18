@@ -1,0 +1,1439 @@
+52432.052627 [Thread debugging using libthread_db enabled]
+52432.052662 Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+52432.128370 [New Thread 0x7ffff1aff640 (LWP 29017)]
+52432.128659 [New Thread 0x7ffff12fe640 (LWP 29018)]
+52432.141959 [New Thread 0x7fffef4eb640 (LWP 29019)]
+52432.310480 [New Thread 0x7fffee1e1640 (LWP 29020)]
+52432.787266 [New Thread 0x7fffeced7640 (LWP 29021)]
+52432.799303 [New Thread 0x7fffebbcd640 (LWP 29022)]
+52432.811405 [New Thread 0x7fffea8c3640 (LWP 29023)]
+52432.846349 [New Thread 0x7fffe95b9640 (LWP 29024)]
+52432.858313 [New Thread 0x7fffe82af640 (LWP 29025)]
+52463.283919 [New Thread 0x7fffe304b640 (LWP 29039)]
+52467.102638 [New Thread 0x7fffda7bf640 (LWP 29043)]
+52467.102913 [New Thread 0x7fffd6b67640 (LWP 29044)]
+52467.103096 [New Thread 0x7fffc5108640 (LWP 29045)]
+52467.103288 [New Thread 0x7fffc4907640 (LWP 29046)]
+52467.103988 [New Thread 0x7fffc35fd640 (LWP 29047)]
+52467.104345 [New Thread 0x7fffc17ea640 (LWP 29048)]
+52467.782470 [New Thread 0x7fffbae23640 (LWP 29049)]
+52467.782850 [New Thread 0x7fffba622640 (LWP 29050)]
+52467.813082 [New Thread 0x7fffb880f640 (LWP 29051)]
+[Detaching after fork from child process 29107]
+
+Thread 1 "worldserver" received signal SIGSEGV, Segmentation fault.
+0x0000555558cebd8a in CalendarMgr::RemovePlayerGuildEventsAndSignups (this=0x55555acdbfe0 <CalendarMgr::instance()::instance>, guid=..., guildId=225) at /opt/wotlk_prod/src/server/game/Calendar/CalendarMgr.cpp:297
+297	        if ((*itr)->GetCreatorGUID() == guid && ((*itr)->IsGuildEvent() || (*itr)->IsGuildAnnouncement()))
+#0  0x0000555558cebd8a in CalendarMgr::RemovePlayerGuildEventsAndSignups (this=0x55555acdbfe0 <CalendarMgr::instance()::instance>, guid=..., guildId=225) at /opt/wotlk_prod/src/server/game/Calendar/CalendarMgr.cpp:297
+#1  0x000055555813cc62 in Guild::HandleLeaveMember (this=<optimized out>, session=<optimized out>) at /opt/wotlk_prod/src/server/game/Guilds/Guild.cpp:1534
+#2  0x0000555558dc8c10 in WorldSession::HandleGuildLeaveOpcode (this=<optimized out>) at /opt/wotlk_prod/src/server/game/Handlers/GuildHandler.cpp:121
+#3  0x00005555588d9665 in PacketHandler<WorldPackets::Guild::GuildLeave, &WorldSession::HandleGuildLeaveOpcode>::Call (this=<optimized out>, session=<optimized out>, packet=...) at /opt/wotlk_prod/src/server/game/Server/Protocol/Opcodes.cpp:35
+#4  0x00005555586565d6 in WorldSession::Update (this=<optimized out>, diff=<optimized out>, updater=...) at /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:360
+#5  0x0000555558c8b939 in World::UpdateSessions (this=<optimized out>, diff=<optimized out>) at /opt/wotlk_prod/src/server/game/World/World.cpp:2848
+#6  0x0000555558c7826b in World::Update (this=<optimized out>, diff=<optimized out>) at /opt/wotlk_prod/src/server/game/World/World.cpp:2373
+#7  0x0000555555ef2615 in WorldUpdateLoop () at /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:586
+#8  0x0000555555ee367b in main (argc=<optimized out>, argv=<optimized out>) at /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:398
+#0  0x0000555558cebd8a in CalendarMgr::RemovePlayerGuildEventsAndSignups (this=0x55555acdbfe0 <CalendarMgr::instance()::instance>, guid=..., guildId=225) at /opt/wotlk_prod/src/server/game/Calendar/CalendarMgr.cpp:297
+        itr = {<std::__detail::_Node_iterator_base<CalendarEvent*, false>> = {_M_cur = 0x25875}, <No data fields>}
+        playerInvites = <optimized out>
+#1  0x000055555813cc62 in Guild::HandleLeaveMember (this=<optimized out>, session=<optimized out>) at /opt/wotlk_prod/src/server/game/Guilds/Guild.cpp:1534
+        player = 0x628000e98100
+        disband = <optimized out>
+#2  0x0000555558dc8c10 in WorldSession::HandleGuildLeaveOpcode (this=<optimized out>) at /opt/wotlk_prod/src/server/game/Handlers/GuildHandler.cpp:121
+        guild = 0x4b0f
+#3  0x00005555588d9665 in PacketHandler<WorldPackets::Guild::GuildLeave, &WorldSession::HandleGuildLeaveOpcode>::Call (this=<optimized out>, session=<optimized out>, packet=...) at /opt/wotlk_prod/src/server/game/Server/Protocol/Opcodes.cpp:35
+        nicePacket = {<WorldPackets::ClientPacket> = {<WorldPackets::Packet> = {_vptr$Packet = 0x55555a093820 <vtable for WorldPackets::Guild::GuildLeave+16>, _worldPacket = {<ByteBuffer> = {_vptr$ByteBuffer = 0x555559ed2ab8 <vtable for WorldPacket+16>, static DEFAULT_SIZE = 4096, _rpos = 0, _wpos = 0, _storage = std::vector of length 0, capacity 0}, m_opcode = 141, m_receivedTime = {__d = {__r = 0}}}}, <No data fields>}, <No data fields>}
+#4  0x00005555586565d6 in WorldSession::Update (this=<optimized out>, diff=<optimized out>, updater=...) at /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:360
+        opcode = <optimized out>
+        __ac_metric_stop_watch330 = {_logger = {opHandle = @0x7ffff31762c0}, _startTime = {__d = {__r = 0}}}
+        opHandle = 0x60300524bae0
+        ihe = <optimized out>
+        ihe = <optimized out>
+        pamce = <optimized out>
+        packet = 0x606006fba560
+        deletePacket = true
+        requeuePackets = std::vector of length 0, capacity 0
+        processedPackets = 0
+        currentTime = <optimized out>
+        MAX_PROCESSED_PACKETS_IN_SAME_WORLDSESSION_UPDATE = <optimized out>
+#5  0x0000555558c8b939 in World::UpdateSessions (this=<optimized out>, diff=<optimized out>) at /opt/wotlk_prod/src/server/game/World/World.cpp:2848
+        updater = {<PacketFilter> = {_vptr$PacketFilter = 0x55555a08e890 <vtable for WorldSessionFilter+16>, m_pSession = 0x61900b058680}, <No data fields>}
+        __ac_metric_stop_watch2846 = {_logger = {currentSessionId = @0x7ffff2c76580}, _startTime = {__d = {__r = 0}}}
+        pSession = 0x10000
+        currentSessionId = <optimized out>
+        itr = {<std::__detail::_Node_iterator_base<std::pair<unsigned int const, WorldSession*>, false>> = {_M_cur = 0x6030054a8d60}, <No data fields>}
+        next = {<std::__detail::_Node_iterator_base<std::pair<unsigned int const, WorldSession*>, false>> = {_M_cur = 0x6030066fefe0}, <No data fields>}
+        currTime = <optimized out>
+#6  0x0000555558c7826b in World::Update (this=<optimized out>, diff=<optimized out>) at /opt/wotlk_prod/src/server/game/World/World.cpp:2373
+        __ac_metric_stop_watch2280 = {_logger = {<No data fields>}, _startTime = {__d = {__r = 0}}}
+        __ac_metric_stop_watch2372 = {_logger = {<No data fields>}, _startTime = {__d = {__r = 0}}}
+        currentGameTime = {__r = 1739913131}
+#7  0x0000555555ef2615 in WorldUpdateLoop () at /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:586
+        diff = 17
+        minUpdateDiff = 1
+        realCurrTime = 95636
+        realPrevTime = 95619
+        maxCoreStuckTime = 0
+        halfMaxCoreStuckTime = 4294967295
+#8  0x0000555555ee367b in main (argc=<optimized out>, argv=<optimized out>) at /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:398
+        configFile = filesystem::path "../etc/worldserver.conf"Python Exception <class 'gdb.error'>: No type named std::filesystem::__cxx11::path::_Cmpt.
+
+        configService = ""
+        vm = <incomplete type>
+        ioContext = warning: 52532.493942 RTTI symbol not found for class 'std::_Sp_counted_ptr_inplace<Acore::Asio::IoContext, std::allocator<Acore::Asio::IoContext>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52532.494038 RTTI symbol not found for class 'std::_Sp_counted_ptr_inplace<Acore::Asio::IoContext, std::allocator<Acore::Asio::IoContext>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<Acore::Asio::IoContext> (use count 4, weak count 0) = {get() = 0x603000029f90}
+        opensslHandle = warning: 52532.575505 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_5, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52532.575586 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_5, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<void> (use count 1, weak count 0) = {get() = 0x0}
+        seed = {_bn = 0x6030000453d0}
+        pidFile = ""
+        signals = {impl_ = {service_ = 0x616000000f80, implementation_ = {queue_ = {<boost::asio::detail::noncopyable> = {<No data fields>}, front_ = 0x60b00001e020, back_ = 0x60b00001e020}, signals_ = 0x60400002ad10}, executor_ = {<boost::asio::execution::detail::any_executor_base> = {object_ = {__data = "\220\237\002\000\060`\000\000\000\000\000\000\000\000\000", __align = {<No data fields>}}, object_fns_ = 0x555559ecfc38 <boost::asio::execution::detail::any_executor_base::object_fns_table<boost::asio::io_context::basic_executor_type<std::allocator<void>, 0u> >(std::enable_if<(!is_same<boost::asio::io_context::basic_executor_type<std::allocator<void>, 0u>, void>::value)&&(!is_same<boost::asio::io_context::basic_executor_type<std::allocator<void>, 0u>, std::shared_ptr<void> >::value), void>::type*)::fns>, target_ = 0x7ffff3100900, target_fns_ = 0x555559ecfbd8 <boost::asio::execution::detail::any_executor_base::target_fns_table<boost::asio::io_context::basic_executor_type<std::allocator<void>, 0u> >(bool, std::enable_if<!is_same<boost::asio::io_context::basic_executor_type<std::allocator<void>, 0u>, void>::value, void>::type*)::fns_with_execute>}, <boost::asio::execution::detail::any_executor_context<boost::asio::execution::any_executor<boost::asio::execution::context_as_t<boost::asio::execution_context &>, boost::asio::execution::detail::blocking::never_t<0>, boost::asio::execution::prefer_only<boost::asio::execution::detail::blocking::possibly_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::tracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::untracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::fork_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::continuation_t<0> > >, boost::asio::execution::detail::supportable_properties<0UL, void (boost::asio::execution::context_as_t<boost::asio::execution_context &>, boost::asio::execution::detail::blocking::never_t<0>, boost::asio::execution::prefer_only<boost::asio::execution::detail::blocking::possibly_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::tracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::untracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::fork_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::continuation_t<0> >)>::find_context_as_property, void>> = {<No data fields>}, prop_fns_ = 0x555559ecfc60 <boost::asio::execution::any_executor<boost::asio::execution::context_as_t<boost::asio::execution_context&>, boost::asio::execution::detail::blocking::never_t<0>, boost::asio::execution::prefer_only<boost::asio::execution::detail::blocking::possibly_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::tracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::untracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::fork_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::continuation_t<0> > >::prop_fns_table<boost::asio::io_context::basic_executor_type<std::allocator<void>, 0u> >()::fns>}}}
+        threadPool = warning: 52532.845282 RTTI symbol not found for class 'std::_Sp_counted_deleter<std::vector<std::thread, std::allocator<std::thread> >*, main::$_6, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52532.845376 RTTI symbol not found for class 'std::_Sp_counted_deleter<std::vector<std::thread, std::allocator<std::thread> >*, main::$_6, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<std::vector<std::thread, std::allocator<std::thread> >> (use count 1, weak count 0) = {get() = 0x60300005e660}
+        sScriptMgrHandle = warning: 52532.925165 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_8, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52532.925246 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_8, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<void> (use count 1, weak count 0) = {get() = 0x0}
+        dbHandle = warning: 52533.004892 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_9, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52533.004981 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_9, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<void> (use count 1, weak count 0) = {get() = 0x0}
+        sMetricHandle = warning: 52533.087865 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_10, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52533.087957 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_10, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<void> (use count 1, weak count 0) = {get() = 0x0}
+        mapManagementHandle = warning: 52533.174973 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_11, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52533.175069 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_11, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<void> (use count 1, weak count 0) = {get() = 0x0}
+        raAcceptor = std::unique_ptr<AsyncAcceptor> = {get() = 0x0}
+        soapThread = std::shared_ptr<std::thread> (empty) = {get() = 0x0}
+        worldListener = "0.0.0.0"
+        sWorldSocketMgrHandle = warning: 52533.257076 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_13, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52533.257159 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_13, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<void> (use count 1, weak count 0) = {get() = 0x0}
+        freezeDetector = std::shared_ptr<FreezeDetector> (empty) = {get() = 0x0}
+        cliThread = warning: 52533.333320 RTTI symbol not found for class 'std::_Sp_counted_deleter<std::thread*, void (*)(std::thread*), std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52533.333400 RTTI symbol not found for class 'std::_Sp_counted_deleter<std::thread*, void (*)(std::thread*), std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<std::thread> (use count 1, weak count 0) = {get() = 0x602000e9c4f0}
+        numThreads = <optimized out>
+        networkThreads = <optimized out>
+        worldPort = <optimized out>
+  Id   Target Id                                       Frame 
+* 1    Thread 0x7ffff4a2b7c0 (LWP 29014) "worldserver" 0x0000555558cebd8a in CalendarMgr::RemovePlayerGuildEventsAndSignups (this=0x55555acdbfe0 <CalendarMgr::instance()::instance>, guid=..., guildId=225) at /opt/wotlk_prod/src/server/game/Calendar/CalendarMgr.cpp:297
+  2    Thread 0x7ffff1aff640 (LWP 29017) "worldserver" 0x00007ffff6dc2e2e in epoll_wait (epfd=7, events=0x7ffff0559020, maxevents=128, timeout=-1) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+  3    Thread 0x7ffff12fe640 (LWP 29018) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x61100000175c) at ./nptl/futex-internal.c:57
+  4    Thread 0x7fffef4eb640 (LWP 29019) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000774) at ./nptl/futex-internal.c:57
+  5    Thread 0x7fffee1e1640 (LWP 29020) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000774) at ./nptl/futex-internal.c:57
+  6    Thread 0x7fffeced7640 (LWP 29021) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000680) at ./nptl/futex-internal.c:57
+  7    Thread 0x7fffebbcd640 (LWP 29022) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000680) at ./nptl/futex-internal.c:57
+  8    Thread 0x7fffea8c3640 (LWP 29023) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000680) at ./nptl/futex-internal.c:57
+  9    Thread 0x7fffe95b9640 (LWP 29024) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000594) at ./nptl/futex-internal.c:57
+  10   Thread 0x7fffe82af640 (LWP 29025) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000590) at ./nptl/futex-internal.c:57
+  11   Thread 0x7fffe304b640 (LWP 29039) "worldserver" 0x00007ffff6d827f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7fffcb495020, rem=0x7fffcb495020) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+  12   Thread 0x7fffda7bf640 (LWP 29043) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:57
+  13   Thread 0x7fffd6b67640 (LWP 29044) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:57
+  14   Thread 0x7fffc5108640 (LWP 29045) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:57
+  15   Thread 0x7fffc4907640 (LWP 29046) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:57
+  16   Thread 0x7fffc35fd640 (LWP 29047) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:57
+  17   Thread 0x7fffc17ea640 (LWP 29048) "worldserver" __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:57
+  18   Thread 0x7fffbae23640 (LWP 29049) "worldserver" 0x00007ffff6dc2e2e in epoll_wait (epfd=29, events=0x7fffb9889820, maxevents=128, timeout=-1) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+  19   Thread 0x7fffba622640 (LWP 29050) "worldserver" 0x00007ffff6dc2e2e in epoll_wait (epfd=32, events=0x7fffb8e16020, maxevents=128, timeout=-1) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+  20   Thread 0x7fffb880f640 (LWP 29051) "worldserver" 0x00007ffff6db863d in __GI___select (nfds=1, readfds=0x7fffb880eba0, writefds=0x0, exceptfds=0x7fffb880eb20, timeout=0x7fffb880eb10) at ../sysdeps/unix/sysv/linux/select.c:69
+
+Thread 20 (Thread 0x7fffb880f640 (LWP 29051) "worldserver"):
+#0  0x00007ffff6db863d in __GI___select (nfds=1, readfds=0x7fffb880eba0, writefds=0x0, exceptfds=0x7fffb880eb20, timeout=0x7fffb880eb10) at ../sysdeps/unix/sysv/linux/select.c:69
+        sc_ret = -514
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        s = <optimized out>
+        us = <optimized out>
+        ns = <optimized out>
+        ts64 = {tv_sec = 0, tv_nsec = 53799066}
+        pts64 = 0x7fffb880eaa0
+        r = <optimized out>
+#1  0x00007ffff7f370eb in ?? () from /lib/x86_64-linux-gnu/libreadline.so.8
+No symbol table info available.
+#2  0x00007ffff7f3736d in rl_read_key () from /lib/x86_64-linux-gnu/libreadline.so.8
+No symbol table info available.
+#3  0x00007ffff7f1bc87 in readline_internal_char () from /lib/x86_64-linux-gnu/libreadline.so.8
+No symbol table info available.
+#4  0x00007ffff7f24d15 in readline () from /lib/x86_64-linux-gnu/libreadline.so.8
+No symbol table info available.
+#5  0x0000555555f63059 in CliThread () at /opt/wotlk_prod/src/server/apps/worldserver/CommandLine/CliRunnable.cpp:157
+        command = ""
+        command_str = <optimized out>
+        BLANK = 0 '\000'
+#6  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#7  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488343072, -1898729008178524640, 140736288847424, 0, 140737334417360, 140737488343424, 1898598227025464864, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#8  0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 19 (Thread 0x7fffba622640 (LWP 29050) "worldserver"):
+#0  0x00007ffff6dc2e2e in epoll_wait (epfd=32, events=0x7fffb8e16020, maxevents=128, timeout=-1) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+        sc_ret = -4
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+#1  0x0000555555f1d907 in boost::asio::detail::epoll_reactor::run (this=<optimized out>, usec=<optimized out>, ops=...) at /usr/include/boost/asio/detail/impl/epoll_reactor.ipp:471
+        events = {{events = 1, data = {ptr = 0x61100540d134, fd = 88133940, u32 = 88133940, u64 = 106721435504948}}, {events = 1, data = {ptr = 0x60f000605530, fd = 6313264, u32 = 6313264, u64 = 106583914730800}}, {events = 1, data = {ptr = 0x60f00061db30, fd = 6413104, u32 = 6413104, u64 = 106583914830640}}, {events = 0, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}} <repeats 50 times>, {events = 0, data = {ptr = 0x7fffb8e162b0, fd = -1193188688, u32 = 3101778608, u64 = 140736295166640}}, {events = 14, data = {ptr = 0x7774656e00000000, fd = 0, u32 = 0, u64 = 8607616310932668416}}, {events = 778793583, data = {ptr = 0x65646f63706f, fd = 1868787823, u32 = 1868787823, u64 = 111482039922799}}, {events = 0, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}} <repeats 72 times>}
+        timeout = -1
+        num_events = <optimized out>
+        check_timers = <optimized out>
+#2  0x0000555555f1bfbc in boost::asio::detail::scheduler::do_run_one (this=0x61100540d340, lock=..., this_thread=..., ec=...) at /usr/include/boost/asio/detail/impl/scheduler.ipp:465
+        on_exit = {scheduler_ = 0x61100540d340, lock_ = 0x7fffb8b19100, this_thread_ = 0x7fffb8b19060}
+        o = <optimized out>
+        more_handlers = <optimized out>
+#3  0x0000555555f1b296 in boost::asio::detail::scheduler::run (this=<optimized out>, ec=...) at /usr/include/boost/asio/detail/impl/scheduler.ipp:204
+        this_thread = {<boost::asio::detail::thread_info_base> = {<boost::asio::detail::noncopyable> = {<No data fields>}, reusable_memory_ = {0x0, 0x0, 0x0}, has_pending_exception_ = 0, pending_exception_ = {_M_exception_object = 0x0}}, private_op_queue = {<boost::asio::detail::noncopyable> = {<No data fields>}, front_ = 0x0, back_ = 0x0}, private_outstanding_work = 0}
+        ctx = {<boost::asio::detail::noncopyable> = {<No data fields>}, key_ = 0x61100540d340, value_ = 0x7fffb8b19060, next_ = 0x0}
+        lock = {<boost::asio::detail::noncopyable> = {<No data fields>}, mutex_ = @0x61100540d370, locked_ = false}
+        n = 79227
+#4  0x0000555555f3cf0c in boost::asio::io_context::run (this=<optimized out>) at /usr/include/boost/asio/impl/io_context.ipp:63
+        ec = {val_ = 0, failed_ = false, cat_ = 0x555559ecf4d8 <boost::system::detail::cat_holder<void>::system_category_instance>}
+        s = <optimized out>
+#5  Acore::Asio::IoContext::run (this=<optimized out>) at /opt/wotlk_prod/src/common/Asio/IoContext.h:38
+No locals.
+#6  0x00005555586b9830 in NetworkThread<WorldSocket>::Run (this=<optimized out>) at /opt/wotlk_prod/src/server/shared/Network/NetworkThread.h:184
+No locals.
+#7  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#8  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488342656, -1898729008178524640, 140736320382528, 0, 140737334417360, 140737488343008, 1898593535310564896, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#9  0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 18 (Thread 0x7fffbae23640 (LWP 29049) "worldserver"):
+#0  0x00007ffff6dc2e2e in epoll_wait (epfd=29, events=0x7fffb9889820, maxevents=128, timeout=-1) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+        sc_ret = -4
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+#1  0x0000555555f1d907 in boost::asio::detail::epoll_reactor::run (this=<optimized out>, usec=<optimized out>, ops=...) at /usr/include/boost/asio/detail/impl/epoll_reactor.ipp:471
+        events = {{events = 1, data = {ptr = 0x61100540d634, fd = 88135220, u32 = 88135220, u64 = 106721435506228}}, {events = 1, data = {ptr = 0x60f00061ca50, fd = 6408784, u32 = 6408784, u64 = 106583914826320}}, {events = 0, data = {ptr = 0x2319310900000000, fd = 0, u32 = 0, u64 = 2529106580469710848}}, {events = 998373853, data = {ptr = 0xb62cae52d85f0d3f, fd = -664859329, u32 = 3630107967, u64 = 13127058684718812479}}, {events = 3220254520, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}}, {events = 0, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}}, {events = 0, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}}, {events = 0, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}}, {events = 1014150082, data = {ptr = 0xee533c34b5d9aec6, fd = -1244025146, u32 = 3050942150, u64 = 17173136001180741318}}, {events = 3462873903, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}}, {events = 0, data = {ptr = 0xce363b1100000000, fd = 0, u32 = 0, u64 = 14859128964756013056}}, {events = 374487513, data = {ptr = 0x9a90e416223aa5d8, fd = 574268888, u32 = 574268888, u64 = 11137652662201918936}}, {events = 1169829675, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}}, {events = 0, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}}, {events = 0, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}}, {events = 0, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}}, {events = 2062622301, data = {ptr = 0x2cb5bc9dac500a45, fd = -1404040635, u32 = 2890926661, u64 = 3221688493840271941}}, {events = 2603482589, data = {ptr = 0x5753532bc637a910, fd = -969430768, u32 = 3325536528, u64 = 6292464551840950544}}, {events = 519357850, data = {ptr = 0xfcb7ff01b55fd661, fd = -1252010399, u32 = 3042956897, u64 = 18210304001098896993}}, {events = 1109024846, data = {ptr = 0xde8324d63b820659, fd = 998377049, u32 = 998377049, u64 = 16033699600909076057}}, {events = 4235615817, data = {ptr = 0x424dcd8b8a37cd5f, fd = -1976054433, u32 = 2318912863, u64 = 4777700778913025375}}, {events = 1130434410, data = {ptr = 0xebb97015765c3d62, fd = 1985756514, u32 = 1985756514, u64 = 16985730707086916962}}, {events = 3010195951, data = {ptr = 0xd54f025aad4f8e78, fd = -1387295112, u32 = 2907672184, u64 = 15370506641716776568}}, {events = 1503413487, data = {ptr = 0xa5716a58e902ed62, fd = -385684126, u32 = 3909283170, u64 = 11921426618725363042}}, {events = 2418936573, data = {ptr = 0x77933bbc6f0ff3f5, fd = 1863316469, u32 = 1863316469, u64 = 8616296192593097717}}, {events = 4125903830, data = {ptr = 0xf0d186ddf07b6693, fd = -260348269, u32 = 4034619027, u64 = 17352799127015745171}}, {events = 3029670238, data = {ptr = 0x4e1dee417c96425, fd = 399074341, u32 = 399074341, u64 = 351807317144593445}}, {events = 263161723, data = {ptr = 0x3b121f20cb3924ac, fd = -885447508, u32 = 3409519788, u64 = 4256498823527474348}}, {events = 824168656, data = {ptr = 0x7045998839e7458a, fd = 971457930, u32 = 971457930, u64 = 8090041116007024010}}, {events = 53068606, data = {ptr = 0xe5de1ad5eb2f0f0a, fd = -349237494, u32 = 3945729802, u64 = 16563705985591349002}}, {events = 2957172939, data = {ptr = 0xf49424560de4013c, fd = 233046332, u32 = 233046332, u64 = 17623751193826427196}}, {events = 1585166155, data = {ptr = 0x89e8dd2b672410fe, fd = 1730416894, u32 = 1730416894, u64 = 9937435756276748542}}, {events = 570189833, data = {ptr = 0x3441504e0fa53b72, fd = 262486898, u32 = 262486898, u64 = 3765379059658603378}}, {events = 201463638, data = {ptr = 0x80d1d0cfcb5f720c, fd = -882937332, u32 = 3412029964, u64 = 9282429897876140556}}, {events = 1460483676, data = {ptr = 0x87f324cab87b2740, fd = -1199888576, u32 = 3095078720, u64 = 9796214067558033216}}, {events = 1885505598, data = {ptr = 0x61d43a770771f897, fd = 124909719, u32 = 124909719, u64 = 7049323599642097815}}, {events = 2888595330, data = {ptr = 0xda2eb3a26222469b, fd = 1646413467, u32 = 1646413467, u64 = 15721700859209467547}}, {events = 949793030, data = {ptr = 0x45312e40d178ee7d, fd = -780603779, u32 = 3514363517, u64 = 4985817118402997885}}, {events = 3805843978, data = {ptr = 0x490d8f8653436878, fd = 1396926584, u32 = 1396926584, u64 = 5264021346551294072}}, {events = 2841775867, data = {ptr = 0x37c8e45b0db28250, fd = 229802576, u32 = 229802576, u64 = 4019713747151127120}}, {events = 556615668, data = {ptr = 0x508530503a09c928, fd = 973719848, u32 = 973719848, u64 = 5802096816065988904}}, {events = 3898062753, data = {ptr = 0x433c16ba872b145b, fd = -2027219877, u32 = 2267747419, u64 = 4844772289531286619}}, {events = 1632569729, data = {ptr = 0xc787bd3cd22f2b73, fd = -768660621, u32 = 3526306675, u64 = 14377668404325591923}}, {events = 2971345826, data = {ptr = 0x9170f606fc729908, fd = -59598584, u32 = 4235368712, u64 = 10480146842756749576}}, {events = 278733692, data = {ptr = 0xc87269eb684c8d83, fd = 1749847427, u32 = 1749847427, u64 = 14443723414718680451}}, {events = 165150090, data = {ptr = 0x6fc052de31af722, fd = -484772062, u32 = 3810195234, u64 = 503282953000515362}}, {events = 3023946674, data = {ptr = 0xa7e44c603790ae89, fd = 932228745, u32 = 932228745, u64 = 12097878475156795017}}, {events = 4285424560, data = {ptr = 0x187ad7fd16336e7d, fd = 372469373, u32 = 372469373, u64 = 1763959686068137597}}, {events = 285106890, data = {ptr = 0xd8bb3b0df8c0b9ca, fd = -121587254, u32 = 4173380042, u64 = 15617141064031320522}}, {events = 4273669186, data = {ptr = 0xefb41bd1b68aea69, fd = -1232410007, u32 = 3062557289, u64 = 17272461058397366889}}, {events = 217638960, data = {ptr = 0x166d9f583aaafb70, fd = 984284016, u32 = 984284016, u64 = 1616123042586098544}}, {events = 3972134480, data = {ptr = 0x73a96be9cb80ece8, fd = -880743192, u32 = 3414224104, u64 = 8334311237311589608}}, {events = 3033920178, data = {ptr = 0x6390794ab6c6096a, fd = -1228535446, u32 = 3066431850, u64 = 7174367568202172778}}, {events = 1952893229, data = {ptr = 0x7fffb9889ab0, fd = -1182229840, u32 = 3112737456, u64 = 140736306125488}}, {events = 14, data = {ptr = 0x7774656e00000000, fd = 0, u32 = 0, u64 = 8607616310932668416}}, {events = 778793583, data = {ptr = 0xe70065646f63706f, fd = 1868787823, u32 = 1868787823, u64 = 16645415704801276015}}, {events = 684577629, data = {ptr = 0xcd19733c7d0e0a0e, fd = 2098072078, u32 = 2098072078, u64 = 14778970355826297358}}, {events = 3735902171, data = {ptr = 0xf22f05c99098033e, fd = -1869085890, u32 = 2425881406, u64 = 17451173444356408126}}, {events = 3518708530, data = {ptr = 0x85078c90fe730514, fd = -26016492, u32 = 4268950804, u64 = 9585784886253520148}}, {events = 1656905885, data = {ptr = 0x8b16c869ece5b28b, fd = -320490869, u32 = 3974476427, u64 = 10022418378031215243}}, {events = 906907923, data = {ptr = 0x311eaaa066b7e00d, fd = 1723326477, u32 = 1723326477, u64 = 3539453963054604301}}, {events = 3425606648, data = {ptr = 0x29a6e4200894c8b, fd = 8998027, u32 = 8998027, u64 = 187583564245191819}}, {events = 3121929184, data = {ptr = 0x9a61118af45c3901, fd = -195282687, u32 = 4099684609, u64 = 11124191843084679425}}, {events = 2090949663, data = {ptr = 0x12061921147a4709, fd = 343557897, u32 = 343557897, u64 = 1298753172411139849}}, {events = 2460562214, data = {ptr = 0xad626925c6123c32, fd = -971883470, u32 = 3323083826, u64 = 12493663927236967474}}, {events = 41561099, data = {ptr = 0x57b1bc292506bce0, fd = 621198560, u32 = 621198560, u64 = 6319038637078396128}}, {events = 4039597117, data = {ptr = 0x5186824d3ca74b7, fd = -741706569, u32 = 3553260727, u64 = 367157877012067511}}, {events = 3408243300, data = {ptr = 0xf2192794582d9eb, fd = 1166203371, u32 = 1166203371, u64 = 1090313634355272171}}, {events = 3125226313, data = {ptr = 0x44695bd02a41db1e, fd = 708959006, u32 = 708959006, u64 = 4929572216754002718}}, {events = 3554988332, data = {ptr = 0xe780ee7f3f613b00, fd = 1063336704, u32 = 1063336704, u64 = 16681595250071911168}}, {events = 2995475404, data = {ptr = 0xbd11999ba59fc87, fd = -1168507769, u32 = 3126459527, u64 = 851489952596884615}}, {events = 874037494, data = {ptr = 0xad998708e3b05cad, fd = -474981203, u32 = 3819986093, u64 = 12509177912247737517}}, {events = 1735441934, data = {ptr = 0xda0cbb0068503442, fd = 1750086722, u32 = 1750086722, u64 = 15712138810413298754}}, {events = 97807021, data = {ptr = 0x6cbda2cf2c1eda9, fd = -222171735, u32 = 4072795561, u64 = 489724871086042537}}, {events = 761629532, data = {ptr = 0x32e77fb0d2a3ed4a, fd = -761008822, u32 = 3533958474, u64 = 3668040818941488458}}, {events = 725631635, data = {ptr = 0x62d130fda5bd5c80, fd = -1514316672, u32 = 2780650624, u64 = 7120526351814974592}}, {events = 516662458, data = {ptr = 0xeca76463eae2c330, fd = -354237648, u32 = 3940729648, u64 = 17052708894366942000}}, {events = 1502351802, data = {ptr = 0x433455bcaf3d826c, fd = -1354923412, u32 = 2940043884, u64 = 4842589768212382316}}, {events = 2570012949, data = {ptr = 0xdb1ee31dc76955d8, fd = -949398056, u32 = 3345569240, u64 = 15789307060646663640}}, {events = 364359583, data = {ptr = 0x85e92de8750f5250, fd = 1963938384, u32 = 1963938384, u64 = 9649294153037599312}}, {events = 2524958676, data = {ptr = 0x9997faf34c2ac1d7, fd = 1277870551, u32 = 1277870551, u64 = 11067590532148150743}}, {events = 85065497, data = {ptr = 0xc6a7befafc71f599, fd = -59640423, u32 = 4235326873, u64 = 14314619925806839193}}, {events = 2223298534, data = {ptr = 0x680e5cbf5505ec03, fd = 1426451459, u32 = 1426451459, u64 = 7498032406453414915}}, {events = 3976568003, data = {ptr = 0xc1575e013a326fa4, fd = 976383908, u32 = 976383908, u64 = 13931707331658280868}}, {events = 1435753488, data = {ptr = 0x1bb39b7cb6b9a380, fd = -1229347968, u32 = 3065619328, u64 = 1996110019799131008}}, {events = 3564118425, data = {ptr = 0x2b3328e606208c38, fd = 102796344, u32 = 102796344, u64 = 3112876735853530168}}, {events = 1714294801, data = {ptr = 0xcc75e18a2df8369e, fd = 771241630, u32 = 771241630, u64 = 14732929739605423774}}, {events = 3400679213, data = {ptr = 0x17d640f0dab5bf93, fd = -625623149, u32 = 3669344147, u64 = 1717631711094095763}}, {events = 2056233915, data = {ptr = 0x803908a4cbcfab2d, fd = -875582675, u32 = 3419384621, u64 = 9239425614414326573}}, {events = 2381564762, data = {ptr = 0xf8bf2941eab9b2a8, fd = -356928856, u32 = 3938038440, u64 = 17924090405045514920}}, {events = 2334715958, data = {ptr = 0x7dccab0e774b0663, fd = 2001405539, u32 = 2001405539, u64 = 9064808228609263203}}, {events = 4282308294, data = {ptr = 0xe025d34dc3054979, fd = -1023063687, u32 = 3271903609, u64 = 16151547969571998073}}, {events = 1967248407, data = {ptr = 0x5e08c0b614621b55, fd = 341973845, u32 = 341973845, u64 = 6775877527637465941}}, {events = 580079400, data = {ptr = 0x2e0e14970fbb93e9, fd = 263951337, u32 = 263951337, u64 = 3318612614455202793}}, {events = 1251170943, data = {ptr = 0xd57014bde927d3fe, fd = -383265794, u32 = 3911701502, u64 = 15379815533363319806}}, {events = 1151154807, data = {ptr = 0x83a9539ff285ce9f, fd = -226111841, u32 = 4068855455, u64 = 9487206036466421407}}, {events = 1898761553, data = {ptr = 0x864513f3e43e90da, fd = -465661734, u32 = 3829305562, u64 = 9675161312702664922}}, {events = 3156241121, data = {ptr = 0x6bb3b15cbde566e7, fd = -1109039385, u32 = 3185927911, u64 = 7760741594770532071}}, {events = 4071531857, data = {ptr = 0xe2fa1f5a17711665, fd = 393287269, u32 = 393287269, u64 = 16355419468550182501}}, {events = 2753917540, data = {ptr = 0xf8480a4f2a57bc0e, fd = 710392846, u32 = 710392846, u64 = 17890560854858382350}}, {events = 3985772862, data = {ptr = 0xe6a95174510e5eeb, fd = 1359896299, u32 = 1359896299, u64 = 16620905459805478635}}, {events = 2198662523, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}}, {events = 0, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}} <repeats 26 times>}
+        timeout = -1
+        num_events = <optimized out>
+        check_timers = <optimized out>
+#2  0x0000555555f1bfbc in boost::asio::detail::scheduler::do_run_one (this=0x61100540d840, lock=..., this_thread=..., ec=...) at /usr/include/boost/asio/detail/impl/scheduler.ipp:465
+        on_exit = {scheduler_ = 0x61100540d840, lock_ = 0x7fffb9622100, this_thread_ = 0x7fffb9622060}
+        o = <optimized out>
+        more_handlers = <optimized out>
+#3  0x0000555555f1b296 in boost::asio::detail::scheduler::run (this=<optimized out>, ec=...) at /usr/include/boost/asio/detail/impl/scheduler.ipp:204
+        this_thread = {<boost::asio::detail::thread_info_base> = {<boost::asio::detail::noncopyable> = {<No data fields>}, reusable_memory_ = {0x0, 0x0, 0x0}, has_pending_exception_ = 0, pending_exception_ = {_M_exception_object = 0x0}}, private_op_queue = {<boost::asio::detail::noncopyable> = {<No data fields>}, front_ = 0x0, back_ = 0x0}, private_outstanding_work = 0}
+        ctx = {<boost::asio::detail::noncopyable> = {<No data fields>}, key_ = 0x61100540d840, value_ = 0x7fffb9622060, next_ = 0x0}
+        lock = {<boost::asio::detail::noncopyable> = {<No data fields>}, mutex_ = @0x61100540d870, locked_ = false}
+        n = 78854
+#4  0x0000555555f3cf0c in boost::asio::io_context::run (this=<optimized out>) at /usr/include/boost/asio/impl/io_context.ipp:63
+        ec = {val_ = 0, failed_ = false, cat_ = 0x555559ecf4d8 <boost::system::detail::cat_holder<void>::system_category_instance>}
+        s = <optimized out>
+#5  Acore::Asio::IoContext::run (this=<optimized out>) at /opt/wotlk_prod/src/common/Asio/IoContext.h:38
+No locals.
+#6  0x00005555586b9830 in NetworkThread<WorldSocket>::Run (this=<optimized out>) at /opt/wotlk_prod/src/server/shared/Network/NetworkThread.h:184
+No locals.
+#7  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#8  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488342656, -1898729008178524640, 140736328775232, 0, 140737334417360, 140737488343008, 1898594634285321760, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#9  0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 17 (Thread 0x7fffc17ea640 (LWP 29048) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555acd1f38 <MapMgr::instance()::instance+376>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555acd1e98 <MapMgr::instance()::instance+216>, cond=0x55555acd1f10 <MapMgr::instance()::instance+336>) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffc17e9bd0, __canceltype = -1048667168, __prev = 0x0}
+        cbuffer = {wseq = 177750, cond = 0x55555acd1f10 <MapMgr::instance()::instance+336>, mutex = 0x55555acd1e98 <MapMgr::instance()::instance+216>, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 177750
+        seq = 88875
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x55555acd1f10 <MapMgr::instance()::instance+336>, mutex=0x55555acd1e98 <MapMgr::instance()::instance+216>) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x00005555583d6960 in std::condition_variable::wait<ProducerConsumerQueue<UpdateRequest*>::WaitAndPop(UpdateRequest*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<UpdateRequest*>::WaitAndPop(UpdateRequest*&)::{lambda()#1}) (this=0x55555acd1f38 <MapMgr::instance()::instance+376>, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<UpdateRequest*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x55555acd1e98 <MapMgr::instance()::instance+216>, _M_owns = true}
+#7  0x00005555583d54b1 in MapUpdater::WorkerThread (this=0x55555acd1e98 <MapMgr::instance()::instance+216>) at /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:154
+        request = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488275648, -1898729008178524640, 140736439690816, 0, 140737334417360, 140737488276000, 1898793891239956000, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 16 (Thread 0x7fffc35fd640 (LWP 29047) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555acd1f38 <MapMgr::instance()::instance+376>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555acd1e98 <MapMgr::instance()::instance+216>, cond=0x55555acd1f10 <MapMgr::instance()::instance+336>) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffc35fcbd0, __canceltype = -1017132064, __prev = 0x0}
+        cbuffer = {wseq = 177752, cond = 0x55555acd1f10 <MapMgr::instance()::instance+336>, mutex = 0x55555acd1e98 <MapMgr::instance()::instance+216>, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 177752
+        seq = 88876
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x55555acd1f10 <MapMgr::instance()::instance+336>, mutex=0x55555acd1e98 <MapMgr::instance()::instance+216>) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x00005555583d6960 in std::condition_variable::wait<ProducerConsumerQueue<UpdateRequest*>::WaitAndPop(UpdateRequest*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<UpdateRequest*>::WaitAndPop(UpdateRequest*&)::{lambda()#1}) (this=0x55555acd1f38 <MapMgr::instance()::instance+376>, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<UpdateRequest*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x55555acd1e98 <MapMgr::instance()::instance+216>, _M_owns = true}
+#7  0x00005555583d54b1 in MapUpdater::WorkerThread (this=0x55555acd1e98 <MapMgr::instance()::instance+216>) at /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:154
+        request = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488275648, -1898729008178524640, 140736471225920, 0, 140737334417360, 140737488276000, 1898789208114990624, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 15 (Thread 0x7fffc4907640 (LWP 29046) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555acd1f38 <MapMgr::instance()::instance+376>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555acd1e98 <MapMgr::instance()::instance+216>, cond=0x55555acd1f10 <MapMgr::instance()::instance+336>) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffc4906bd0, __canceltype = -997168160, __prev = 0x0}
+        cbuffer = {wseq = 177748, cond = 0x55555acd1f10 <MapMgr::instance()::instance+336>, mutex = 0x55555acd1e98 <MapMgr::instance()::instance+216>, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 177748
+        seq = 88874
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x55555acd1f10 <MapMgr::instance()::instance+336>, mutex=0x55555acd1e98 <MapMgr::instance()::instance+216>) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x00005555583d6960 in std::condition_variable::wait<ProducerConsumerQueue<UpdateRequest*>::WaitAndPop(UpdateRequest*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<UpdateRequest*>::WaitAndPop(UpdateRequest*&)::{lambda()#1}) (this=0x55555acd1f38 <MapMgr::instance()::instance+376>, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<UpdateRequest*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x55555acd1e98 <MapMgr::instance()::instance+216>, _M_owns = true}
+#7  0x00005555583d54b1 in MapUpdater::WorkerThread (this=0x55555acd1e98 <MapMgr::instance()::instance+216>) at /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:154
+        request = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488275648, -1898729008178524640, 140736491189824, 0, 140737334417360, 140737488276000, 1898783078122917408, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 14 (Thread 0x7fffc5108640 (LWP 29045) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555acd1f38 <MapMgr::instance()::instance+376>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555acd1e98 <MapMgr::instance()::instance+216>, cond=0x55555acd1f10 <MapMgr::instance()::instance+336>) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffc5107bd0, __canceltype = -988775456, __prev = 0x0}
+        cbuffer = {wseq = 177746, cond = 0x55555acd1f10 <MapMgr::instance()::instance+336>, mutex = 0x55555acd1e98 <MapMgr::instance()::instance+216>, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 177746
+        seq = 88873
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x55555acd1f10 <MapMgr::instance()::instance+336>, mutex=0x55555acd1e98 <MapMgr::instance()::instance+216>) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x00005555583d6960 in std::condition_variable::wait<ProducerConsumerQueue<UpdateRequest*>::WaitAndPop(UpdateRequest*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<UpdateRequest*>::WaitAndPop(UpdateRequest*&)::{lambda()#1}) (this=0x55555acd1f38 <MapMgr::instance()::instance+376>, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<UpdateRequest*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x55555acd1e98 <MapMgr::instance()::instance+216>, _M_owns = true}
+#7  0x00005555583d54b1 in MapUpdater::WorkerThread (this=0x55555acd1e98 <MapMgr::instance()::instance+216>) at /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:154
+        request = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488275648, -1898729008178524640, 140736499582528, 0, 140737334417360, 140737488276000, 1898784177097674272, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 13 (Thread 0x7fffd6b67640 (LWP 29044) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555acd1f38 <MapMgr::instance()::instance+376>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555acd1e98 <MapMgr::instance()::instance+216>, cond=0x55555acd1f10 <MapMgr::instance()::instance+336>) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffd6b66bd0, __canceltype = -692687904, __prev = 0x0}
+        cbuffer = {wseq = 177754, cond = 0x55555acd1f10 <MapMgr::instance()::instance+336>, mutex = 0x55555acd1e98 <MapMgr::instance()::instance+216>, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 177754
+        seq = 88877
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x55555acd1f10 <MapMgr::instance()::instance+336>, mutex=0x55555acd1e98 <MapMgr::instance()::instance+216>) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x00005555583d6960 in std::condition_variable::wait<ProducerConsumerQueue<UpdateRequest*>::WaitAndPop(UpdateRequest*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<UpdateRequest*>::WaitAndPop(UpdateRequest*&)::{lambda()#1}) (this=0x55555acd1f38 <MapMgr::instance()::instance+376>, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<UpdateRequest*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x55555acd1e98 <MapMgr::instance()::instance+216>, _M_owns = true}
+#7  0x00005555583d54b1 in MapUpdater::WorkerThread (this=0x55555acd1e98 <MapMgr::instance()::instance+216>) at /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:154
+        request = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488275648, -1898729008178524640, 140736795670080, 0, 140737334417360, 140737488276000, 1898814156506271264, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 12 (Thread 0x7fffda7bf640 (LWP 29043) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x55555acd1f38 <MapMgr::instance()::instance+376>) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55555acd1f38 <MapMgr::instance()::instance+376>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x55555acd1e98 <MapMgr::instance()::instance+216>, cond=0x55555acd1f10 <MapMgr::instance()::instance+336>) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffda7bebd0, __canceltype = -629412896, __prev = 0x0}
+        cbuffer = {wseq = 177756, cond = 0x55555acd1f10 <MapMgr::instance()::instance+336>, mutex = 0x55555acd1e98 <MapMgr::instance()::instance+216>, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 177756
+        seq = 88878
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x55555acd1f10 <MapMgr::instance()::instance+336>, mutex=0x55555acd1e98 <MapMgr::instance()::instance+216>) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x00005555583d6960 in std::condition_variable::wait<ProducerConsumerQueue<UpdateRequest*>::WaitAndPop(UpdateRequest*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<UpdateRequest*>::WaitAndPop(UpdateRequest*&)::{lambda()#1}) (this=0x55555acd1f38 <MapMgr::instance()::instance+376>, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<UpdateRequest*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x55555acd1e98 <MapMgr::instance()::instance+216>, _M_owns = true}
+#7  0x00005555583d54b1 in MapUpdater::WorkerThread (this=0x55555acd1e98 <MapMgr::instance()::instance+216>) at /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:154
+        request = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488275648, -1898729008178524640, 140736858945088, 0, 140737334417360, 140737488276000, 1898804840722206240, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 11 (Thread 0x7fffe304b640 (LWP 29039) "worldserver"):
+#0  0x00007ffff6d827f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7fffcb495020, rem=0x7fffcb495020) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        r = <optimized out>
+#1  0x00007ffff6d87677 in __GI___nanosleep (req=<optimized out>, rem=<optimized out>) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+        ret = <optimized out>
+#2  0x000055555754dcab in std::this_thread::sleep_for<long, std::ratio<1l, 1000l> > (__rtime=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/this_thread_sleep.h:82
+        __s = {__r = 0}
+        __ns = {__r = 25000000}
+        __ts = <optimized out>
+#3  AuctionHouseWorkerThread::Run (this=0x6130009febc0) at /opt/wotlk_prod/src/server/game/AuctionHouse/AuctionHouseSearcher.cpp:48
+No locals.
+#4  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#5  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488275456, -1898729008178524640, 140737002124864, 0, 140737334417360, 140737488275808, 1898718110300114464, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#6  0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 10 (Thread 0x7fffe82af640 (LWP 29025) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000590) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x60f000000590) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x60f000000590, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x60f0000004f0, cond=0x60f000000568) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffe82aebb0, __canceltype = 972784, __prev = 0x0}
+        cbuffer = {wseq = 2, cond = 0x60f000000568, mutex = 0x60f0000004f0, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 2
+        seq = 1
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x60f000000568, mutex=0x60f0000004f0) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x0000555559020610 in std::condition_variable::wait<ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}) (this=0x60f000000590, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<SQLOperation*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x60f0000004f0, _M_owns = true}
+#7  0x0000555559020042 in DatabaseWorker::WorkerThread (this=0x6030000ed340) at /opt/wotlk_prod/src/server/database/Database/DatabaseWorker.cpp:43
+        operation = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488341408, -1898729008178524640, 140737088517696, 0, 140737334417360, 140737488341760, 1898703007047618080, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 9 (Thread 0x7fffe95b9640 (LWP 29024) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000594) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x60f000000594) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x60f000000594, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x60f0000004f0, cond=0x60f000000568) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffe95b8bb0, __canceltype = -394555392, __prev = 0x0}
+        cbuffer = {wseq = 5, cond = 0x60f000000568, mutex = 0x60f0000004f0, private = 0}
+        err = <optimized out>
+        g = 1
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 5
+        seq = 2
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x60f000000568, mutex=0x60f0000004f0) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x0000555559020610 in std::condition_variable::wait<ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}) (this=0x60f000000594, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<SQLOperation*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x60f0000004f0, _M_owns = true}
+#7  0x00005555590201ed in DatabaseWorker::WorkerThread (this=0x6030000e4ee0) at /opt/wotlk_prod/src/server/database/Database/DatabaseWorker.cpp:43
+        operation = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488341408, -1898729008178524640, 140737108481600, 0, 140737334417360, 140737488341760, 1898705613019024928, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 8 (Thread 0x7fffea8c3640 (LWP 29023) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000680) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x60f000000680) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x60f000000680, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x60f0000005e0, cond=0x60f000000658) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffea8c2bb0, __canceltype = 14285791, __prev = 0x0}
+        cbuffer = {wseq = 5826, cond = 0x60f000000658, mutex = 0x60f0000005e0, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 5826
+        seq = 2913
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x60f000000658, mutex=0x60f0000005e0) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x0000555559020610 in std::condition_variable::wait<ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}) (this=0x60f000000680, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<SQLOperation*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x60f0000005e0, _M_owns = true}
+#7  0x00005555590201ed in DatabaseWorker::WorkerThread (this=0x6030000ce7d0) at /opt/wotlk_prod/src/server/database/Database/DatabaseWorker.cpp:43
+        operation = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488341408, -1898729008178524640, 140737128445504, 0, 140737334417360, 140737488341760, 1898699483026951712, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 7 (Thread 0x7fffebbcd640 (LWP 29022) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000680) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x60f000000680) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x60f000000680, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x60f0000005e0, cond=0x60f000000658) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffebbccbb0, __canceltype = -354334720, __prev = 0x0}
+        cbuffer = {wseq = 5822, cond = 0x60f000000658, mutex = 0x60f0000005e0, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 5822
+        seq = 2911
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x60f000000658, mutex=0x60f0000005e0) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x0000555559020610 in std::condition_variable::wait<ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}) (this=0x60f000000680, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<SQLOperation*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x60f0000005e0, _M_owns = true}
+#7  0x00005555590201ed in DatabaseWorker::WorkerThread (this=0x6030000c6370) at /opt/wotlk_prod/src/server/database/Database/DatabaseWorker.cpp:43
+        operation = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488341408, -1898729008178524640, 140737148409408, 0, 140737334417360, 140737488341760, 1898702097588293152, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 6 (Thread 0x7fffeced7640 (LWP 29021) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000680) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x60f000000680) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x60f000000680, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x60f0000005e0, cond=0x60f000000658) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffeced6bb0, __canceltype = 14285767, __prev = 0x0}
+        cbuffer = {wseq = 5824, cond = 0x60f000000658, mutex = 0x60f0000005e0, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 5824
+        seq = 2912
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x60f000000658, mutex=0x60f0000005e0) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x0000555559020610 in std::condition_variable::wait<ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}) (this=0x60f000000680, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<SQLOperation*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x60f0000005e0, _M_owns = true}
+#7  0x00005555590201ed in DatabaseWorker::WorkerThread (this=0x6030000be6f0) at /opt/wotlk_prod/src/server/database/Database/DatabaseWorker.cpp:43
+        operation = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488341408, -1898729008178524640, 140737168373312, 0, 140737334417360, 140737488341760, 1898695898876743200, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 5 (Thread 0x7fffee1e1640 (LWP 29020) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000774) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x60f000000774) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x60f000000774, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x60f0000006d0, cond=0x60f000000748) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffee1e0bb0, __canceltype = -314198016, __prev = 0x0}
+        cbuffer = {wseq = 413, cond = 0x60f000000748, mutex = 0x60f0000006d0, private = 0}
+        err = <optimized out>
+        g = 1
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 413
+        seq = 206
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x60f000000748, mutex=0x60f0000006d0) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x0000555559020610 in std::condition_variable::wait<ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}) (this=0x60f000000774, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<SQLOperation*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x60f0000006d0, _M_owns = true}
+#7  0x00005555590201ed in DatabaseWorker::WorkerThread (this=0x6030000a8e80) at /opt/wotlk_prod/src/server/database/Database/DatabaseWorker.cpp:43
+        operation = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488341408, -1898729008178524640, 140737188337216, 0, 140737334417360, 140737488341760, 1898689708755127840, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 4 (Thread 0x7fffef4eb640 (LWP 29019) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x60f000000774) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x60f000000774) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x60f000000774, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x60f0000006d0, cond=0x60f000000748) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7fffef4eabb0, __canceltype = 1523447744, __prev = 0x0}
+        cbuffer = {wseq = 415, cond = 0x60f000000748, mutex = 0x60f0000006d0, private = 0}
+        err = <optimized out>
+        g = 1
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 415
+        seq = 207
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x60f000000748, mutex=0x60f0000006d0) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x0000555559020610 in std::condition_variable::wait<ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}>(std::unique_lock<std::mutex>&, ProducerConsumerQueue<SQLOperation*>::WaitAndPop(SQLOperation*&)::{lambda()#1}) (this=0x60f000000774, __lock=..., __p=...) at /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable:103
+No locals.
+#6  ProducerConsumerQueue<SQLOperation*>::WaitAndPop (this=<optimized out>, value=<optimized out>) at /opt/wotlk_prod/src/common/Threading/PCQueue.h:76
+        lock = {_M_device = 0x60f0000006d0, _M_owns = true}
+#7  0x00005555590201ed in DatabaseWorker::WorkerThread (this=0x603000092650) at /opt/wotlk_prod/src/server/database/Database/DatabaseWorker.cpp:43
+        operation = 0x0
+#8  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#9  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488341408, -1898729008178524640, 140737208301120, 0, 140737334417360, 140737488341760, 1898692323316469280, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#10 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 3 (Thread 0x7ffff12fe640 (LWP 29018) "worldserver"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x61100000175c) at ./nptl/futex-internal.c:57
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x61100000175c) at ./nptl/futex-internal.c:87
+        err = <optimized out>
+        clockbit = 256
+        op = 393
+        err = <optimized out>
+        clockbit = <optimized out>
+        op = <optimized out>
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x61100000175c, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+No locals.
+#3  0x00007ffff6d30a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x6110000016f8, cond=0x611000001730) at ./nptl/pthread_cond_wait.c:503
+        spin = 0
+        buffer = {__routine = 0x7ffff6d30720 <__condvar_cleanup_waiting>, __arg = 0x7ffff12fda50, __canceltype = 14102592, __prev = 0x0}
+        cbuffer = {wseq = 1911, cond = 0x611000001730, mutex = 0x6110000016f8, private = 0}
+        err = <optimized out>
+        g = 1
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = 1911
+        seq = 955
+        private = 0
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        done = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        s = <optimized out>
+#4  ___pthread_cond_wait (cond=0x611000001730, mutex=0x6110000016f8) at ./nptl/pthread_cond_wait.c:627
+No locals.
+#5  0x0000555555f1c3a9 in boost::asio::detail::posix_event::wait<boost::asio::detail::conditionally_enabled_mutex::scoped_lock> (this=0x7ffff12fdb98, lock=...) at /usr/include/boost/asio/detail/posix_event.hpp:119
+No locals.
+#6  boost::asio::detail::conditionally_enabled_event::wait (this=0x7ffff12fdb90, lock=...) at /usr/include/boost/asio/detail/conditionally_enabled_event.hpp:97
+No locals.
+#7  boost::asio::detail::scheduler::do_run_one (this=0x6110000016c0, lock=..., this_thread=..., ec=...) at /usr/include/boost/asio/detail/impl/scheduler.ipp:490
+No locals.
+#8  0x0000555555f1b296 in boost::asio::detail::scheduler::run (this=<optimized out>, ec=...) at /usr/include/boost/asio/detail/impl/scheduler.ipp:204
+        this_thread = {<boost::asio::detail::thread_info_base> = {<boost::asio::detail::noncopyable> = {<No data fields>}, reusable_memory_ = {0x0, 0x0, 0x0}, has_pending_exception_ = 0, pending_exception_ = {_M_exception_object = 0x0}}, private_op_queue = {<boost::asio::detail::noncopyable> = {<No data fields>}, front_ = 0x0, back_ = 0x0}, private_outstanding_work = 0}
+        ctx = {<boost::asio::detail::noncopyable> = {<No data fields>}, key_ = 0x6110000016c0, value_ = 0x7fffef7f5060, next_ = 0x0}
+        lock = {<boost::asio::detail::noncopyable> = {<No data fields>}, mutex_ = @0x6110000016f0, locked_ = true}
+        n = 871
+#9  0x0000555555f3cf0c in boost::asio::io_context::run (this=<optimized out>) at /usr/include/boost/asio/impl/io_context.ipp:63
+        ec = {val_ = 0, failed_ = false, cat_ = 0x555559ecf4d8 <boost::system::detail::cat_holder<void>::system_category_instance>}
+        s = <optimized out>
+#10 Acore::Asio::IoContext::run (this=<optimized out>) at /opt/wotlk_prod/src/common/Asio/IoContext.h:38
+No locals.
+#11 0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#12 0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488343200, -1898729008178524640, 140737239836224, 17, 140737334417360, 140737488343552, 1898758008935681568, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#13 0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 2 (Thread 0x7ffff1aff640 (LWP 29017) "worldserver"):
+#0  0x00007ffff6dc2e2e in epoll_wait (epfd=7, events=0x7ffff0559020, maxevents=128, timeout=-1) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+        sc_ret = -4
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+#1  0x0000555555f1d907 in boost::asio::detail::epoll_reactor::run (this=<optimized out>, usec=<optimized out>, ops=...) at /usr/include/boost/asio/detail/impl/epoll_reactor.ipp:471
+        events = {{events = 1, data = {ptr = 0x611000014328, fd = 82728, u32 = 82728, u64 = 106721347453736}}, {events = 0, data = {ptr = 0x0, fd = 0, u32 = 0, u64 = 0}} <repeats 127 times>}
+        timeout = -1
+        num_events = <optimized out>
+        check_timers = <optimized out>
+#2  0x0000555555f1bfbc in boost::asio::detail::scheduler::do_run_one (this=0x6110000016c0, lock=..., this_thread=..., ec=...) at /usr/include/boost/asio/detail/impl/scheduler.ipp:465
+        on_exit = {scheduler_ = 0x6110000016c0, lock_ = 0x7ffff02fe100, this_thread_ = 0x7ffff02fe060}
+        o = <optimized out>
+        more_handlers = <optimized out>
+#3  0x0000555555f1b296 in boost::asio::detail::scheduler::run (this=<optimized out>, ec=...) at /usr/include/boost/asio/detail/impl/scheduler.ipp:204
+        this_thread = {<boost::asio::detail::thread_info_base> = {<boost::asio::detail::noncopyable> = {<No data fields>}, reusable_memory_ = {0x0, 0x0, 0x0}, has_pending_exception_ = 0, pending_exception_ = {_M_exception_object = 0x0}}, private_op_queue = {<boost::asio::detail::noncopyable> = {<No data fields>}, front_ = 0x0, back_ = 0x0}, private_outstanding_work = 0}
+        ctx = {<boost::asio::detail::noncopyable> = {<No data fields>}, key_ = 0x6110000016c0, value_ = 0x7ffff02fe060, next_ = 0x0}
+        lock = {<boost::asio::detail::noncopyable> = {<No data fields>}, mutex_ = @0x6110000016f0, locked_ = false}
+        n = 875
+#4  0x0000555555f3cf0c in boost::asio::io_context::run (this=<optimized out>) at /usr/include/boost/asio/impl/io_context.ipp:63
+        ec = {val_ = 0, failed_ = false, cat_ = 0x555559ecf4d8 <boost::system::detail::cat_holder<void>::system_category_instance>}
+        s = <optimized out>
+#5  Acore::Asio::IoContext::run (this=<optimized out>) at /opt/wotlk_prod/src/common/Asio/IoContext.h:38
+No locals.
+#6  0x00007ffff70a9253 in ?? () from /lib/x86_64-linux-gnu/libstdc++.so.6
+No symbol table info available.
+#7  0x00007ffff6d31ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+        ret = <optimized out>
+        pd = <optimized out>
+        out = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140737488343200, -1898729008178524640, 140737248228928, 17, 140737334417360, 140737488343552, 1898759107910438432, 1898744022278082080}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#8  0x00007ffff6dc3850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+No locals.
+
+Thread 1 (Thread 0x7ffff4a2b7c0 (LWP 29014) "worldserver"):
+#0  0x0000555558cebd8a in CalendarMgr::RemovePlayerGuildEventsAndSignups (this=0x55555acdbfe0 <CalendarMgr::instance()::instance>, guid=..., guildId=225) at /opt/wotlk_prod/src/server/game/Calendar/CalendarMgr.cpp:297
+        itr = {<std::__detail::_Node_iterator_base<CalendarEvent*, false>> = {_M_cur = 0x25875}, <No data fields>}
+        playerInvites = <optimized out>
+#1  0x000055555813cc62 in Guild::HandleLeaveMember (this=<optimized out>, session=<optimized out>) at /opt/wotlk_prod/src/server/game/Guilds/Guild.cpp:1534
+        player = 0x628000e98100
+        disband = <optimized out>
+#2  0x0000555558dc8c10 in WorldSession::HandleGuildLeaveOpcode (this=<optimized out>) at /opt/wotlk_prod/src/server/game/Handlers/GuildHandler.cpp:121
+        guild = 0x4b0f
+#3  0x00005555588d9665 in PacketHandler<WorldPackets::Guild::GuildLeave, &WorldSession::HandleGuildLeaveOpcode>::Call (this=<optimized out>, session=<optimized out>, packet=...) at /opt/wotlk_prod/src/server/game/Server/Protocol/Opcodes.cpp:35
+        nicePacket = {<WorldPackets::ClientPacket> = {<WorldPackets::Packet> = {_vptr$Packet = 0x55555a093820 <vtable for WorldPackets::Guild::GuildLeave+16>, _worldPacket = {<ByteBuffer> = {_vptr$ByteBuffer = 0x555559ed2ab8 <vtable for WorldPacket+16>, static DEFAULT_SIZE = 4096, _rpos = 0, _wpos = 0, _storage = std::vector of length 0, capacity 0}, m_opcode = 141, m_receivedTime = {__d = {__r = 0}}}}, <No data fields>}, <No data fields>}
+#4  0x00005555586565d6 in WorldSession::Update (this=<optimized out>, diff=<optimized out>, updater=...) at /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:360
+        opcode = <optimized out>
+        __ac_metric_stop_watch330 = {_logger = {opHandle = @0x7ffff31762c0}, _startTime = {__d = {__r = 0}}}
+        opHandle = 0x60300524bae0
+        ihe = <optimized out>
+        ihe = <optimized out>
+        pamce = <optimized out>
+        packet = 0x606006fba560
+        deletePacket = true
+        requeuePackets = std::vector of length 0, capacity 0
+        processedPackets = 0
+        currentTime = <optimized out>
+        MAX_PROCESSED_PACKETS_IN_SAME_WORLDSESSION_UPDATE = <optimized out>
+#5  0x0000555558c8b939 in World::UpdateSessions (this=<optimized out>, diff=<optimized out>) at /opt/wotlk_prod/src/server/game/World/World.cpp:2848
+        updater = {<PacketFilter> = {_vptr$PacketFilter = 0x55555a08e890 <vtable for WorldSessionFilter+16>, m_pSession = 0x61900b058680}, <No data fields>}
+        __ac_metric_stop_watch2846 = {_logger = {currentSessionId = @0x7ffff2c76580}, _startTime = {__d = {__r = 0}}}
+        pSession = 0x10000
+        currentSessionId = <optimized out>
+        itr = {<std::__detail::_Node_iterator_base<std::pair<unsigned int const, WorldSession*>, false>> = {_M_cur = 0x6030054a8d60}, <No data fields>}
+        next = {<std::__detail::_Node_iterator_base<std::pair<unsigned int const, WorldSession*>, false>> = {_M_cur = 0x6030066fefe0}, <No data fields>}
+        currTime = <optimized out>
+#6  0x0000555558c7826b in World::Update (this=<optimized out>, diff=<optimized out>) at /opt/wotlk_prod/src/server/game/World/World.cpp:2373
+        __ac_metric_stop_watch2280 = {_logger = {<No data fields>}, _startTime = {__d = {__r = 0}}}
+        __ac_metric_stop_watch2372 = {_logger = {<No data fields>}, _startTime = {__d = {__r = 0}}}
+        currentGameTime = {__r = 1739913131}
+#7  0x0000555555ef2615 in WorldUpdateLoop () at /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:586
+        diff = 17
+        minUpdateDiff = 1
+        realCurrTime = 95636
+        realPrevTime = 95619
+        maxCoreStuckTime = 0
+        halfMaxCoreStuckTime = 4294967295
+#8  0x0000555555ee367b in main (argc=<optimized out>, argv=<optimized out>) at /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:398
+        configFile = filesystem::path "../etc/worldserver.conf"Python Exception <class 'gdb.error'>: No type named std::filesystem::__cxx11::path::_Cmpt.
+
+        configService = ""
+        vm = <incomplete type>
+        ioContext = warning: 52540.711381 RTTI symbol not found for class 'std::_Sp_counted_ptr_inplace<Acore::Asio::IoContext, std::allocator<Acore::Asio::IoContext>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52540.711397 RTTI symbol not found for class 'std::_Sp_counted_ptr_inplace<Acore::Asio::IoContext, std::allocator<Acore::Asio::IoContext>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<Acore::Asio::IoContext> (use count 4, weak count 0) = {get() = 0x603000029f90}
+        opensslHandle = warning: 52540.712727 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_5, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52540.712738 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_5, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<void> (use count 1, weak count 0) = {get() = 0x0}
+        seed = {_bn = 0x6030000453d0}
+        pidFile = ""
+        signals = {impl_ = {service_ = 0x616000000f80, implementation_ = {queue_ = {<boost::asio::detail::noncopyable> = {<No data fields>}, front_ = 0x60b00001e020, back_ = 0x60b00001e020}, signals_ = 0x60400002ad10}, executor_ = {<boost::asio::execution::detail::any_executor_base> = {object_ = {__data = "\220\237\002\000\060`\000\000\000\000\000\000\000\000\000", __align = {<No data fields>}}, object_fns_ = 0x555559ecfc38 <boost::asio::execution::detail::any_executor_base::object_fns_table<boost::asio::io_context::basic_executor_type<std::allocator<void>, 0u> >(std::enable_if<(!is_same<boost::asio::io_context::basic_executor_type<std::allocator<void>, 0u>, void>::value)&&(!is_same<boost::asio::io_context::basic_executor_type<std::allocator<void>, 0u>, std::shared_ptr<void> >::value), void>::type*)::fns>, target_ = 0x7ffff3100900, target_fns_ = 0x555559ecfbd8 <boost::asio::execution::detail::any_executor_base::target_fns_table<boost::asio::io_context::basic_executor_type<std::allocator<void>, 0u> >(bool, std::enable_if<!is_same<boost::asio::io_context::basic_executor_type<std::allocator<void>, 0u>, void>::value, void>::type*)::fns_with_execute>}, <boost::asio::execution::detail::any_executor_context<boost::asio::execution::any_executor<boost::asio::execution::context_as_t<boost::asio::execution_context &>, boost::asio::execution::detail::blocking::never_t<0>, boost::asio::execution::prefer_only<boost::asio::execution::detail::blocking::possibly_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::tracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::untracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::fork_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::continuation_t<0> > >, boost::asio::execution::detail::supportable_properties<0UL, void (boost::asio::execution::context_as_t<boost::asio::execution_context &>, boost::asio::execution::detail::blocking::never_t<0>, boost::asio::execution::prefer_only<boost::asio::execution::detail::blocking::possibly_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::tracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::untracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::fork_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::continuation_t<0> >)>::find_context_as_property, void>> = {<No data fields>}, prop_fns_ = 0x555559ecfc60 <boost::asio::execution::any_executor<boost::asio::execution::context_as_t<boost::asio::execution_context&>, boost::asio::execution::detail::blocking::never_t<0>, boost::asio::execution::prefer_only<boost::asio::execution::detail::blocking::possibly_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::tracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::outstanding_work::untracked_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::fork_t<0> >, boost::asio::execution::prefer_only<boost::asio::execution::detail::relationship::continuation_t<0> > >::prop_fns_table<boost::asio::io_context::basic_executor_type<std::allocator<void>, 0u> >()::fns>}}}
+        threadPool = warning: 52540.865505 RTTI symbol not found for class 'std::_Sp_counted_deleter<std::vector<std::thread, std::allocator<std::thread> >*, main::$_6, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52540.865521 RTTI symbol not found for class 'std::_Sp_counted_deleter<std::vector<std::thread, std::allocator<std::thread> >*, main::$_6, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<std::vector<std::thread, std::allocator<std::thread> >> (use count 1, weak count 0) = {get() = 0x60300005e660}
+        sScriptMgrHandle = warning: 52540.866099 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_8, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52540.866108 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_8, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<void> (use count 1, weak count 0) = {get() = 0x0}
+        dbHandle = warning: 52540.866613 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_9, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52540.866621 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_9, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<void> (use count 1, weak count 0) = {get() = 0x0}
+        sMetricHandle = warning: 52540.867119 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_10, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52540.867128 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_10, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<void> (use count 1, weak count 0) = {get() = 0x0}
+        mapManagementHandle = warning: 52540.867602 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_11, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52540.867610 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_11, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<void> (use count 1, weak count 0) = {get() = 0x0}
+        raAcceptor = std::unique_ptr<AsyncAcceptor> = {get() = 0x0}
+        soapThread = std::shared_ptr<std::thread> (empty) = {get() = 0x0}
+        worldListener = "0.0.0.0"
+        sWorldSocketMgrHandle = warning: 52540.869086 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_13, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52540.869096 RTTI symbol not found for class 'std::_Sp_counted_deleter<decltype(nullptr), main::$_13, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<void> (use count 1, weak count 0) = {get() = 0x0}
+        freezeDetector = std::shared_ptr<FreezeDetector> (empty) = {get() = 0x0}
+        cliThread = warning: 52540.869975 RTTI symbol not found for class 'std::_Sp_counted_deleter<std::thread*, void (*)(std::thread*), std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+warning: 52540.869987 RTTI symbol not found for class 'std::_Sp_counted_deleter<std::thread*, void (*)(std::thread*), std::allocator<void>, (__gnu_cxx::_Lock_policy)2>'
+std::shared_ptr<std::thread> (use count 1, weak count 0) = {get() = 0x602000e9c4f0}
+        numThreads = <optimized out>
+        networkThreads = <optimized out>
+        worldPort = <optimized out>

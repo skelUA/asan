@@ -802,3 +802,91 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
+=================================================================
+==4332==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000dbe0b0 at pc 0x555558cebecc bp 0x7fffffffcc90 sp 0x7fffffffcc88
+READ of size 8 at 0x602000dbe0b0 thread T0
+    #0 0x555558cebecb in CalendarMgr::RemovePlayerGuildEventsAndSignups(ObjectGuid, unsigned int) /opt/wotlk_prod/src/server/game/Calendar/CalendarMgr.cpp
+    #1 0x55555813cc61 in Guild::HandleLeaveMember(WorldSession*) /opt/wotlk_prod/src/server/game/Guilds/Guild.cpp:1534:19
+    #2 0x555558dc8c0f in WorldSession::HandleGuildLeaveOpcode(WorldPackets::Guild::GuildLeave&) /opt/wotlk_prod/src/server/game/Handlers/GuildHandler.cpp:121:16
+    #3 0x5555588d9664 in PacketHandler<WorldPackets::Guild::GuildLeave, &(WorldSession::HandleGuildLeaveOpcode(WorldPackets::Guild::GuildLeave&))>::Call(WorldSession*, WorldPacket&) const /opt/wotlk_prod/src/server/game/Server/Protocol/Opcodes.cpp:35:9
+    #4 0x5555586565d5 in WorldSession::Update(unsigned int, PacketFilter&) /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:360:35
+    #5 0x555558c8b938 in World::UpdateSessions(unsigned int) /opt/wotlk_prod/src/server/game/World/World.cpp:2848:24
+    #6 0x555558c7826a in World::Update(unsigned int) /opt/wotlk_prod/src/server/game/World/World.cpp:2373:5
+    #7 0x555555ef2614 in WorldUpdateLoop() /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:586:17
+    #8 0x555555ee367a in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:398:5
+    #9 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #10 0x7ffff6cc6e3f in __libc_start_main csu/../csu/libc-start.c:392:3
+    #11 0x555555e1e144 in _start (/opt/azeroth-server/bin/worldserver+0x8ca144) (BuildId: f60063e4adc41f35c6242ce39725b4df1b98f33d)
+
+0x602000dbe0b0 is located 0 bytes inside of 16-byte region [0x602000dbe0b0,0x602000dbe0c0)
+freed by thread T0 here:
+    #0 0x555555edc5bd in operator delete(void*) (/opt/azeroth-server/bin/worldserver+0x9885bd) (BuildId: f60063e4adc41f35c6242ce39725b4df1b98f33d)
+    #1 0x555558cf432f in __gnu_cxx::new_allocator<std::__detail::_Hash_node<CalendarEvent*, false> >::deallocate(std::__detail::_Hash_node<CalendarEvent*, false>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:145:2
+    #2 0x555558cf432f in std::allocator<std::__detail::_Hash_node<CalendarEvent*, false> >::deallocate(std::__detail::_Hash_node<CalendarEvent*, false>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:199:25
+    #3 0x555558cf432f in std::allocator_traits<std::allocator<std::__detail::_Hash_node<CalendarEvent*, false> > >::deallocate(std::allocator<std::__detail::_Hash_node<CalendarEvent*, false> >&, std::__detail::_Hash_node<CalendarEvent*, false>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:496:13
+    #4 0x555558cf432f in std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<CalendarEvent*, false> > >::_M_deallocate_node_ptr(std::__detail::_Hash_node<CalendarEvent*, false>*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable_policy.h:1905:7
+    #5 0x555558cf432f in std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<CalendarEvent*, false> > >::_M_deallocate_node(std::__detail::_Hash_node<CalendarEvent*, false>*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable_policy.h:1895:7
+    #6 0x555558cf432f in std::_Hashtable<CalendarEvent*, CalendarEvent*, std::allocator<CalendarEvent*>, std::__detail::_Identity, std::equal_to<CalendarEvent*>, std::hash<CalendarEvent*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_erase(unsigned long, std::__detail::_Hash_node_base*, std::__detail::_Hash_node<CalendarEvent*, false>*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable.h:2183:13
+    #7 0x555558cf432f in std::_Hashtable<CalendarEvent*, CalendarEvent*, std::allocator<CalendarEvent*>, std::__detail::_Identity, std::equal_to<CalendarEvent*>, std::hash<CalendarEvent*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_erase(std::integral_constant<bool, true>, CalendarEvent* const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable.h:2209:7
+    #8 0x555558ce7a6b in std::_Hashtable<CalendarEvent*, CalendarEvent*, std::allocator<CalendarEvent*>, std::__detail::_Identity, std::equal_to<CalendarEvent*>, std::hash<CalendarEvent*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::erase(CalendarEvent* const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable.h:938:16
+    #9 0x555558ce7a6b in std::unordered_set<CalendarEvent*, std::hash<CalendarEvent*>, std::equal_to<CalendarEvent*>, std::allocator<CalendarEvent*> >::erase(CalendarEvent* const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_set.h:546:21
+    #10 0x555558ce7a6b in CalendarMgr::RemoveEvent(CalendarEvent*, ObjectGuid) /opt/wotlk_prod/src/server/game/Calendar/CalendarMgr.cpp:207:13
+    #11 0x555558cebea1 in CalendarMgr::RemoveEvent(unsigned long, ObjectGuid) /opt/wotlk_prod/src/server/game/Calendar/CalendarMgr.cpp:167:5
+    #12 0x555558cebea1 in CalendarMgr::RemovePlayerGuildEventsAndSignups(ObjectGuid, unsigned int) /opt/wotlk_prod/src/server/game/Calendar/CalendarMgr.cpp:298:13
+    #13 0x55555813cc61 in Guild::HandleLeaveMember(WorldSession*) /opt/wotlk_prod/src/server/game/Guilds/Guild.cpp:1534:19
+    #14 0x555558dc8c0f in WorldSession::HandleGuildLeaveOpcode(WorldPackets::Guild::GuildLeave&) /opt/wotlk_prod/src/server/game/Handlers/GuildHandler.cpp:121:16
+    #15 0x5555588d9664 in PacketHandler<WorldPackets::Guild::GuildLeave, &(WorldSession::HandleGuildLeaveOpcode(WorldPackets::Guild::GuildLeave&))>::Call(WorldSession*, WorldPacket&) const /opt/wotlk_prod/src/server/game/Server/Protocol/Opcodes.cpp:35:9
+    #16 0x5555586565d5 in WorldSession::Update(unsigned int, PacketFilter&) /opt/wotlk_prod/src/server/game/Server/WorldSession.cpp:360:35
+    #17 0x555558c8b938 in World::UpdateSessions(unsigned int) /opt/wotlk_prod/src/server/game/World/World.cpp:2848:24
+    #18 0x555558c7826a in World::Update(unsigned int) /opt/wotlk_prod/src/server/game/World/World.cpp:2373:5
+    #19 0x555555ef2614 in WorldUpdateLoop() /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:586:17
+    #20 0x555555ee367a in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:398:5
+    #21 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+previously allocated by thread T0 here:
+    #0 0x555555edbd5d in operator new(unsigned long) (/opt/azeroth-server/bin/worldserver+0x987d5d) (BuildId: f60063e4adc41f35c6242ce39725b4df1b98f33d)
+    #1 0x555558cf1bf1 in __gnu_cxx::new_allocator<std::__detail::_Hash_node<CalendarEvent*, false> >::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:127:27
+    #2 0x555558cf1bf1 in std::allocator<std::__detail::_Hash_node<CalendarEvent*, false> >::allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:185:32
+    #3 0x555558cf1bf1 in std::allocator_traits<std::allocator<std::__detail::_Hash_node<CalendarEvent*, false> > >::allocate(std::allocator<std::__detail::_Hash_node<CalendarEvent*, false> >&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:464:20
+    #4 0x555558cf1bf1 in std::__detail::_Hash_node<CalendarEvent*, false>* std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<CalendarEvent*, false> > >::_M_allocate_node<CalendarEvent* const&>(CalendarEvent* const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable_policy.h:1873:16
+    #5 0x555558cf1bf1 in std::__detail::_Hash_node<CalendarEvent*, false>* std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<CalendarEvent*, false> > >::operator()<CalendarEvent* const&>(CalendarEvent* const&) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable_policy.h:168:16
+    #6 0x555558cf1bf1 in std::pair<std::__detail::_Node_iterator<CalendarEvent*, true, false>, bool> std::_Hashtable<CalendarEvent*, CalendarEvent*, std::allocator<CalendarEvent*>, std::__detail::_Identity, std::equal_to<CalendarEvent*>, std::hash<CalendarEvent*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_insert<CalendarEvent* const&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<CalendarEvent*, false> > > >(CalendarEvent* const&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<CalendarEvent*, false> > > const&, std::integral_constant<bool, true>) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable.h:2108:23
+    #7 0x555558cdd991 in std::__detail::_Insert_base<CalendarEvent*, CalendarEvent*, std::allocator<CalendarEvent*>, std::__detail::_Identity, std::equal_to<CalendarEvent*>, std::hash<CalendarEvent*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::insert(CalendarEvent* const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable_policy.h:844:13
+    #8 0x555558cdd991 in std::unordered_set<CalendarEvent*, std::hash<CalendarEvent*>, std::equal_to<CalendarEvent*>, std::allocator<CalendarEvent*> >::insert(CalendarEvent* const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_set.h:422:21
+    #9 0x555558cdd991 in CalendarMgr::LoadFromDB() /opt/wotlk_prod/src/server/game/Calendar/CalendarMgr.cpp:90:21
+    #10 0x555558c475f8 in World::SetInitialWorldSettings() /opt/wotlk_prod/src/server/game/World/World.cpp:2065:19
+    #11 0x555555ee1b6e in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:306:13
+    #12 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+SUMMARY: AddressSanitizer: heap-use-after-free /opt/wotlk_prod/src/server/game/Calendar/CalendarMgr.cpp in CalendarMgr::RemovePlayerGuildEventsAndSignups(ObjectGuid, unsigned int)
+Shadow bytes around the buggy address:
+  0x0c04801afbc0: fa fa 00 00 fa fa 00 00 fa fa 00 01 fa fa 00 00
+  0x0c04801afbd0: fa fa 00 00 fa fa 00 01 fa fa 00 00 fa fa 00 00
+  0x0c04801afbe0: fa fa 00 01 fa fa 00 00 fa fa 00 00 fa fa 00 01
+  0x0c04801afbf0: fa fa 00 00 fa fa 00 00 fa fa 00 01 fa fa 00 00
+  0x0c04801afc00: fa fa 00 00 fa fa 00 01 fa fa 00 00 fa fa 00 00
+=>0x0c04801afc10: fa fa 00 01 fa fa[fd]fd fa fa 00 00 fa fa 00 01
+  0x0c04801afc20: fa fa 00 00 fa fa 00 00 fa fa 00 01 fa fa 00 00
+  0x0c04801afc30: fa fa 00 00 fa fa 00 01 fa fa 00 00 fa fa 00 00
+  0x0c04801afc40: fa fa 00 01 fa fa 00 00 fa fa 00 00 fa fa 00 01
+  0x0c04801afc50: fa fa 00 00 fa fa 00 00 fa fa 00 01 fa fa 00 00
+  0x0c04801afc60: fa fa 00 00 fa fa 00 01 fa fa 00 00 fa fa 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
