@@ -679,3 +679,126 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
+=================================================================
+==4332==ERROR: AddressSanitizer: global-buffer-overflow on address 0x55555955eea8 at pc 0x555556b17160 bp 0x7fffc4de25b0 sp 0x7fffc4de25a8
+READ of size 4 at 0x55555955eea8 thread T13
+    #0 0x555556b1715f in npc_lord_illidan_stormrage::npc_lord_illidan_stormrageAI::SummonNextWave() /opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:1389:38
+    #1 0x555556b1b641 in npc_lord_illidan_stormrage::npc_lord_illidan_stormrageAI::UpdateAI(unsigned int) /opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:1189:21
+    #2 0x5555578e441f in Creature::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Creature/Creature.cpp:828:23
+    #3 0x5555580dbbb7 in void Acore::ObjectUpdater::Visit<Creature>(GridRefMgr<Creature>&) /opt/wotlk_prod/src/server/game/Grids/Notifiers/GridNotifiers.cpp:366:18
+    #4 0x5555583c74f7 in void VisitorHelper<Acore::ObjectUpdater, Creature>(Acore::ObjectUpdater&, ContainerMapList<Creature>&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:43:7
+    #5 0x5555583c74f7 in void VisitorHelper<Acore::ObjectUpdater, Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:49:5
+    #6 0x5555583c74f7 in void VisitorHelper<Acore::ObjectUpdater, GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:50:5
+    #7 0x5555583c74f7 in void VisitorHelper<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(Acore::ObjectUpdater&, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:56:5
+    #8 0x5555583c74f7 in TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >::Visit(TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:90:9
+    #9 0x5555583c74f7 in void Grid<Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::Visit<Acore::ObjectUpdater>(TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/Grid.h:89:17
+    #10 0x5555583c74f7 in void NGrid<8u, Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::VisitGrid<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(unsigned int, unsigned int, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/NGrid.h:102:27
+    #11 0x555558382c1f in void Map::Visit<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >(Cell const&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.h:881:25
+    #12 0x555558382c1f in Map::VisitNearbyCellsOf(WorldObject*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:726:13
+    #13 0x5555583822d8 in Map::VisitNearbyCellsOfPlayer(Player*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:674:5
+    #14 0x55555838372d in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:820:9
+    #15 0x5555583d7112 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #16 0x5555583d552e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #17 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #18 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #19 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x55555955eea8 is located 24 bytes to the left of global variable 'SpawnLocation' defined in '/opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:844:17' (0x55555955eec0) of size 256
+0x55555955eea8 is located 8 bytes to the right of global variable 'WavesInfo' defined in '/opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:871:25' (0x55555955ee60) of size 64
+SUMMARY: AddressSanitizer: global-buffer-overflow /opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:1389:38 in npc_lord_illidan_stormrage::npc_lord_illidan_stormrageAI::SummonNextWave()
+Shadow bytes around the buggy address:
+  0x0aab2b2a3d80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3d90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3da0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3db0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3dc0: 00 00 00 00 00 00 00 00 00 03 f9 f9 00 00 00 00
+=>0x0aab2b2a3dd0: 00 00 00 00 f9[f9]f9 f9 00 00 00 00 00 00 00 00
+  0x0aab2b2a3de0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3df0: 00 00 00 00 00 00 00 00 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b2a3e00: 00 00 00 00 00 03 f9 f9 f9 f9 f9 f9 00 00 00 00
+  0x0aab2b2a3e10: 00 f9 f9 f9 f9 f9 f9 f9 00 00 03 f9 f9 f9 f9 f9
+  0x0aab2b2a3e20: 00 00 00 06 f9 f9 f9 f9 00 00 00 02 f9 f9 f9 f9
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+Thread T13 created by T0 here:
+    #0 0x555555e8a40c in pthread_create (/opt/azeroth-server/bin/worldserver+0x93640c) (BuildId: f60063e4adc41f35c6242ce39725b4df1b98f33d)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558c48bb7 in World::SetInitialWorldSettings() /opt/wotlk_prod/src/server/game/World/World.cpp:2106:14
+    #3 0x555555ee1b6e in main /opt/wotlk_prod/src/server/apps/worldserver/Main.cpp:306:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+=================================================================
+==4332==ERROR: AddressSanitizer: global-buffer-overflow on address 0x55555955eeac at pc 0x555556b1719b bp 0x7fffc4de25b0 sp 0x7fffc4de25a8
+READ of size 4 at 0x55555955eeac thread T13
+    #0 0x555556b1719a in npc_lord_illidan_stormrage::npc_lord_illidan_stormrageAI::SummonNextWave() /opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:1390:42
+    #1 0x555556b1b641 in npc_lord_illidan_stormrage::npc_lord_illidan_stormrageAI::UpdateAI(unsigned int) /opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:1189:21
+    #2 0x5555578e441f in Creature::Update(unsigned int) /opt/wotlk_prod/src/server/game/Entities/Creature/Creature.cpp:828:23
+    #3 0x5555580dbbb7 in void Acore::ObjectUpdater::Visit<Creature>(GridRefMgr<Creature>&) /opt/wotlk_prod/src/server/game/Grids/Notifiers/GridNotifiers.cpp:366:18
+    #4 0x5555583c74f7 in void VisitorHelper<Acore::ObjectUpdater, Creature>(Acore::ObjectUpdater&, ContainerMapList<Creature>&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:43:7
+    #5 0x5555583c74f7 in void VisitorHelper<Acore::ObjectUpdater, Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:49:5
+    #6 0x5555583c74f7 in void VisitorHelper<Acore::ObjectUpdater, GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:50:5
+    #7 0x5555583c74f7 in void VisitorHelper<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(Acore::ObjectUpdater&, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:56:5
+    #8 0x5555583c74f7 in TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >::Visit(TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /opt/wotlk_prod/src/common/Dynamic/TypeContainerVisitor.h:90:9
+    #9 0x5555583c74f7 in void Grid<Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::Visit<Acore::ObjectUpdater>(TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/Grid.h:89:17
+    #10 0x5555583c74f7 in void NGrid<8u, Player, TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::VisitGrid<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(unsigned int, unsigned int, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Grids/NGrid.h:102:27
+    #11 0x555558382c1f in void Map::Visit<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >(Cell const&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.h:881:25
+    #12 0x555558382c1f in Map::VisitNearbyCellsOf(WorldObject*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:726:13
+    #13 0x5555583822d8 in Map::VisitNearbyCellsOfPlayer(Player*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:674:5
+    #14 0x55555838372d in Map::Update(unsigned int, unsigned int, bool) /opt/wotlk_prod/src/server/game/Maps/Map.cpp:820:9
+    #15 0x5555583d7112 in MapUpdateRequest::call() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:44:15
+    #16 0x5555583d552e in MapUpdater::WorkerThread() /opt/wotlk_prod/src/server/game/Maps/MapUpdater.cpp:158:22
+    #17 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #18 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #19 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x55555955eeac is located 20 bytes to the left of global variable 'SpawnLocation' defined in '/opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:844:17' (0x55555955eec0) of size 256
+0x55555955eeac is located 12 bytes to the right of global variable 'WavesInfo' defined in '/opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:871:25' (0x55555955ee60) of size 64
+SUMMARY: AddressSanitizer: global-buffer-overflow /opt/wotlk_prod/src/server/scripts/Outland/zone_shadowmoon_valley.cpp:1390:42 in npc_lord_illidan_stormrage::npc_lord_illidan_stormrageAI::SummonNextWave()
+Shadow bytes around the buggy address:
+  0x0aab2b2a3d80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3d90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3da0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3db0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3dc0: 00 00 00 00 00 00 00 00 00 03 f9 f9 00 00 00 00
+=>0x0aab2b2a3dd0: 00 00 00 00 f9[f9]f9 f9 00 00 00 00 00 00 00 00
+  0x0aab2b2a3de0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0aab2b2a3df0: 00 00 00 00 00 00 00 00 f9 f9 f9 f9 f9 f9 f9 f9
+  0x0aab2b2a3e00: 00 00 00 00 00 03 f9 f9 f9 f9 f9 f9 00 00 00 00
+  0x0aab2b2a3e10: 00 f9 f9 f9 f9 f9 f9 f9 00 00 03 f9 f9 f9 f9 f9
+  0x0aab2b2a3e20: 00 00 00 06 f9 f9 f9 f9 00 00 00 02 f9 f9 f9 f9
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
