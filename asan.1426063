@@ -132,3 +132,46 @@ SHADOW_OFFSET: 0x7fff8000
 ==1426063==T18: stack [0x7fffb8a4f000,0x7fffb924de80) size 0x7fee80; local=0x7fffb924dda4
 ==1426063==T19: FakeStack created: 0x7fffb6132000 -- 0x7fffb6c3b000 stack_size_log: 20; mmapped 11300K, noreserve=0 
 ==1426063==T19: stack [0x7fffb6c3c000,0x7fffb743ae80) size 0x7fee80; local=0x7fffb743ada4
+==1426063==T2 TSDDtor
+==1426063==T1 TSDDtor
+==1426063==T2 exited
+==1426063==T1 exited
+==1426063==T19 TSDDtor
+==1426063==T19 exited
+==1426063==T18 TSDDtor
+==1426063==T17 TSDDtor
+==1426063==T18 exited
+==1426063==T17 exited
+==1426063==T15 TSDDtor
+==1426063==T11 TSDDtor
+==1426063==T12 TSDDtor
+==1426063==T13 TSDDtor
+==1426063==T15 exited
+==1426063==T16 TSDDtor
+==1426063==T12 exited
+==1426063==T14 TSDDtor
+==1426063==T16 exited
+==1426063==T11 exited
+==1426063==T14 exited
+==1426063==T13 exited
+==1426063==T6 TSDDtor
+==1426063==T6 exited
+==1426063==T7 TSDDtor
+==1426063==T5 TSDDtor
+==1426063==T7 exited
+==1426063==T5 exited
+==1426063==T9 TSDDtor
+==1426063==T8 TSDDtor
+==1426063==T9 exited
+==1426063==T8 exited
+==1426063==T3 TSDDtor
+==1426063==T3 exited
+==1426063==T4 TSDDtor
+==1426063==T4 exited
+==1426063==T10 TSDDtor
+==1426063==T10 exited
+==1426461==Could not attach to thread 1426063 (errno 1).
+==1426461==Failed suspending threads.
+==1426063==LeakSanitizer has encountered a fatal error.
+==1426063==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1
+==1426063==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
