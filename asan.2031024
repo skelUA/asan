@@ -138,3 +138,132 @@ SHADOW_OFFSET: 0x7fff8000
 ==2031024==T21: stack [0x7fffb4fa8000,0x7fffb57a6e80) size 0x7fee80; local=0x7fffb57a6da4
 ==2031024==T22: FakeStack created: 0x7fffb3194000 -- 0x7fffb3c9d000 stack_size_log: 20; mmapped 11300K, noreserve=0 
 ==2031024==T22: stack [0x7fffb3c9e000,0x7fffb449ce80) size 0x7fee80; local=0x7fffb449cda4
+=================================================================
+==2031024==ERROR: AddressSanitizer: heap-use-after-free on address 0x61901166f338 at pc 0x555557327156 bp 0x7fffc0870580 sp 0x7fffc0870578
+READ of size 8 at 0x61901166f338 thread T16
+    #0 0x555557327155 in Spell::GetDelayMoment() const /root/azerothcore2025-04-15/src/server/game/Spells/Spell.h:568:44
+    #1 0x555557327155 in spell_mage_fingers_of_frost_proc_aura::HandleOnEffectProc(AuraEffect const*, ProcEventInfo&) /root/azerothcore2025-04-15/src/server/scripts/Spells/spell_mage.cpp:990:97
+    #2 0x555558c25eb2 in Aura::CallScriptEffectProcHandlers(AuraEffect const*, AuraApplication const*, ProcEventInfo&) /root/azerothcore2025-04-15/src/server/game/Spells/Auras/SpellAuras.cpp:2723:25
+    #3 0x555557dec556 in Unit::ProcDamageAndSpellFor(bool, Unit*, unsigned int, unsigned int, WeaponAttackType, SpellInfo const*, unsigned int, SpellInfo const*, signed char, Spell const*, DamageInfo*, HealInfo*, unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:16374:43
+    #4 0x555557df6289 in Unit::ProcDamageAndSpell(Unit*, Unit*, unsigned int, unsigned int, unsigned int, unsigned int, WeaponAttackType, SpellInfo const*, SpellInfo const*, signed char, Spell const*, DamageInfo*, HealInfo*, unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:6437:16
+    #5 0x555558a3d1dd in Spell::DoAllEffectOnTarget(TargetInfo*) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:2899:13
+    #6 0x555558a5ff84 in Spell::handle_immediate() /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:4170:9
+    #7 0x555558a57fbd in Spell::_cast(bool) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:4070:9
+    #8 0x555558a47c77 in Spell::prepare(SpellCastTargets const*, AuraEffect const*) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:3719:13
+    #9 0x5555583d88ba in WorldSession::HandleCastSpellOpcode(WorldPacket&) /root/azerothcore2025-04-15/src/server/game/Handlers/SpellHandler.cpp:547:12
+    #10 0x555558762f43 in WorldSession::Update(unsigned int, PacketFilter&) /root/azerothcore2025-04-15/src/server/game/Server/WorldSession.cpp:376:35
+    #11 0x555558494512 in Map::Update(unsigned int, unsigned int, bool) /root/azerothcore2025-04-15/src/server/game/Maps/Map.cpp:600:22
+    #12 0x5555584e3432 in MapUpdateRequest::call() /root/azerothcore2025-04-15/src/server/game/Maps/MapUpdater.cpp:44:15
+    #13 0x5555584e184e in MapUpdater::WorkerThread() /root/azerothcore2025-04-15/src/server/game/Maps/MapUpdater.cpp:158:22
+    #14 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #15 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #16 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x61901166f338 is located 440 bytes inside of 1056-byte region [0x61901166f180,0x61901166f5a0)
+freed by thread T14 here:
+    #0 0x555555ef813d in operator delete(void*) (/root/azerothcore/ac-server-2025-04-15/bin/worldserver+0x9a413d) (BuildId: bfad2b8029b657ef331b64a5e9f7d11ed96d9a11)
+    #1 0x555557deff5a in __gnu_cxx::new_allocator<std::_List_node<ProcTriggeredData> >::deallocate(std::_List_node<ProcTriggeredData>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:145:2
+    #2 0x555557deff5a in std::allocator<std::_List_node<ProcTriggeredData> >::deallocate(std::_List_node<ProcTriggeredData>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:199:25
+    #3 0x555557deff5a in std::allocator_traits<std::allocator<std::_List_node<ProcTriggeredData> > >::deallocate(std::allocator<std::_List_node<ProcTriggeredData> >&, std::_List_node<ProcTriggeredData>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:496:13
+    #4 0x555557deff5a in std::__cxx11::_List_base<ProcTriggeredData, std::allocator<ProcTriggeredData> >::_M_put_node(std::_List_node<ProcTriggeredData>*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:447:9
+    #5 0x555557deff5a in std::__cxx11::_List_base<ProcTriggeredData, std::allocator<ProcTriggeredData> >::_M_clear() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/list.tcc:81:4
+    #6 0x555557deff5a in std::__cxx11::_List_base<ProcTriggeredData, std::allocator<ProcTriggeredData> >::~_List_base() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:500:9
+    #7 0x555557deff5a in Unit::ProcDamageAndSpellFor(bool, Unit*, unsigned int, unsigned int, WeaponAttackType, SpellInfo const*, unsigned int, SpellInfo const*, signed char, Spell const*, DamageInfo*, HealInfo*, unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:16555:1
+    #8 0x555557df6289 in Unit::ProcDamageAndSpell(Unit*, Unit*, unsigned int, unsigned int, unsigned int, unsigned int, WeaponAttackType, SpellInfo const*, SpellInfo const*, signed char, Spell const*, DamageInfo*, HealInfo*, unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:6437:16
+    #9 0x555558a3c88e in Spell::DoAllEffectOnTarget(TargetInfo*) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:2919:13
+    #10 0x555558a5ff84 in Spell::handle_immediate() /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:4170:9
+    #11 0x555558a57fbd in Spell::_cast(bool) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:4070:9
+    #12 0x555558a47aaf in Spell::cast(bool) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:3814:5
+    #13 0x555558a47aaf in Spell::prepare(SpellCastTargets const*, AuraEffect const*) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:3681:9
+    #14 0x555557dc5cce in Unit::CastSpell(SpellCastTargets const&, SpellInfo const*, CustomSpellValues const*, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:1203:19
+    #15 0x555558ac35d2 in Spell::EffectTriggerSpell(SpellEffIndex) /root/azerothcore2025-04-15/src/server/game/Spells/SpellEffects.cpp:939:15
+    #16 0x555558a3f1f4 in Spell::HandleEffects(Unit*, Item*, GameObject*, unsigned int, SpellEffectHandleMode) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:5665:9
+    #17 0x555558a79462 in Spell::DoAllEffectOnLaunchTarget(TargetInfo&, float*) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:8348:13
+    #18 0x555558a5c946 in Spell::HandleLaunchPhase() /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:8323:9
+    #19 0x555558a57b4b in Spell::_cast(bool) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:3977:5
+    #20 0x555558a47c77 in Spell::prepare(SpellCastTargets const*, AuraEffect const*) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:3719:13
+    #21 0x5555583d88ba in WorldSession::HandleCastSpellOpcode(WorldPacket&) /root/azerothcore2025-04-15/src/server/game/Handlers/SpellHandler.cpp:547:12
+    #22 0x555558762f43 in WorldSession::Update(unsigned int, PacketFilter&) /root/azerothcore2025-04-15/src/server/game/Server/WorldSession.cpp:376:35
+    #23 0x555558494512 in Map::Update(unsigned int, unsigned int, bool) /root/azerothcore2025-04-15/src/server/game/Maps/Map.cpp:600:22
+    #24 0x5555584b01f6 in InstanceMap::Update(unsigned int, unsigned int, bool) /root/azerothcore2025-04-15/src/server/game/Maps/Map.cpp:2213:10
+    #25 0x5555584e3432 in MapUpdateRequest::call() /root/azerothcore2025-04-15/src/server/game/Maps/MapUpdater.cpp:44:15
+    #26 0x5555584e184e in MapUpdater::WorkerThread() /root/azerothcore2025-04-15/src/server/game/Maps/MapUpdater.cpp:158:22
+    #27 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+previously allocated by thread T14 here:
+    #0 0x555555ef78dd in operator new(unsigned long) (/root/azerothcore/ac-server-2025-04-15/bin/worldserver+0x9a38dd) (BuildId: bfad2b8029b657ef331b64a5e9f7d11ed96d9a11)
+    #1 0x555557dead76 in __gnu_cxx::new_allocator<std::_List_node<ProcTriggeredData> >::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:127:27
+    #2 0x555557dead76 in std::allocator<std::_List_node<ProcTriggeredData> >::allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:185:32
+    #3 0x555557dead76 in std::allocator_traits<std::allocator<std::_List_node<ProcTriggeredData> > >::allocate(std::allocator<std::_List_node<ProcTriggeredData> >&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:464:20
+    #4 0x555557dead76 in std::__cxx11::_List_base<ProcTriggeredData, std::allocator<ProcTriggeredData> >::_M_get_node() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:443:16
+    #5 0x555557dead76 in std::_List_node<ProcTriggeredData>* std::__cxx11::list<ProcTriggeredData, std::allocator<ProcTriggeredData> >::_M_create_node<ProcTriggeredData const&>(ProcTriggeredData const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:635:21
+    #6 0x555557dead76 in void std::__cxx11::list<ProcTriggeredData, std::allocator<ProcTriggeredData> >::_M_insert<ProcTriggeredData const&>(std::_List_iterator<ProcTriggeredData>, ProcTriggeredData const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:1912:18
+    #7 0x555557dead76 in std::__cxx11::list<ProcTriggeredData, std::allocator<ProcTriggeredData> >::push_front(ProcTriggeredData const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_list.h:1163:15
+    #8 0x555557dead76 in Unit::ProcDamageAndSpellFor(bool, Unit*, unsigned int, unsigned int, WeaponAttackType, SpellInfo const*, unsigned int, SpellInfo const*, signed char, Spell const*, DamageInfo*, HealInfo*, unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:16311:31
+    #9 0x555557df6289 in Unit::ProcDamageAndSpell(Unit*, Unit*, unsigned int, unsigned int, unsigned int, unsigned int, WeaponAttackType, SpellInfo const*, SpellInfo const*, signed char, Spell const*, DamageInfo*, HealInfo*, unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:6437:16
+    #10 0x555558a3c88e in Spell::DoAllEffectOnTarget(TargetInfo*) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:2919:13
+    #11 0x555558a5ff84 in Spell::handle_immediate() /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:4170:9
+    #12 0x555558a57fbd in Spell::_cast(bool) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:4070:9
+    #13 0x555558a47aaf in Spell::cast(bool) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:3814:5
+    #14 0x555558a47aaf in Spell::prepare(SpellCastTargets const*, AuraEffect const*) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:3681:9
+    #15 0x555557dc5cce in Unit::CastSpell(SpellCastTargets const&, SpellInfo const*, CustomSpellValues const*, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:1203:19
+    #16 0x555558ac35d2 in Spell::EffectTriggerSpell(SpellEffIndex) /root/azerothcore2025-04-15/src/server/game/Spells/SpellEffects.cpp:939:15
+    #17 0x555558a3f1f4 in Spell::HandleEffects(Unit*, Item*, GameObject*, unsigned int, SpellEffectHandleMode) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:5665:9
+    #18 0x555558a79462 in Spell::DoAllEffectOnLaunchTarget(TargetInfo&, float*) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:8348:13
+    #19 0x555558a5c946 in Spell::HandleLaunchPhase() /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:8323:9
+    #20 0x555558a57b4b in Spell::_cast(bool) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:3977:5
+    #21 0x555558a47c77 in Spell::prepare(SpellCastTargets const*, AuraEffect const*) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:3719:13
+    #22 0x5555583d88ba in WorldSession::HandleCastSpellOpcode(WorldPacket&) /root/azerothcore2025-04-15/src/server/game/Handlers/SpellHandler.cpp:547:12
+    #23 0x555558762f43 in WorldSession::Update(unsigned int, PacketFilter&) /root/azerothcore2025-04-15/src/server/game/Server/WorldSession.cpp:376:35
+    #24 0x555558494512 in Map::Update(unsigned int, unsigned int, bool) /root/azerothcore2025-04-15/src/server/game/Maps/Map.cpp:600:22
+    #25 0x5555584b01f6 in InstanceMap::Update(unsigned int, unsigned int, bool) /root/azerothcore2025-04-15/src/server/game/Maps/Map.cpp:2213:10
+    #26 0x5555584e3432 in MapUpdateRequest::call() /root/azerothcore2025-04-15/src/server/game/Maps/MapUpdater.cpp:44:15
+    #27 0x5555584e184e in MapUpdater::WorkerThread() /root/azerothcore2025-04-15/src/server/game/Maps/MapUpdater.cpp:158:22
+    #28 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+Thread T16 created by T0 here:
+    #0 0x555555ea5f8c in pthread_create (/root/azerothcore/ac-server-2025-04-15/bin/worldserver+0x951f8c) (BuildId: bfad2b8029b657ef331b64a5e9f7d11ed96d9a11)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558d55556 in World::SetInitialWorldSettings() /root/azerothcore2025-04-15/src/server/game/World/World.cpp:1880:14
+    #3 0x555555efd6ee in main /root/azerothcore2025-04-15/src/server/apps/worldserver/Main.cpp:307:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+Thread T14 created by T0 here:
+    #0 0x555555ea5f8c in pthread_create (/root/azerothcore/ac-server-2025-04-15/bin/worldserver+0x951f8c) (BuildId: bfad2b8029b657ef331b64a5e9f7d11ed96d9a11)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558d55556 in World::SetInitialWorldSettings() /root/azerothcore2025-04-15/src/server/game/World/World.cpp:1880:14
+    #3 0x555555efd6ee in main /root/azerothcore2025-04-15/src/server/apps/worldserver/Main.cpp:307:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+SUMMARY: AddressSanitizer: heap-use-after-free /root/azerothcore2025-04-15/src/server/game/Spells/Spell.h:568:44 in Spell::GetDelayMoment() const
+Shadow bytes around the buggy address:
+  0x0c32822c5e10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c32822c5e20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c32822c5e30: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32822c5e40: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32822c5e50: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x0c32822c5e60: fd fd fd fd fd fd fd[fd]fd fd fd fd fd fd fd fd
+  0x0c32822c5e70: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32822c5e80: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32822c5e90: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32822c5ea0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32822c5eb0: fd fd fd fd fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
