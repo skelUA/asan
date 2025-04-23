@@ -138,3 +138,124 @@ SHADOW_OFFSET: 0x7fff8000
 ==2213475==T21: stack [0x7fffb57c2000,0x7fffb5fc0e80) size 0x7fee80; local=0x7fffb5fc0da4
 ==2213475==T22: FakeStack created: 0x7fffb39ae000 -- 0x7fffb44b7000 stack_size_log: 20; mmapped 11300K, noreserve=0 
 ==2213475==T22: stack [0x7fffb44b8000,0x7fffb4cb6e80) size 0x7fee80; local=0x7fffb4cb6da4
+=================================================================
+==2213475==ERROR: AddressSanitizer: heap-use-after-free on address 0x619011e12838 at pc 0x555557327156 bp 0x7fffd9c34c80 sp 0x7fffd9c34c78
+READ of size 8 at 0x619011e12838 thread T12
+    #0 0x555557327155 in Spell::GetDelayMoment() const /root/azerothcore2025-04-15/src/server/game/Spells/Spell.h:568:44
+    #1 0x555557327155 in spell_mage_fingers_of_frost_proc_aura::HandleOnEffectProc(AuraEffect const*, ProcEventInfo&) /root/azerothcore2025-04-15/src/server/scripts/Spells/spell_mage.cpp:990:97
+    #2 0x555558c25eb2 in Aura::CallScriptEffectProcHandlers(AuraEffect const*, AuraApplication const*, ProcEventInfo&) /root/azerothcore2025-04-15/src/server/game/Spells/Auras/SpellAuras.cpp:2723:25
+    #3 0x555557dec556 in Unit::ProcDamageAndSpellFor(bool, Unit*, unsigned int, unsigned int, WeaponAttackType, SpellInfo const*, unsigned int, SpellInfo const*, signed char, Spell const*, DamageInfo*, HealInfo*, unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:16374:43
+    #4 0x555557df6289 in Unit::ProcDamageAndSpell(Unit*, Unit*, unsigned int, unsigned int, unsigned int, unsigned int, WeaponAttackType, SpellInfo const*, SpellInfo const*, signed char, Spell const*, DamageInfo*, HealInfo*, unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:6437:16
+    #5 0x555558a3d1dd in Spell::DoAllEffectOnTarget(TargetInfo*) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:2899:13
+    #6 0x555558a61fdb in Spell::handle_delayed(unsigned long) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:4226:17
+    #7 0x555558a78dcb in SpellEvent::Execute(unsigned long, unsigned int) /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:8200:52
+    #8 0x555559250d6d in EventProcessor::Update(unsigned int) /root/azerothcore2025-04-15/src/common/Utilities/EventProcessor.cpp:55:24
+    #9 0x555557aaaf5e in WorldObject::Update(unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Object/Object.cpp:1063:14
+    #10 0x555557dab108 in Unit::Update(unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:389:18
+    #11 0x555557d4db68 in Player::Update(unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Player/PlayerUpdates.cpp:83:11
+    #12 0x555558494b5f in Map::Update(unsigned int, unsigned int, bool) /root/azerothcore2025-04-15/src/server/game/Maps/Map.cpp:656:17
+    #13 0x5555584e3432 in MapUpdateRequest::call() /root/azerothcore2025-04-15/src/server/game/Maps/MapUpdater.cpp:44:15
+    #14 0x5555584e184e in MapUpdater::WorkerThread() /root/azerothcore2025-04-15/src/server/game/Maps/MapUpdater.cpp:158:22
+    #15 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #16 0x7ffff6d31ac2 in start_thread nptl/./nptl/pthread_create.c:442:8
+    #17 0x7ffff6dc384f  misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+0x619011e12838 is located 440 bytes inside of 936-byte region [0x619011e12680,0x619011e12a28)
+freed by thread T15 here:
+    #0 0x555555ef813d in operator delete(void*) (/root/azerothcore/ac-server-2025-04-15/bin/worldserver+0x9a413d) (BuildId: bfad2b8029b657ef331b64a5e9f7d11ed96d9a11)
+    #1 0x555558a78413 in SpellEvent::~SpellEvent() /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:8161:9
+    #2 0x555558a78c7d in SpellEvent::~SpellEvent() /root/azerothcore2025-04-15/src/server/game/Spells/Spell.cpp:8155:1
+    #3 0x555559250ef7 in EventProcessor::Update(unsigned int) /root/azerothcore2025-04-15/src/common/Utilities/EventProcessor.cpp
+    #4 0x555557aaaf5e in WorldObject::Update(unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Object/Object.cpp:1063:14
+    #5 0x555557dab108 in Unit::Update(unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:389:18
+    #6 0x5555579bd2a9 in Creature::Update(unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Creature/Creature.cpp:724:19
+    #7 0x555557a288ef in TempSummon::Update(unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Creature/TemporarySummon.cpp:68:15
+    #8 0x5555581e6447 in void Acore::ObjectUpdater::Visit<Creature>(GridRefMgr<Creature>&) /root/azerothcore2025-04-15/src/server/game/Grids/Notifiers/GridNotifiers.cpp:366:18
+    #9 0x5555584d37c6 in void VisitorHelper<Acore::ObjectUpdater, Creature>(Acore::ObjectUpdater&, ContainerMapList<Creature>&) /root/azerothcore2025-04-15/src/common/Dynamic/TypeContainerVisitor.h:43:7
+    #10 0x5555584d37c6 in void VisitorHelper<Acore::ObjectUpdater, Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >&) /root/azerothcore2025-04-15/src/common/Dynamic/TypeContainerVisitor.h:49:5
+    #11 0x5555584d37c6 in void VisitorHelper<Acore::ObjectUpdater, GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /root/azerothcore2025-04-15/src/common/Dynamic/TypeContainerVisitor.h:50:5
+    #12 0x5555584d37c6 in void VisitorHelper<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(Acore::ObjectUpdater&, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /root/azerothcore2025-04-15/src/common/Dynamic/TypeContainerVisitor.h:56:5
+    #13 0x5555584d37c6 in TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >::Visit(TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /root/azerothcore2025-04-15/src/common/Dynamic/TypeContainerVisitor.h:90:9
+    #14 0x5555584d37c6 in void GridCell<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::Visit<Acore::ObjectUpdater>(TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /root/azerothcore2025-04-15/src/server/game/Grids/GridCell.h:62:17
+    #15 0x5555584d37c6 in void MapGrid<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::VisitCell<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(unsigned short, unsigned short, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /root/azerothcore2025-04-15/src/server/game/Grids/MapGrid.h:92:19
+    #16 0x5555584936ec in void Map::Visit<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >(Cell const&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /root/azerothcore2025-04-15/src/server/game/Maps/Map.h:715:33
+    #17 0x5555584936ec in Map::VisitNearbyCellsOf(WorldObject*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /root/azerothcore2025-04-15/src/server/game/Maps/Map.cpp:556:13
+    #18 0x555558494a64 in Map::Update(unsigned int, unsigned int, bool) /root/azerothcore2025-04-15/src/server/game/Maps/Map.cpp:645:13
+    #19 0x5555584e3432 in MapUpdateRequest::call() /root/azerothcore2025-04-15/src/server/game/Maps/MapUpdater.cpp:44:15
+    #20 0x5555584e184e in MapUpdater::WorkerThread() /root/azerothcore2025-04-15/src/server/game/Maps/MapUpdater.cpp:158:22
+    #21 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+previously allocated by thread T12 here:
+    #0 0x555555ef78dd in operator new(unsigned long) (/root/azerothcore/ac-server-2025-04-15/bin/worldserver+0x9a38dd) (BuildId: bfad2b8029b657ef331b64a5e9f7d11ed96d9a11)
+    #1 0x555557dc5b7d in Unit::CastSpell(SpellCastTargets const&, SpellInfo const*, CustomSpellValues const*, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:1192:20
+    #2 0x555557dc666b in Unit::CastSpell(Unit*, SpellInfo const*, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:1232:12
+    #3 0x555557dc666b in Unit::CastSpell(Unit*, unsigned int, TriggerCastFlags, Item*, AuraEffect const*, ObjectGuid) /root/azerothcore2025-04-15/src/server/game/Entities/Unit/Unit.cpp:1220:12
+    #4 0x55555748e549 in SmartScript::ProcessAction(SmartScriptHolder&, Unit*, unsigned int, unsigned int, bool, SpellInfo const*, GameObject*) /root/azerothcore2025-04-15/src/server/game/AI/SmartScripts/SmartScript.cpp:740:50
+    #5 0x5555574e0c06 in SmartScript::ProcessTimedAction(SmartScriptHolder&, unsigned int const&, unsigned int const&, Unit*, unsigned int, unsigned int, bool, SpellInfo const*, GameObject*) /root/azerothcore2025-04-15/src/server/game/AI/SmartScripts/SmartScript.cpp:3318:9
+    #6 0x555557487e7f in SmartScript::ProcessEvent(SmartScriptHolder&, Unit*, unsigned int, unsigned int, bool, SpellInfo const*, GameObject*) /root/azerothcore2025-04-15/src/server/game/AI/SmartScripts/SmartScript.cpp
+    #7 0x5555574e346b in SmartScript::UpdateTimer(SmartScriptHolder&, unsigned int) /root/azerothcore2025-04-15/src/server/game/AI/SmartScripts/SmartScript.cpp:4926:25
+    #8 0x5555574e42de in SmartScript::OnUpdate(unsigned int) /root/azerothcore2025-04-15/src/server/game/AI/SmartScripts/SmartScript.cpp:4991:9
+    #9 0x55555747ae68 in SmartAI::UpdateAI(unsigned int) /root/azerothcore2025-04-15/src/server/game/AI/SmartScripts/SmartAI.cpp:507:18
+    #10 0x5555579be74f in Creature::Update(unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Creature/Creature.cpp:829:23
+    #11 0x555557a288ef in TempSummon::Update(unsigned int) /root/azerothcore2025-04-15/src/server/game/Entities/Creature/TemporarySummon.cpp:68:15
+    #12 0x5555581e6447 in void Acore::ObjectUpdater::Visit<Creature>(GridRefMgr<Creature>&) /root/azerothcore2025-04-15/src/server/game/Grids/Notifiers/GridNotifiers.cpp:366:18
+    #13 0x5555584d37c6 in void VisitorHelper<Acore::ObjectUpdater, Creature>(Acore::ObjectUpdater&, ContainerMapList<Creature>&) /root/azerothcore2025-04-15/src/common/Dynamic/TypeContainerVisitor.h:43:7
+    #14 0x5555584d37c6 in void VisitorHelper<Acore::ObjectUpdater, Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >&) /root/azerothcore2025-04-15/src/common/Dynamic/TypeContainerVisitor.h:49:5
+    #15 0x5555584d37c6 in void VisitorHelper<Acore::ObjectUpdater, GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > >(Acore::ObjectUpdater&, ContainerMapList<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /root/azerothcore2025-04-15/src/common/Dynamic/TypeContainerVisitor.h:50:5
+    #16 0x5555584d37c6 in void VisitorHelper<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(Acore::ObjectUpdater&, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /root/azerothcore2025-04-15/src/common/Dynamic/TypeContainerVisitor.h:56:5
+    #17 0x5555584d37c6 in TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >::Visit(TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >&) /root/azerothcore2025-04-15/src/common/Dynamic/TypeContainerVisitor.h:90:9
+    #18 0x5555584d37c6 in void GridCell<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::Visit<Acore::ObjectUpdater>(TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /root/azerothcore2025-04-15/src/server/game/Grids/GridCell.h:62:17
+    #19 0x5555584d37c6 in void MapGrid<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > >, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >::VisitCell<Acore::ObjectUpdater, TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > >(unsigned short, unsigned short, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /root/azerothcore2025-04-15/src/server/game/Grids/MapGrid.h:92:19
+    #20 0x5555584936ec in void Map::Visit<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >(Cell const&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&) /root/azerothcore2025-04-15/src/server/game/Maps/Map.h:715:33
+    #21 0x5555584936ec in Map::VisitNearbyCellsOf(WorldObject*, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Creature, TypeList<DynamicObject, TypeList<Corpse, TypeNull> > > > > >&, TypeContainerVisitor<Acore::ObjectUpdater, TypeMapContainer<TypeList<GameObject, TypeList<Player, TypeList<Creature, TypeList<Corpse, TypeList<DynamicObject, TypeNull> > > > > > >&) /root/azerothcore2025-04-15/src/server/game/Maps/Map.cpp:556:13
+    #22 0x555558494a64 in Map::Update(unsigned int, unsigned int, bool) /root/azerothcore2025-04-15/src/server/game/Maps/Map.cpp:645:13
+    #23 0x5555584e3432 in MapUpdateRequest::call() /root/azerothcore2025-04-15/src/server/game/Maps/MapUpdater.cpp:44:15
+    #24 0x5555584e184e in MapUpdater::WorkerThread() /root/azerothcore2025-04-15/src/server/game/Maps/MapUpdater.cpp:158:22
+    #25 0x7ffff70a9252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+Thread T12 created by T0 here:
+    #0 0x555555ea5f8c in pthread_create (/root/azerothcore/ac-server-2025-04-15/bin/worldserver+0x951f8c) (BuildId: bfad2b8029b657ef331b64a5e9f7d11ed96d9a11)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558d55556 in World::SetInitialWorldSettings() /root/azerothcore2025-04-15/src/server/game/World/World.cpp:1880:14
+    #3 0x555555efd6ee in main /root/azerothcore2025-04-15/src/server/apps/worldserver/Main.cpp:307:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+Thread T15 created by T0 here:
+    #0 0x555555ea5f8c in pthread_create (/root/azerothcore/ac-server-2025-04-15/bin/worldserver+0x951f8c) (BuildId: bfad2b8029b657ef331b64a5e9f7d11ed96d9a11)
+    #1 0x7ffff70a9328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558d55556 in World::SetInitialWorldSettings() /root/azerothcore2025-04-15/src/server/game/World/World.cpp:1880:14
+    #3 0x555555efd6ee in main /root/azerothcore2025-04-15/src/server/apps/worldserver/Main.cpp:307:13
+    #4 0x7ffff6cc6d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+SUMMARY: AddressSanitizer: heap-use-after-free /root/azerothcore2025-04-15/src/server/game/Spells/Spell.h:568:44 in Spell::GetDelayMoment() const
+Shadow bytes around the buggy address:
+  0x0c32823ba4b0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c32823ba4c0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c32823ba4d0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32823ba4e0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32823ba4f0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x0c32823ba500: fd fd fd fd fd fd fd[fd]fd fd fd fd fd fd fd fd
+  0x0c32823ba510: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32823ba520: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32823ba530: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c32823ba540: fd fd fd fd fd fa fa fa fa fa fa fa fa fa fa fa
+  0x0c32823ba550: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
