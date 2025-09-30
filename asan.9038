@@ -148,3 +148,27 @@ SHADOW_OFFSET: 0x7fff8000
 ==9038==T26: stack [0x7fffae2fd000,0x7fffaeafbe80) size 0x7fee80; local=0x7fffaeafbda4
 ==9038==T27: FakeStack created: 0x7fffac4e9000 -- 0x7fffacff2000 stack_size_log: 20; mmapped 11300K, noreserve=0 
 ==9038==T27: stack [0x7fffacff3000,0x7fffad7f1e80) size 0x7fee80; local=0x7fffad7f1da4
+=================================================================
+==9038==ERROR: AddressSanitizer: allocator is out of memory trying to allocate 0x9000000010 bytes
+    #0 0x555555f4da9d in operator new(unsigned long) (/root/azerothcore/ac-server-2025-09-30/bin/worldserver+0x9f9a9d) (BuildId: 30c867f8004d432071efc642f1ede5e2a5ada175)
+    #1 0x555557f3475e in __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:127:27
+    #2 0x555557f3475e in std::allocator<unsigned char>::allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:185:32
+    #3 0x555557f3475e in std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:464:20
+    #4 0x555557f3475e in std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:346:20
+    #5 0x555557f3475e in std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/vector.tcc:635:34
+    #6 0x5555590aa384 in std::vector<unsigned char, std::allocator<unsigned char> >::resize(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:940:4
+    #7 0x5555590aa384 in ByteBuffer::append(unsigned char const*, unsigned long) /root/azerothcore2025-09-30/src/server/shared/Packets/ByteBuffer.cpp:218:18
+    #8 0x555558858029 in ByteBuffer::operator<<(std::basic_string_view<char, std::char_traits<char> >) /root/azerothcore2025-09-30/src/server/shared/Packets/ByteBuffer.h:216:13
+    #9 0x555558858029 in WorldPackets::Query::NameQueryResponse::Write() /root/azerothcore2025-09-30/src/server/game/Server/Packets/QueryPackets.cpp:32:18
+    #10 0x555558412615 in WorldSession::SendNameQueryOpcode(ObjectGuid) /root/azerothcore2025-09-30/src/server/game/Handlers/QueryHandler.cpp:61:34
+    #11 0x555558a51652 in PacketHandler<WorldPackets::Query::NameQuery, &(WorldSession::HandleNameQueryOpcode(WorldPackets::Query::NameQuery&))>::Call(WorldSession*, WorldPacket&) const /root/azerothcore2025-09-30/src/server/game/Server/Protocol/Opcodes.cpp:35:9
+    #12 0x5555587c0643 in WorldSession::Update(unsigned int, PacketFilter&) /root/azerothcore2025-09-30/src/server/game/Server/WorldSession.cpp:403:35
+    #13 0x5555587f2050 in WorldSessionMgr::UpdateSessions(unsigned int) /root/azerothcore2025-09-30/src/server/game/Server/WorldSessionMgr.cpp:138:24
+    #14 0x555558d5003b in World::Update(unsigned int) /root/azerothcore2025-09-30/src/server/game/World/World.cpp:1192:27
+    #15 0x555555f64634 in WorldUpdateLoop() /root/azerothcore2025-09-30/src/server/apps/worldserver/Main.cpp:587:17
+    #16 0x555555f55520 in main /root/azerothcore2025-09-30/src/server/apps/worldserver/Main.cpp:399:5
+    #17 0x7ffff6ccbd8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+==9038==HINT: if you don't care about these errors you may set allocator_may_return_null=1
+SUMMARY: AddressSanitizer: out-of-memory (/root/azerothcore/ac-server-2025-09-30/bin/worldserver+0x9f9a9d) (BuildId: 30c867f8004d432071efc642f1ede5e2a5ada175) in operator new(unsigned long)
+==9038==ABORTING
