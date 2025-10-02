@@ -148,3 +148,25 @@ SHADOW_OFFSET: 0x7fff8000
 ==136348==T26: stack [0x7fffaf7ab000,0x7fffaffa9e80) size 0x7fee80; local=0x7fffaffa9da4
 ==136348==T27: FakeStack created: 0x7fffad997000 -- 0x7fffae4a0000 stack_size_log: 20; mmapped 11300K, noreserve=0 
 ==136348==T27: stack [0x7fffae4a1000,0x7fffaec9fe80) size 0x7fee80; local=0x7fffaec9fda4
+=================================================================
+==136348==ERROR: AddressSanitizer: requested allocation size 0x15c00000013 (0x15c00001018 after adjustments for alignment, red zones etc.) exceeds maximum supported size of 0x10000000000 (thread T0)
+    #0 0x555555f4e3ed in operator new(unsigned long) (/root/azerothcore/ac-server-2025-10-02/bin/worldserver+0x9fa3ed) (BuildId: 9d0f0de173c3263f84c952eabacb755efd8fab39)
+    #1 0x555555fb2095 in __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:127:27
+    #2 0x555555fb2095 in std::allocator<char>::allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:185:32
+    #3 0x555555fb2095 in std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:464:20
+    #4 0x555555fb2095 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.tcc:153:14
+    #5 0x555555fb2095 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.tcc:265:24
+    #6 0x555558415264 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:1387:8
+    #7 0x555558415264 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:681:15
+    #8 0x555558415264 in WorldSession::SendNameQueryOpcode(ObjectGuid) /root/azerothcore2025-10-02/src/server/game/Handlers/QueryHandler.cpp:48:28
+    #9 0x555558a562b2 in PacketHandler<WorldPackets::Query::NameQuery, &(WorldSession::HandleNameQueryOpcode(WorldPackets::Query::NameQuery&))>::Call(WorldSession*, WorldPacket&) const /root/azerothcore2025-10-02/src/server/game/Server/Protocol/Opcodes.cpp:35:9
+    #10 0x5555587c4643 in WorldSession::Update(unsigned int, PacketFilter&) /root/azerothcore2025-10-02/src/server/game/Server/WorldSession.cpp:403:35
+    #11 0x5555587f60c0 in WorldSessionMgr::UpdateSessions(unsigned int) /root/azerothcore2025-10-02/src/server/game/Server/WorldSessionMgr.cpp:138:24
+    #12 0x555558d534ce in World::Update(unsigned int) /root/azerothcore2025-10-02/src/server/game/World/World.cpp:1191:27
+    #13 0x555555f64f84 in WorldUpdateLoop() /root/azerothcore2025-10-02/src/server/apps/worldserver/Main.cpp:587:17
+    #14 0x555555f55e70 in main /root/azerothcore2025-10-02/src/server/apps/worldserver/Main.cpp:399:5
+    #15 0x7ffff6ccbd8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+==136348==HINT: if you don't care about these errors you may set allocator_may_return_null=1
+SUMMARY: AddressSanitizer: allocation-size-too-big (/root/azerothcore/ac-server-2025-10-02/bin/worldserver+0x9fa3ed) (BuildId: 9d0f0de173c3263f84c952eabacb755efd8fab39) in operator new(unsigned long)
+==136348==ABORTING
