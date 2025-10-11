@@ -493,3 +493,55 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
+=================================================================
+==467730==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x628001b37bd0 at pc 0x55555824fe31 bp 0x7fffffffd270 sp 0x7fffffffd268
+WRITE of size 8 at 0x628001b37bd0 thread T0
+    #0 0x55555824fe30 in Player::SetGroupInvite(Group*) /root/azerothcore2025-10-10/src/server/game/Entities/Player/Player.h:2469:55
+    #1 0x55555824fe30 in Group::RemoveAllInvites() /root/azerothcore2025-10-10/src/server/game/Groups/Group.cpp:365:21
+    #2 0x55555824fe30 in Group::Disband(bool) /root/azerothcore2025-10-10/src/server/game/Groups/Group.cpp:821:5
+    #3 0x55555824ae89 in Group::RemoveMember(ObjectGuid, RemoveMethod const&, ObjectGuid, char const*) /root/azerothcore2025-10-10/src/server/game/Groups/Group.cpp
+    #4 0x555557bb3d74 in Player::RemoveFromGroup(Group*, ObjectGuid, RemoveMethod, ObjectGuid, char const*) /root/azerothcore2025-10-10/src/server/game/Entities/Player/Player.cpp:2362:16
+    #5 0x5555583354f7 in Player::RemoveFromGroup(RemoveMethod) /root/azerothcore2025-10-10/src/server/game/Entities/Player/Player.h:1883:78
+    #6 0x5555583354f7 in WorldSession::HandleGroupDisbandOpcode(WorldPacket&) /root/azerothcore2025-10-10/src/server/game/Handlers/GroupHandler.cpp:455:22
+    #7 0x5555587c5543 in WorldSession::Update(unsigned int, PacketFilter&) /root/azerothcore2025-10-10/src/server/game/Server/WorldSession.cpp:403:35
+    #8 0x5555587f6fc0 in WorldSessionMgr::UpdateSessions(unsigned int) /root/azerothcore2025-10-10/src/server/game/Server/WorldSessionMgr.cpp:138:24
+    #9 0x555558d543ce in World::Update(unsigned int) /root/azerothcore2025-10-10/src/server/game/World/World.cpp:1191:27
+    #10 0x555555f64f84 in WorldUpdateLoop() /root/azerothcore2025-10-10/src/server/apps/worldserver/Main.cpp:587:17
+    #11 0x555555f55e70 in main /root/azerothcore2025-10-10/src/server/apps/worldserver/Main.cpp:399:5
+    #12 0x7ffff6ccbd8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #13 0x7ffff6ccbe3f in __libc_start_main csu/../csu/libc-start.c:392:3
+    #14 0x555555e907d4 in _start (/root/azerothcore/ac-server-2025-10-10/bin/worldserver+0x93c7d4) (BuildId: 5ee7e33bedc17e0800359e01bbf8f382fcbfcae4)
+
+Address 0x628001b37bd0 is a wild pointer inside of access range of size 0x000000000008.
+SUMMARY: AddressSanitizer: heap-buffer-overflow /root/azerothcore2025-10-10/src/server/game/Entities/Player/Player.h:2469:55 in Player::SetGroupInvite(Group*)
+Shadow bytes around the buggy address:
+  0x0c508035ef20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c508035ef30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c508035ef40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c508035ef50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c508035ef60: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+=>0x0c508035ef70: fa fa fa fa fa fa fa fa fa fa[fa]fa fa fa fa fa
+  0x0c508035ef80: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c508035ef90: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c508035efa0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c508035efb0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c508035efc0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
