@@ -314,3 +314,31 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
+=================================================================
+==809283==ERROR: AddressSanitizer: allocator is out of memory trying to allocate 0x900000000d bytes
+    #0 0x555555f4e81d in operator new(unsigned long) (/root/azerothcore/ac-server-2025-10-17/bin/worldserver+0x9fa81d) (BuildId: f9730fc0929e153144df46732616c15d16374d12)
+    #1 0x555555fb24c5 in __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:127:27
+    #2 0x555555fb24c5 in std::allocator<char>::allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:185:32
+    #3 0x555555fb24c5 in std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:464:20
+    #4 0x555555fb24c5 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.tcc:153:14
+    #5 0x555555fb24c5 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.tcc:265:24
+    #6 0x5555577fcee9 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:1387:8
+    #7 0x5555577fcee9 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:681:15
+    #8 0x5555577fcee9 in CharacterCache::GetCharacterNameByGuid(ObjectGuid, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) const /root/azerothcore2025-10-17/src/server/game/Cache/CharacterCache.cpp:308:10
+    #9 0x5555576b8b89 in ArenaTeam::Roster(WorldSession*) /root/azerothcore2025-10-17/src/server/game/Battlegrounds/ArenaTeam.cpp:458:26
+    #10 0x5555587c6b53 in WorldSession::Update(unsigned int, PacketFilter&) /root/azerothcore2025-10-17/src/server/game/Server/WorldSession.cpp:404:35
+    #11 0x5555584eb4b6 in Map::Update(unsigned int, unsigned int, bool) /root/azerothcore2025-10-17/src/server/game/Maps/Map.cpp:442:22
+    #12 0x55555853d9b2 in MapUpdateRequest::call() /root/azerothcore2025-10-17/src/server/game/Maps/MapUpdater.cpp:46:15
+    #13 0x55555853bbee in MapUpdater::WorkerThread() /root/azerothcore2025-10-17/src/server/game/Maps/MapUpdater.cpp:186:22
+    #14 0x7ffff70ae252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+==809283==HINT: if you don't care about these errors you may set allocator_may_return_null=1
+SUMMARY: AddressSanitizer: out-of-memory (/root/azerothcore/ac-server-2025-10-17/bin/worldserver+0x9fa81d) (BuildId: f9730fc0929e153144df46732616c15d16374d12) in operator new(unsigned long)
+Thread T17 created by T0 here:
+    #0 0x555555efcecc in pthread_create (/root/azerothcore/ac-server-2025-10-17/bin/worldserver+0x9a8ecc) (BuildId: f9730fc0929e153144df46732616c15d16374d12)
+    #1 0x7ffff70ae328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558d257a9 in World::SetInitialWorldSettings() /root/azerothcore2025-10-17/src/server/game/World/World.cpp:909:14
+    #3 0x555555f547a0 in main /root/azerothcore2025-10-17/src/server/apps/worldserver/Main.cpp:307:13
+    #4 0x7ffff6ccbd8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+==809283==ABORTING

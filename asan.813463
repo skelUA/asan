@@ -1,0 +1,178 @@
+==813463==Registered root region at 0x7ffff45016e0 of size 96
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff45016e0 of size 96
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept '__isoc99_printf'
+==813463==Registered root region at 0x7ffff45016e0 of size 96
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff45016e0 of size 96
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept '__isoc99_sprintf'
+==813463==Registered root region at 0x7ffff45016e0 of size 96
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff45016e0 of size 96
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept '__isoc99_snprintf'
+==813463==Registered root region at 0x7ffff45016e0 of size 96
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff45016e0 of size 96
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept '__isoc99_fprintf'
+==813463==Registered root region at 0x7ffff45016e0 of size 96
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff45016e0 of size 96
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept '__isoc99_vprintf'
+==813463==Registered root region at 0x7ffff45016e0 of size 96
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff45016e0 of size 96
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept '__isoc99_vsprintf'
+==813463==Registered root region at 0x7ffff45016e0 of size 96
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff45016e0 of size 96
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept '__isoc99_vsnprintf'
+==813463==Registered root region at 0x7ffff45016e0 of size 96
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff45016e0 of size 96
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept '__isoc99_vfprintf'
+==813463==Registered root region at 0x7ffff3f01ab0 of size 112
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff3f01ab0 of size 112
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept 'pthread_mutexattr_getrobust_np'
+==813463==Registered root region at 0x7ffff45016e0 of size 96
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff45016e0 of size 96
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept 'xdr_quad_t'
+==813463==Registered root region at 0x7ffff45016e0 of size 96
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff45016e0 of size 96
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept 'xdr_u_quad_t'
+==813463==Registered root region at 0x7ffff45016e0 of size 96
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff45016e0 of size 96
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept 'xdr_destroy'
+==813463==Registered root region at 0x7ffff3d01310 of size 80
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff3d01310 of size 80
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept 'crypt'
+==813463==Registered root region at 0x7ffff45016e0 of size 96
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff45016e0 of size 96
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept 'crypt_r'
+==813463==Registered root region at 0x7ffff3f01ab0 of size 112
+==813463==Registered root region at 0x7ffff41007a0 of size 32
+==813463==Unregistered root region at 0x7ffff3f01ab0 of size 112
+==813463==Unregistered root region at 0x7ffff41007a0 of size 32
+==813463==AddressSanitizer: failed to intercept '__cxa_rethrow_primary_exception'
+==813463==AddressSanitizer: libc interceptors initialized
+|| `[0x10007fff8000, 0x7fffffffffff]` || HighMem    ||
+|| `[0x02008fff7000, 0x10007fff7fff]` || HighShadow ||
+|| `[0x00008fff7000, 0x02008fff6fff]` || ShadowGap  ||
+|| `[0x00007fff8000, 0x00008fff6fff]` || LowShadow  ||
+|| `[0x000000000000, 0x00007fff7fff]` || LowMem     ||
+MemToShadow(shadow): 0x00008fff7000 0x000091ff6dff 0x004091ff6e00 0x02008fff6fff
+redzone=16
+max_redzone=2048
+quarantine_size_mb=256M
+thread_local_quarantine_size_kb=1024K
+malloc_context_size=30
+SHADOW_SCALE: 3
+SHADOW_GRANULARITY: 8
+SHADOW_OFFSET: 0x7fff8000
+==813463==Installed the sigaction for signal 11
+==813463==Installed the sigaction for signal 7
+==813463==Installed the sigaction for signal 8
+==813463==T0: FakeStack created: 0x7ffff29f7000 -- 0x7ffff3500000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T0: stack [0x7fffff7ff000,0x7ffffffff000) size 0x800000; local=0x7fffffffe754
+==813463==AddressSanitizer Init done
+==813463==T1: FakeStack created: 0x7fffefdf5000 -- 0x7ffff08fe000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T1: stack [0x7ffff1100000,0x7ffff18fee80) size 0x7fee80; local=0x7ffff18feda4
+==813463==T2: FakeStack created: 0x7fffeeaeb000 -- 0x7fffef5f4000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T2: stack [0x7ffff08ff000,0x7ffff10fde80) size 0x7fee80; local=0x7ffff10fdda4
+==813463==T3: FakeStack created: 0x7fffedfe2000 -- 0x7fffeeaeb000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T3: stack [0x7fffef5f5000,0x7fffefdf3e80) size 0x7fee80; local=0x7fffefdf3da4
+==813463==T4: FakeStack created: 0x7fffeccd8000 -- 0x7fffed7e1000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T4: stack [0x7fffed7e2000,0x7fffedfe0e80) size 0x7fee80; local=0x7fffedfe0da4
+==813463==T5: FakeStack created: 0x7fffeb9ce000 -- 0x7fffec4d7000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T5: stack [0x7fffec4d8000,0x7fffeccd6e80) size 0x7fee80; local=0x7fffeccd6da4
+==813463==T6: FakeStack created: 0x7fffea6c4000 -- 0x7fffeb1cd000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T6: stack [0x7fffeb1ce000,0x7fffeb9cce80) size 0x7fee80; local=0x7fffeb9ccda4
+==813463==T7: FakeStack created: 0x7fffe93ba000 -- 0x7fffe9ec3000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T7: stack [0x7fffe9ec4000,0x7fffea6c2e80) size 0x7fee80; local=0x7fffea6c2da4
+==813463==T8: FakeStack created: 0x7fffe80b0000 -- 0x7fffe8bb9000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T8: stack [0x7fffe8bba000,0x7fffe93b8e80) size 0x7fee80; local=0x7fffe93b8da4
+==813463==T9: FakeStack created: 0x7fffe6da6000 -- 0x7fffe78af000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T9: stack [0x7fffe78b0000,0x7fffe80aee80) size 0x7fee80; local=0x7fffe80aeda4
+==813463==T10: FakeStack created: 0x7fffca101000 -- 0x7fffcac0a000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T10: stack [0x7fffcb40c000,0x7fffcbc0ae80) size 0x7fee80; local=0x7fffcbc0ada4
+==813463==T11: FakeStack created: 0x7fffc95f8000 -- 0x7fffca101000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T11: stack [0x7fffcac0b000,0x7fffcb409e80) size 0x7fee80; local=0x7fffcb409da4
+==813463==T12: FakeStack created: 0x7fffd3fd0000 -- 0x7fffd4ad9000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T12: stack [0x7fffdad5e000,0x7fffdb55ce80) size 0x7fee80; local=0x7fffdb55cda4
+==813463==T13: FakeStack created: 0x7fffc1ac6000 -- 0x7fffc25cf000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T13: stack [0x7fffda55d000,0x7fffdad5be80) size 0x7fee80; local=0x7fffdad5bda4
+==813463==T14: FakeStack created: 0x7fffc07bc000 -- 0x7fffc12c5000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T14: stack [0x7fffc25d0000,0x7fffc2dcee80) size 0x7fee80; local=0x7fffc2dceda4
+==813463==T15: FakeStack created: 0x7fffbf4b2000 -- 0x7fffbffbb000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T15: stack [0x7fffc12c6000,0x7fffc1ac4e80) size 0x7fee80; local=0x7fffc1ac4da4
+==813463==T16: FakeStack created: 0x7fffbe1a8000 -- 0x7fffbecb1000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T16: stack [0x7fffbffbc000,0x7fffc07bae80) size 0x7fee80; local=0x7fffc07bada4
+==813463==T17: FakeStack created: 0x7fffbce9e000 -- 0x7fffbd9a7000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T17: stack [0x7fffbecb2000,0x7fffbf4b0e80) size 0x7fee80; local=0x7fffbf4b0da4
+==813463==T18: FakeStack created: 0x7fffbbb94000 -- 0x7fffbc69d000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T18: stack [0x7fffbd9a8000,0x7fffbe1a6e80) size 0x7fee80; local=0x7fffbe1a6da4
+==813463==T19: FakeStack created: 0x7fffbb08b000 -- 0x7fffbbb94000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T19: stack [0x7fffbc69e000,0x7fffbce9ce80) size 0x7fee80; local=0x7fffbce9cda4
+==813463==T20: FakeStack created: 0x7fffb5735000 -- 0x7fffb623e000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T20: stack [0x7fffb623f000,0x7fffb6a3de80) size 0x7fee80; local=0x7fffb6a3dda4
+==813463==T21: FakeStack created: 0x7fffb3c2a000 -- 0x7fffb4733000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T21: stack [0x7fffb4f35000,0x7fffb5733e80) size 0x7fee80; local=0x7fffb5733da4
+==813463==T22: FakeStack created: 0x7fffb2920000 -- 0x7fffb3429000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T22: stack [0x7fffb4734000,0x7fffb4f32e80) size 0x7fee80; local=0x7fffb4f32da4
+==813463==T23: FakeStack created: 0x7fffb1616000 -- 0x7fffb211f000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T23: stack [0x7fffb342a000,0x7fffb3c28e80) size 0x7fee80; local=0x7fffb3c28da4
+==813463==T24: FakeStack created: 0x7fffb030c000 -- 0x7fffb0e15000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T24: stack [0x7fffb2120000,0x7fffb291ee80) size 0x7fee80; local=0x7fffb291eda4
+==813463==T25: FakeStack created: 0x7fffaf803000 -- 0x7fffb030c000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T25: stack [0x7fffb0e16000,0x7fffb1614e80) size 0x7fee80; local=0x7fffb1614da4
+==813463==T26: FakeStack created: 0x7fffae4f9000 -- 0x7fffaf002000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T26: stack [0x7fffaf003000,0x7fffaf801e80) size 0x7fee80; local=0x7fffaf801da4
+==813463==T27: FakeStack created: 0x7fffad1ef000 -- 0x7fffadcf8000 stack_size_log: 20; mmapped 11300K, noreserve=0 
+==813463==T27: stack [0x7fffadcf9000,0x7fffae4f7e80) size 0x7fee80; local=0x7fffae4f7da4
+=================================================================
+==813463==ERROR: AddressSanitizer: allocator is out of memory trying to allocate 0x900000000d bytes
+    #0 0x555555f4e81d in operator new(unsigned long) (/root/azerothcore/ac-server-2025-10-17/bin/worldserver+0x9fa81d) (BuildId: f9730fc0929e153144df46732616c15d16374d12)
+    #1 0x555555fb24c5 in __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:127:27
+    #2 0x555555fb24c5 in std::allocator<char>::allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:185:32
+    #3 0x555555fb24c5 in std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:464:20
+    #4 0x555555fb24c5 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.tcc:153:14
+    #5 0x555555fb24c5 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.tcc:265:24
+    #6 0x5555577fcee9 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:1387:8
+    #7 0x5555577fcee9 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:681:15
+    #8 0x5555577fcee9 in CharacterCache::GetCharacterNameByGuid(ObjectGuid, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) const /root/azerothcore2025-10-17/src/server/game/Cache/CharacterCache.cpp:308:10
+    #9 0x5555576b8b89 in ArenaTeam::Roster(WorldSession*) /root/azerothcore2025-10-17/src/server/game/Battlegrounds/ArenaTeam.cpp:458:26
+    #10 0x5555587c6b53 in WorldSession::Update(unsigned int, PacketFilter&) /root/azerothcore2025-10-17/src/server/game/Server/WorldSession.cpp:404:35
+    #11 0x5555584eb4b6 in Map::Update(unsigned int, unsigned int, bool) /root/azerothcore2025-10-17/src/server/game/Maps/Map.cpp:442:22
+    #12 0x55555853d9b2 in MapUpdateRequest::call() /root/azerothcore2025-10-17/src/server/game/Maps/MapUpdater.cpp:46:15
+    #13 0x55555853bbee in MapUpdater::WorkerThread() /root/azerothcore2025-10-17/src/server/game/Maps/MapUpdater.cpp:186:22
+    #14 0x7ffff70ae252  (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc252) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+
+==813463==HINT: if you don't care about these errors you may set allocator_may_return_null=1
+SUMMARY: AddressSanitizer: out-of-memory (/root/azerothcore/ac-server-2025-10-17/bin/worldserver+0x9fa81d) (BuildId: f9730fc0929e153144df46732616c15d16374d12) in operator new(unsigned long)
+Thread T15 created by T0 here:
+    #0 0x555555efcecc in pthread_create (/root/azerothcore/ac-server-2025-10-17/bin/worldserver+0x9a8ecc) (BuildId: f9730fc0929e153144df46732616c15d16374d12)
+    #1 0x7ffff70ae328 in std::thread::_M_start_thread(std::unique_ptr<std::thread::_State, std::default_delete<std::thread::_State> >, void (*)()) (/lib/x86_64-linux-gnu/libstdc++.so.6+0xdc328) (BuildId: e37fe1a879783838de78cbc8c80621fa685d58a2)
+    #2 0x555558d257a9 in World::SetInitialWorldSettings() /root/azerothcore2025-10-17/src/server/game/World/World.cpp:909:14
+    #3 0x555555f547a0 in main /root/azerothcore2025-10-17/src/server/apps/worldserver/Main.cpp:307:13
+    #4 0x7ffff6ccbd8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+==813463==ABORTING
