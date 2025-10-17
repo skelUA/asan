@@ -148,3 +148,26 @@ SHADOW_OFFSET: 0x7fff8000
 ==797874==T26: stack [0x7fffaf003000,0x7fffaf801e80) size 0x7fee80; local=0x7fffaf801da4
 ==797874==T27: FakeStack created: 0x7fffad1ef000 -- 0x7fffadcf8000 stack_size_log: 20; mmapped 11300K, noreserve=0 
 ==797874==T27: stack [0x7fffadcf9000,0x7fffae4f7e80) size 0x7fee80; local=0x7fffae4f7da4
+==797874==WARNING: AddressSanitizer failed to allocate 0x17200000006 bytes
+=================================================================
+==797874==ERROR: AddressSanitizer: allocator is out of memory trying to allocate 0x17200000006 bytes
+    #0 0x555555f4e81d in operator new(unsigned long) (/root/azerothcore/ac-server-2025-10-17/bin/worldserver+0x9fa81d) (BuildId: 4f28da450da53e56ef7277cd5241262aad1fdb77)
+    #1 0x555555fb24c5 in __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:127:27
+    #2 0x555555fb24c5 in std::allocator<char>::allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:185:32
+    #3 0x555555fb24c5 in std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:464:20
+    #4 0x555555fb24c5 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.tcc:153:14
+    #5 0x555555fb24c5 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.tcc:265:24
+    #6 0x555558415cd4 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:1387:8
+    #7 0x555558415cd4 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:681:15
+    #8 0x555558415cd4 in WorldSession::SendNameQueryOpcode(ObjectGuid) /root/azerothcore2025-10-17/src/server/game/Handlers/QueryHandler.cpp:48:28
+    #9 0x555558a57ee2 in PacketHandler<WorldPackets::Query::NameQuery, &(WorldSession::HandleNameQueryOpcode(WorldPackets::Query::NameQuery&))>::Call(WorldSession*, WorldPacket&) const /root/azerothcore2025-10-17/src/server/game/Server/Protocol/Opcodes.cpp:35:9
+    #10 0x5555587c6273 in WorldSession::Update(unsigned int, PacketFilter&) /root/azerothcore2025-10-17/src/server/game/Server/WorldSession.cpp:404:35
+    #11 0x5555587f7cf0 in WorldSessionMgr::UpdateSessions(unsigned int) /root/azerothcore2025-10-17/src/server/game/Server/WorldSessionMgr.cpp:138:24
+    #12 0x555558d5516e in World::Update(unsigned int) /root/azerothcore2025-10-17/src/server/game/World/World.cpp:1191:27
+    #13 0x555555f653b4 in WorldUpdateLoop() /root/azerothcore2025-10-17/src/server/apps/worldserver/Main.cpp:587:17
+    #14 0x555555f562a0 in main /root/azerothcore2025-10-17/src/server/apps/worldserver/Main.cpp:399:5
+    #15 0x7ffff6ccbd8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+==797874==HINT: if you don't care about these errors you may set allocator_may_return_null=1
+SUMMARY: AddressSanitizer: out-of-memory (/root/azerothcore/ac-server-2025-10-17/bin/worldserver+0x9fa81d) (BuildId: 4f28da450da53e56ef7277cd5241262aad1fdb77) in operator new(unsigned long)
+==797874==ABORTING
