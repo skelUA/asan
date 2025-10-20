@@ -557,3 +557,168 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
+==819973==T2 TSDDtor
+==819973==T1 TSDDtor
+==819973==T3 TSDDtor
+==819973==T2 exited
+==819973==T1 exited
+==819973==T3 exited
+==819973==T27 TSDDtor
+==819973==T27 exited
+==819973==T21 TSDDtor
+==819973==T25 TSDDtor
+==819973==T21 exited
+==819973==T24 TSDDtor
+==819973==T25 exited
+==819973==T24 exited
+==819973==T23 TSDDtor
+==819973==T23 exited
+==819973==T22 TSDDtor
+==819973==T22 exited
+==819973==T20 TSDDtor
+==819973==T20 exited
+=================================================================
+==819973==ERROR: AddressSanitizer: heap-use-after-free on address 0x60700244b20c at pc 0x555557aac65f bp 0x7fffffffdfd0 sp 0x7fffffffdfc8
+READ of size 4 at 0x60700244b20c thread T0
+    #0 0x555557aac65e in GameObject::GetScriptId() const /root/azerothcore2025-10-17/src/server/game/Entities/GameObject/GameObject.cpp:2182:47
+    #1 0x5555587548be in ScriptMgr::OnGameObjectLootStateChanged(GameObject*, unsigned int, Unit*) /root/azerothcore2025-10-17/src/server/game/Scripting/ScriptDefines/GameObjectScript.cpp:188:79
+    #2 0x555557a93e68 in GameObject::SetLootState(LootState, Unit*) /root/azerothcore2025-10-17/src/server/game/Entities/GameObject/GameObject.cpp:2434:17
+    #3 0x555557a93e68 in GameObject::Delete() /root/azerothcore2025-10-17/src/server/game/Entities/GameObject/GameObject.cpp:980:5
+    #4 0x555558606f07 in OutdoorPvP::DeleteSpawns() /root/azerothcore2025-10-17/src/server/game/OutdoorPvP/OutdoorPvP.cpp:265:30
+    #5 0x555558606fbb in OutdoorPvP::~OutdoorPvP() /root/azerothcore2025-10-17/src/server/game/OutdoorPvP/OutdoorPvP.cpp:274:5
+    #6 0x555557211dbd in OutdoorPvPHP::~OutdoorPvPHP() /root/azerothcore2025-10-17/src/server/scripts/OutdoorPvP/OutdoorPvPHP.h:103:7
+    #7 0x55555860e75b in std::default_delete<OutdoorPvP>::operator()(OutdoorPvP*) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:85:2
+    #8 0x55555860e75b in std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >::~unique_ptr() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4
+    #9 0x55555860e75b in void std::destroy_at<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> > >(std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:88:15
+    #10 0x55555860e75b in void std::_Destroy<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> > >(std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:149:7
+    #11 0x55555860e75b in void std::_Destroy_aux<false>::__destroy<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*>(std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*, std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:163:6
+    #12 0x55555860e75b in void std::_Destroy<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*>(std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*, std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:195:7
+    #13 0x55555860e75b in void std::_Destroy<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*, std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> > >(std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*, std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*, std::allocator<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> > >&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:848:7
+    #14 0x55555860e75b in std::vector<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >, std::allocator<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> > > >::_M_erase_at_end(std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:1796:6
+    #15 0x55555860e75b in std::vector<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >, std::allocator<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> > > >::clear() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:1499:9
+    #16 0x55555860e75b in OutdoorPvPMgr::Die() /root/azerothcore2025-10-17/src/server/game/OutdoorPvP/OutdoorPvPMgr.cpp:38:21
+    #17 0x555555f6bf9f in main::$_11::operator()(void*) const /root/azerothcore2025-10-17/src/server/apps/worldserver/Main.cpp:314:25
+    #18 0x555555f6bf9f in std::_Sp_counted_deleter<std::nullptr_t, main::$_11, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:442:9
+    #19 0x555555f576a8 in std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:168:6
+    #20 0x555555f576a8 in std::__shared_count<(__gnu_cxx::_Lock_policy)2>::~__shared_count() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:705:11
+    #21 0x555555f576a8 in std::__shared_ptr<void, (__gnu_cxx::_Lock_policy)2>::~__shared_ptr() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1154:31
+    #22 0x555555f576a8 in main /root/azerothcore2025-10-17/src/server/apps/worldserver/Main.cpp:418:1
+    #23 0x7ffff6ccbd8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #24 0x7ffff6ccbe3f in __libc_start_main csu/../csu/libc-start.c:392:3
+    #25 0x555555e90c04 in _start (/root/azerothcore/ac-server-2025-10-17/bin/worldserver+0x93cc04) (BuildId: 597f152473ff367f2444a17fb8851d357628ad22)
+
+0x60700244b20c is located 60 bytes inside of 80-byte region [0x60700244b1d0,0x60700244b220)
+freed by thread T0 here:
+    #0 0x555555f4f07d in operator delete(void*) (/root/azerothcore/ac-server-2025-10-17/bin/worldserver+0x9fb07d) (BuildId: 597f152473ff367f2444a17fb8851d357628ad22)
+    #1 0x55555821632f in __gnu_cxx::new_allocator<std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false> >::deallocate(std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:145:2
+    #2 0x55555821632f in std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false> >::deallocate(std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:199:25
+    #3 0x55555821632f in std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false> > >::deallocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false> >&, std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false>*, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:496:13
+    #4 0x55555821632f in std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false> > >::_M_deallocate_node_ptr(std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false>*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable_policy.h:1905:7
+    #5 0x55555821632f in std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false> > >::_M_deallocate_node(std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false>*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable_policy.h:1895:7
+    #6 0x55555821632f in std::_Hashtable<unsigned int, std::pair<unsigned int const, GameObjectData>, std::allocator<std::pair<unsigned int const, GameObjectData> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_erase(unsigned long, std::__detail::_Hash_node_base*, std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false>*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable.h:2183:13
+    #7 0x55555821632f in std::_Hashtable<unsigned int, std::pair<unsigned int const, GameObjectData>, std::allocator<std::pair<unsigned int const, GameObjectData> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_erase(std::integral_constant<bool, true>, unsigned int const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable.h:2209:7
+    #8 0x555558161662 in std::_Hashtable<unsigned int, std::pair<unsigned int const, GameObjectData>, std::allocator<std::pair<unsigned int const, GameObjectData> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(unsigned int const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable.h:938:16
+    #9 0x555558161662 in std::unordered_map<unsigned int, GameObjectData, std::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, GameObjectData> > >::erase(unsigned int const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_map.h:763:21
+    #10 0x555558161662 in ObjectMgr::DeleteGOData(unsigned int) /root/azerothcore2025-10-17/src/server/game/Globals/ObjectMgr.cpp:8255:26
+    #11 0x555558606a4e in OPvPCapturePoint::DelCapturePoint() /root/azerothcore2025-10-17/src/server/game/OutdoorPvP/OutdoorPvP.cpp:217:17
+    #12 0x555558606a4e in OPvPCapturePoint::DeleteSpawns() /root/azerothcore2025-10-17/src/server/game/OutdoorPvP/OutdoorPvP.cpp:241:5
+    #13 0x555558606f07 in OutdoorPvP::DeleteSpawns() /root/azerothcore2025-10-17/src/server/game/OutdoorPvP/OutdoorPvP.cpp:265:30
+    #14 0x555558606fbb in OutdoorPvP::~OutdoorPvP() /root/azerothcore2025-10-17/src/server/game/OutdoorPvP/OutdoorPvP.cpp:274:5
+    #15 0x555557211dbd in OutdoorPvPHP::~OutdoorPvPHP() /root/azerothcore2025-10-17/src/server/scripts/OutdoorPvP/OutdoorPvPHP.h:103:7
+    #16 0x55555860e75b in std::default_delete<OutdoorPvP>::operator()(OutdoorPvP*) const /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:85:2
+    #17 0x55555860e75b in std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >::~unique_ptr() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4
+    #18 0x55555860e75b in void std::destroy_at<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> > >(std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:88:15
+    #19 0x55555860e75b in void std::_Destroy<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> > >(std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:149:7
+    #20 0x55555860e75b in void std::_Destroy_aux<false>::__destroy<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*>(std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*, std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:163:6
+    #21 0x55555860e75b in void std::_Destroy<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*>(std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*, std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:195:7
+    #22 0x55555860e75b in void std::_Destroy<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*, std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> > >(std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*, std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*, std::allocator<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> > >&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:848:7
+    #23 0x55555860e75b in std::vector<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >, std::allocator<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> > > >::_M_erase_at_end(std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:1796:6
+    #24 0x55555860e75b in std::vector<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> >, std::allocator<std::unique_ptr<OutdoorPvP, std::default_delete<OutdoorPvP> > > >::clear() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:1499:9
+    #25 0x55555860e75b in OutdoorPvPMgr::Die() /root/azerothcore2025-10-17/src/server/game/OutdoorPvP/OutdoorPvPMgr.cpp:38:21
+    #26 0x555555f6bf9f in main::$_11::operator()(void*) const /root/azerothcore2025-10-17/src/server/apps/worldserver/Main.cpp:314:25
+    #27 0x555555f6bf9f in std::_Sp_counted_deleter<std::nullptr_t, main::$_11, std::allocator<void>, (__gnu_cxx::_Lock_policy)2>::_M_dispose() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:442:9
+    #28 0x555555f576a8 in std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:168:6
+    #29 0x555555f576a8 in std::__shared_count<(__gnu_cxx::_Lock_policy)2>::~__shared_count() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:705:11
+    #30 0x555555f576a8 in std::__shared_ptr<void, (__gnu_cxx::_Lock_policy)2>::~__shared_ptr() /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1154:31
+    #31 0x555555f576a8 in main /root/azerothcore2025-10-17/src/server/apps/worldserver/Main.cpp:418:1
+    #32 0x7ffff6ccbd8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+previously allocated by thread T0 here:
+    #0 0x555555f4e81d in operator new(unsigned long) (/root/azerothcore/ac-server-2025-10-17/bin/worldserver+0x9fa81d) (BuildId: 597f152473ff367f2444a17fb8851d357628ad22)
+    #1 0x555557aba44b in __gnu_cxx::new_allocator<std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false> >::allocate(unsigned long, void const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:127:27
+    #2 0x555557aba44b in std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false> >::allocate(unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:185:32
+    #3 0x555557aba44b in std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false> > >::allocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false> >&, unsigned long) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:464:20
+    #4 0x555557aba44b in std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false>* std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false> > >::_M_allocate_node<std::piecewise_construct_t const&, std::tuple<unsigned int const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<unsigned int const&>&&, std::tuple<>&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable_policy.h:1873:16
+    #5 0x555557aba44b in std::_Hashtable<unsigned int, std::pair<unsigned int const, GameObjectData>, std::allocator<std::pair<unsigned int const, GameObjectData> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_Scoped_node::_Scoped_node<std::piecewise_construct_t const&, std::tuple<unsigned int const&>, std::tuple<> >(std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned int const, GameObjectData>, false> > >*, std::piecewise_construct_t const&, std::tuple<unsigned int const&>&&, std::tuple<>&&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable.h:304:19
+    #6 0x555557aba44b in std::__detail::_Map_base<unsigned int, std::pair<unsigned int const, GameObjectData>, std::allocator<std::pair<unsigned int const, GameObjectData> >, std::__detail::_Select1st, std::equal_to<unsigned int>, std::hash<unsigned int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned int const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable_policy.h:707:42
+    #7 0x5555580357df in std::unordered_map<unsigned int, GameObjectData, std::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<std::pair<unsigned int const, GameObjectData> > >::operator[](unsigned int const&) /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_map.h:980:16
+    #8 0x5555580357df in ObjectMgr::NewGOData(unsigned int) /root/azerothcore2025-10-17/src/server/game/Globals/ObjectMgr.h:1301:66
+    #9 0x5555580357df in ObjectMgr::AddGOData(unsigned int, unsigned int, float, float, float, float, unsigned int, float, float, float, float) /root/azerothcore2025-10-17/src/server/game/Globals/ObjectMgr.cpp:2513:28
+    #10 0x55555860444f in OPvPCapturePoint::SetCapturePointData(unsigned int, unsigned int, float, float, float, float, float, float, float, float) /root/azerothcore2025-10-17/src/server/game/OutdoorPvP/OutdoorPvP.cpp:139:41
+    #11 0x555557206de5 in OPvPCapturePointHP::OPvPCapturePointHP(OutdoorPvP*, OutdoorPvPHPTowerType) /root/azerothcore2025-10-17/src/server/scripts/OutdoorPvP/OutdoorPvPHP.cpp:41:5
+    #12 0x555557207b55 in OutdoorPvPHP::SetupOutdoorPvP() /root/azerothcore2025-10-17/src/server/scripts/OutdoorPvP/OutdoorPvPHP.cpp:81:25
+    #13 0x55555860ffb2 in OutdoorPvPMgr::InitOutdoorPvP() /root/azerothcore2025-10-17/src/server/game/OutdoorPvP/OutdoorPvPMgr.cpp:97:19
+    #14 0x555558d275ff in World::SetInitialWorldSettings() /root/azerothcore2025-10-17/src/server/game/World/World.cpp:945:21
+    #15 0x555555f547a0 in main /root/azerothcore2025-10-17/src/server/apps/worldserver/Main.cpp:307:13
+    #16 0x7ffff6ccbd8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+
+SUMMARY: AddressSanitizer: heap-use-after-free /root/azerothcore2025-10-17/src/server/game/Entities/GameObject/GameObject.cpp:2182:47 in GameObject::GetScriptId() const
+Shadow bytes around the buggy address:
+  0x0c0e804815f0: fa fa fa fa 00 00 00 00 00 00 00 00 00 fa fa fa
+  0x0c0e80481600: fa fa 00 00 00 00 00 00 00 00 00 fa fa fa fa fa
+  0x0c0e80481610: 00 00 00 00 00 00 00 00 00 00 fa fa fa fa 00 00
+  0x0c0e80481620: 00 00 00 00 00 00 00 fa fa fa fa fa 00 00 00 00
+  0x0c0e80481630: 00 00 00 00 00 fa fa fa fa fa fd fd fd fd fd fd
+=>0x0c0e80481640: fd[fd]fd fd fa fa fa fa fd fd fd fd fd fd fd fd
+  0x0c0e80481650: fd fd fa fa fa fa 00 00 00 00 00 00 00 00 00 00
+  0x0c0e80481660: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 fa fa
+  0x0c0e80481670: fa fa 00 00 00 00 00 00 00 00 00 00 fa fa fa fa
+  0x0c0e80481680: 00 00 00 00 00 00 00 00 00 00 fa fa fa fa 00 00
+  0x0c0e80481690: 00 00 00 00 00 00 00 00 fa fa fa fa 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==819973==T16 TSDDtor
+==819973==T15 TSDDtor
+==819973==T13 TSDDtor
+==819973==T16 exited
+==819973==T17 TSDDtor
+==819973==T14 TSDDtor
+==819973==T19 TSDDtor
+==819973==T18 TSDDtor
+==819973==T12 TSDDtor
+==819973==T13 exited
+==819973==T14 exited
+==819973==T18 exited
+==819973==T19 exited
+==819973==T15 exited
+==819973==T17 exited
+==819973==T12 exited
+==819973==T7 TSDDtor
+==819973==T6 TSDDtor
+==819973==T7 exited
+==819973==T6 exited
+==819973==T9 TSDDtor
+==819973==T8 TSDDtor
+==819973==T9 exited
+==819973==T8 exited
+==819973==T4 TSDDtor
+==819973==T5 TSDDtor
+==819973==T4 exited
+==819973==T5 exited
