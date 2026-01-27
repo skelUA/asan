@@ -1,0 +1,48 @@
+19010045.592364 [Thread debugging using libthread_db enabled]
+19010045.592396 Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+19010045.632557 [New Thread 0x7ffff41ff640 (LWP 106747)]
+19010045.632881 [New Thread 0x7ffff39fe640 (LWP 106748)]
+19010045.633153 [New Thread 0x7ffff2bff640 (LWP 106749)]
+19010045.636992 [New Thread 0x7ffff1b7f640 (LWP 106750)]
+19010045.798706 [New Thread 0x7ffff137e640 (LWP 106754)]
+19010046.104824 [New Thread 0x7ffff0b7d640 (LWP 106758)]
+19010046.114204 [New Thread 0x7ffff037c640 (LWP 106759)]
+19010046.139787 [New Thread 0x7fffefb7b640 (LWP 106760)]
+19010046.147874 [New Thread 0x7fffef37a640 (LWP 106761)]
+[Detaching after fork from child process 106762]
+[Detaching after fork from child process 106763]
+[Detaching after fork from child process 106764]
+[Detaching after fork from child process 106765]
+[Detaching after fork from child process 106766]
+[Detaching after fork from child process 106767]
+[Detaching after fork from child process 106768]
+[Detaching after fork from child process 106769]
+[Detaching after fork from child process 106770]
+19010067.603440 [New Thread 0x7fff8a7ff640 (LWP 106776)]
+19010067.603852 [New Thread 0x7fff89ffe640 (LWP 106777)]
+19010069.797972 [New Thread 0x7fff723ff640 (LWP 106778)]
+19010069.798230 [New Thread 0x7fff715ff640 (LWP 106779)]
+19010069.798415 [New Thread 0x7fff70dfe640 (LWP 106780)]
+19010069.798621 [New Thread 0x7fff705fd640 (LWP 106781)]
+19010069.798899 [New Thread 0x7fff6fdfc640 (LWP 106782)]
+19010069.799092 [New Thread 0x7fff6f5fb640 (LWP 106783)]
+19010069.799326 [New Thread 0x7fff6edfa640 (LWP 106784)]
+19010069.799577 [New Thread 0x7fff6e5f9640 (LWP 106785)]
+19010070.629350 [New Thread 0x7fff6ddf8640 (LWP 106786)]
+19010070.629932 [New Thread 0x7fff6d5f7640 (LWP 106787)]
+19010070.630356 [New Thread 0x7fff6cdf6640 (LWP 106788)]
+19010070.630846 [New Thread 0x7fff6bdff640 (LWP 106789)]
+19010070.631279 [New Thread 0x7fff6afff640 (LWP 106790)]
+19010070.631630 [New Thread 0x7fff6a5fe640 (LWP 106791)]
+19010070.660909 [New Thread 0x7fff693ff640 (LWP 106792)]
+19010070.661424 [New Thread 0x7fff685ff640 (LWP 106793)]
+
+Thread 1 "worldserver" received signal SIGINT, Interrupt.
+__futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x555557240174 <MapMgr::instance()::instance+508>) at ./nptl/futex-internal.c:57
+19010072.299805 57	./nptl/futex-internal.c: No such file or directory.
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x555557240174 <MapMgr::instance()::instance+508>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x555557240174 <MapMgr::instance()::instance+508>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x555557240174 <MapMgr::instance()::instance+508>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ffff6d35a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x555557240120 <MapMgr::instance()::instance+424>, cond=0x555557240148 <MapMgr::instance()::instance+464>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=0x555557240148 <MapMgr::instance()::instance+464>, mutex=0x555557240120 <MapMgr::instance()::instance+424>) at ./nptl/pthread_cond_wait.c:627
+#5  0x000055555655981b in std::condition_variable::wait<MapUpdater::wait()::$_0>(std::unique_lock<std::mutex>&, MapUpdater::wait()::$_0) (this=Quit
